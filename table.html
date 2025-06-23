@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table in HTML </title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        thead,
+        tfoot {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+        
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>Shahid</td>
+            <td>22</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>Shahid</td>
+            <td>22</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>Shahid</td>
+            <td>22</td>
+            <td>Male</td>
+        </tr>
+
+    </table> -->
+    <table>
+        <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: center;">---</td>
+            </tr>
+        </tfoot>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>age</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Jameel Khan</td>
+                <td>22</td>
+                <td rowspan="4">100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Faheem khan </td>
+                <td>22</td>
+                <!-- <td>100</td> -->
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jamal</td>
+                <td>22</td>
+                <!-- <td>100</td> -->
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Kamal</td>
+                <td>22</td>
+                <!-- <td>100</td> -->
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>

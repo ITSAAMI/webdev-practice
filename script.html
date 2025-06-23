@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="number"] {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form>
+        <input type="number" id="num1" value="0">
+        <input type="number" id="num2" value="0">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <button type="button" onclick="calculate()">=</button>
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function calculate() {
+            const num1 = Number(document.getElementById("num1").value);
+            const num2 = Number(document.getElementById("num2").value);
+            const operator = document.getElementById("operator").value;
+
+            let result;
+
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
