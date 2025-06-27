@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z Index - CSS </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: dodgerblue;
+            height: 100vh;
+        }
+
+        .flex-center {
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* align-content: center; */
+            /* text-align: center; */
+        }
+
+        .boxes {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            /* display: inline-block; */
+            display: block;
+            margin: 20px;
+            border: solid;
+            /* clear: both; */
+        }
+
+        .box1 {
+            background-color: yellow;
+            /* position: absolute;
+            top: 12px;
+            left: 32px; */
+            /* z-index: 2; */
+            float: right;
+            /* clear: both; */
+        }
+
+        .box2 {
+            background-color: greenyellow;
+            /* position: absolute;
+            top: 22px;
+            left: 52px; */
+            /* z-index: 22; */
+            float: left;
+        }
+
+        .box3 {
+            background-color: rgb(98, 255, 247);
+            /* position: absolute;
+            top: 32px;
+            left: 72px;
+            z-index: -1; */
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="plar flex-center">
+        <div class="boxes flex-center box1">1</div>
+        <div class="boxes flex-center box2">2</div>
+        <div class="boxes flex-center box3">3</div>
+    </div>
+</body>
+
+</html>
