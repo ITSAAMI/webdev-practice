@@ -8,7 +8,7 @@ This repository contains practical work, assignments, and exercises for Batch 6 
 - [Waleed](https://github.com/itswaleed123/)  
 - [Arsalan](#)  
 - [Ibrahim](#)  
-- [Aqsa](#)  
+- [Aqsa Khan](https://github.com/AqsaKhanDev/)  
 - [Sania Saleem](#)  
 - [Noor Ul Haq](#)  
 - *...and others*
