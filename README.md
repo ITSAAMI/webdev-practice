@@ -4,7 +4,7 @@ This repository contains practical work, assignments, and exercises for Batch 6 
 
 ## 👩‍💻👨‍💻 Students Included
 
-- [Masood](#)  
+- [Masood](https://github.com/masoodkhancoder)  
 - [Waleed](https://github.com/itswaleed123/)  
 - [Arsalan](#)  
 - [Ibrahim](#)  
