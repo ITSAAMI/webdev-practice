@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove Elements</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #box{
+            border: 2px solid red;
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        
+        button{
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #007B9E;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <h1>What is RAM ? Explain in Details</h1>
+        <p> RAM (Random Access Memory) is a type of computer memory that can be accessed randomly. It is used by the CPU
+            to store data that is actively being used or processed. RAM is volatile memory, meaning that it loses its
+            contents when the power is turned off. It allows for quick read and write access to a storage medium that is
+            faster than traditional hard drives or SSDs. The more RAM a computer has, the more data it can handle at
+            once, which can improve performance for tasks such as gaming, video editing, and multitasking.
+        </p>
+    </div>
+    <button onclick="addElements()">Add</button>
+    <!-- <button onclick="removeElements()">Remove Element</button> -->
+    <script>
+
+        // This function will add a new element to the body of the document
+        function addElements() {
+            let newPera = document.createElement('h1');
+            newPera.innerText = "Hello  World!";
+            document.body.appendChild(newPera);
+        }
+
+        // This function will remove the last element from the body of the document
+        // function removeElements() {
+        //     const box = document.getElementById('box');
+        //     box.remove();
+        // }
+    </script>
+</body>
+
+</html>

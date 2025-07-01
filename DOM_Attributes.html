@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Attributes in JavaScript </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eb6dd6;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* border: 2px solid red ; */
+            flex-direction: column;
+            background: url('cover.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        button {
+            width: 212px;
+            height: 61px;
+            background-color: #6deb6d;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            color: #000000;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #000;
+            background: url('Cover.jpg') no-repeat center center;
+            opacity: 0.8;
+            background-size: cover;
+
+        }
+        button:hover {
+            background-color: #6d6deb;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #000;
+            opacity: 1;
+        }
+
+        img {
+            border: 2px solid rev;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #000;
+            margin: 20px;
+            transition: all 0.3s ease;
+        }
+
+        figcaption {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 10px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <figure>
+        <img src="Avatar.jpg" alt="John Wick" id="img">
+        <center>
+            <figcaption>Caption</figcaption>
+        </center>
+    </figure>
+
+
+    <div class="navbar">
+        <button onclick="ChnageImage(0)">John Wick</button>
+        <button onclick="ChnageImage(1)">Captian Jack </button>
+        <button onclick="ChnageImage(2)">Tanjiro Kamado</button>
+    </div>
+
+    <div id="data"></div>
+
+    <script>
+
+
+        const images = [
+            'John Wick - C5.jpg',
+            '1719807781_demon-slayer-1.jpg',
+            'Tanjiro_kamado.webp'
+        ];
+
+        const names = [
+            'John Wick',
+            'Captain Jack Sparrow',
+            'Tanjiro Kamado'
+        ];
+
+        function ChnageImage(index) {
+            const img = document.querySelector('img');
+            const cap = document.querySelector('figcaption');
+            img.src = images[index];
+            img.alt = names[index];
+            cap.innerHTML = names[index];
+            console.log("Hahahaha")
+        }
+
+    </script>
+</body>
+
+</html>
