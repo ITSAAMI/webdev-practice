@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: dodgerblue;
+        }
+
+        .img-dev {
+            width: 50%;
+            height: 100vh;
+            /* background-image: url(images/img_5terre.jpg); */
+            background-color: rgb(255, 255, 255);
+            background-size: cover;
+            border: 2px solid black;
+            overflow: hidden;
+            margin-bottom: 12px;
+            width: 23%;
+            height: 29%;
+            margin: 12px;
+            float: left;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .desc {
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- One image - 100%  -->
+    <!-- Two images - 50% 50% -->
+    <!-- Three images - 33.33% 33.33% 33.33%  -->
+    <!-- Four Images - 25% 25% 25% 25% -->
+    <!-- Five images - 20% 20% 20% 20% 20% -->
+    <!-- Six images - 16.66% 16.66% 16.66% 16.66% 16.66% 16.66% -->
+
+
+    <div class="img-dev">
+        <img src="images/img_5terre.jpg">
+        <div class="desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius non itaque, exercitationem eveniet.
+        </div>
+    </div>
+    <div class="img-dev">
+        <img src="images/img_5terre.jpg">
+        <div class="desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius non itaque, exercitationem eveniet.
+        </div>
+    </div>
+    <div class="img-dev">
+        <img src="images/img_5terre.jpg">
+        <div class="desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius non itaque, exercitationem eveniet.
+        </div>
+    </div>
+    <div class="img-dev">
+        <img src="images/img_5terre.jpg">
+        <div class="desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius non itaque, exercitationem eveniet.
+        </div>
+    </div>
+
+</body>
+
+</html>
