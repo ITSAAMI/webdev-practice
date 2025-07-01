@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar in Simple CSS </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {}
+
+        header ul {
+            /* margin: 12px; */
+            list-style-type: none;
+            background-color: rgb(184, 255, 240);
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            text-decoration: none;
+            padding: 10px 39px;
+            font-size: 1.5em;
+        }
+
+        li a:hover {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border-radius: 12px;
+        }
+
+        li:last-child,
+        li:nth-last-child(2) {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Conatct</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+
+        </ul>
+    </header>
+</body>
+
+</html>
