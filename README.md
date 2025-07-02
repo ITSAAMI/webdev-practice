@@ -29,7 +29,7 @@ This helps them stay updated with the latest lessons and practice material.
 | 4    | Shayyan              | B5     | [Shayyan](#) | [Shayyan](#) | [Shayyan](#)  |
 | 5    | Muhammad Waleed      | B6     | [Waleed](#)  | [Waleed](#)  | [Waleed](#)   |
 | 6    | Noor Ul Haq          | B6     | [Noor](#)    | [Noor](#)    | [Noor](#)     |
-| 7    | Masood Khan          | B6     | [Masood](#)  | [Masood](#)  | [Masood](#)   |
+| 7    | Masood Khan          | B6     | [Masood](https://github.com/masoodkhancoder)  | [Masood](#)  | [Masood](#)   |
 | 8    | Arsalan              | B6     | [Arsalan](#) | [Arsalan](#) | [Arsalan](#)  |
 | 9    | Aqsa Khan            | B6     | [Aqsa](#)    | [Aqsa](#)    | [Aqsa](#)     |
 | 10   | Sania Saleem         | B6     | [Sania](#)   | [Sania](#)   | [Sania](#)    |
