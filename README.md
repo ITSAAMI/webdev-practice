@@ -19,7 +19,7 @@ Welcome to the official repository for **Batch 05** at **Logic Gigs Pvt. Ltd.** 
 | 1   | Saddan   |
 | 2   | Shahab   |
 | 3   | Junaid   |
-| 4   | Shahzeb  |
+| 4   | MASOOD KHAN  |
 | 5   | Shahyyan |
 
 ---
