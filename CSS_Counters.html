@@ -19,26 +19,32 @@
             content: "Ch#" counter(ch) " : ";
             font-weight: bold;
         }
-        h2{
+
+        h2 {
             counter-increment: topic;
             counter-reset: subtopic;
         }
-        h2::before{
+
+        h2::before {
             content: counter(ch) "." counter(topic) " : ";
             font-weight: bold;
         }
-        h3{
+
+        h3 {
             counter-increment: subtopic;
             counter-reset: subsubtopic;
         }
-        h3::before{
+
+        h3::before {
             content: counter(ch) "." counter(topic) "." counter(subtopic) " : ";
             font-weight: bold;
         }
-        h4{
+
+        h4 {
             counter-increment: subsubtopic;
         }
-        h4::before{
+
+        h4::before {
             content: counter(ch) "." counter(topic) "." counter(subtopic) "." counter(subsubtopic) " : ";
             font-weight: bold;
         }
@@ -76,7 +82,7 @@
     <h3>Hybride Computer</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
         placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
-    
+
 </body>
 
 </html>
