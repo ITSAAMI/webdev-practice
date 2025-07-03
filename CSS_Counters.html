@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Counters</title>
+    <style>
+        body {
+            counter-reset: ch;
+        }
+
+        h1 {
+            counter-increment: ch;
+            counter-reset: topic;
+        }
+
+        h1::before {
+            content: "Ch#" counter(ch) " : ";
+            font-weight: bold;
+        }
+        h2{
+            counter-increment: topic;
+            counter-reset: subtopic;
+        }
+        h2::before{
+            content: counter(ch) "." counter(topic) " : ";
+            font-weight: bold;
+        }
+        h3{
+            counter-increment: subtopic;
+            counter-reset: subsubtopic;
+        }
+        h3::before{
+            content: counter(ch) "." counter(topic) "." counter(subtopic) " : ";
+            font-weight: bold;
+        }
+        h4{
+            counter-increment: subsubtopic;
+        }
+        h4::before{
+            content: counter(ch) "." counter(topic) "." counter(subtopic) "." counter(subsubtopic) " : ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>What is Computer Science ? Explain in Details</h1>
+    <p> Computer science is the study of computer hardware, computer software, and the interactions between them. It is
+        an undergraduate study that covers the theory of computation and the design of computer systems. </p>
+
+    <h2>what is Computer also types of computers?</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis ratione consectetur error molestiae, nihil
+        architecto iusto. Ut et mollitia rerum vitae, repellat assumenda animi eveniet aliquid! Veniam architecto totam
+        ex.</p>
+
+    <h3>Digital Computer </h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    <h4>Super Computer</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    <h4>Main Frame Computer</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    <h4>Mini Computer</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    <h4>Micro Computer</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    <h3>Analog Computer </h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    <h3>Hybride Computer</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cum rem dolorum aut! Suscipit eius libero, ullam
+        placeat sint itaque enim, ducimus unde accusantium facere cupiditate quos quaerat magni impedit!</p>
+    
+</body>
+
+</html>

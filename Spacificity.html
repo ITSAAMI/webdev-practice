@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacificity in CSS </title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* .hello:hover {
+            background-color: yellow;
+            padding: 12px;
+        } */
+        /* #first{
+            background-color: red;
+        } */
+
+        div {
+            background-color: red;
+            padding: 12px;
+            width: 500px;
+            font-size: 20px;
+            
+
+        }
+
+        #id:hover div.class:hover {
+            background-color: yellow;
+        }
+
+        .intro {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello" id="first">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ea dignissimos amet tenetur explicabo maxime neque
+        culpa tempore perspiciatis consequatur. Officia aperiam deleniti sit voluptates mollitia minima ex impedit
+        aliquam.
+    </div>
+</body>
+
+</html>
