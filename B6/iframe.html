@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe in HTML</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(38, 248, 255);
+            height: 100vh;
+        }
+
+
+        .boxes {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            display: inline-block;
+            border: 1px solid;
+            box-shadow: 3px 3px 2px gray;
+            padding: 12px;
+            margin: 12px;
+            color: white;
+            border-radius: 50%;
+        }
+
+        .boxes:hover {
+            border: 2px solid black;
+            /* transform: skew(20deg, 20deg); */
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box-1 {
+            background-color: rgb(47, 77, 0);
+        }
+
+        #box-2 {
+            background-color: rgb(4, 196, 255);
+        }
+
+        #box-3 {
+            background-color: rgb(255, 16, 203);
+        }
+
+        #box-4 {
+            background-color: rgb(31, 35, 255);
+        }
+
+        #box-5 {
+            background-color: rgb(253, 34, 144);
+        }
+    </style>
+</head>
+
+<body class="center">
+    <!-- <iframe src="newpage.html" frameborder="0" style="width: 80px;height: 80px;" name="iframe1"></iframe>
+    
+
+    <a href="Aqsa.html" target="iframe1">click</a>
+    
+
+    <iframe src="Anabiya_imran.html" frameborder="0" style="width: 80px;height: 80px;"></iframe> -->
+
+
+
+    <div class="boxes border1 center" id="box-1">1</div>
+    <div class="boxes center" id="box-2">2</div>
+    <div class="boxes center" id="box-3">3</div>
+    <div class="boxes center" id="box-4">4</div>
+    <div class="boxes center" id="box-5">5</div>
+
+</body>
+
+</html>
