@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation in CSS</title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: dodgerblue;
+        }
+
+
+        @keyframes waleed {
+            /* form {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            } */
+
+            /* 0% { */
+            /* background-color: red; */
+            /* transform: rotate(0deg, 0deg); */
+            /* } */
+
+            /* 25% { */
+            /* background-color: yellow; */
+            /* transform: rotate(90deg, 90deg); */
+            /* } */
+
+            /* 50% { */
+            /* background-color: rgb(132, 238, 132); */
+            /* transform: rotate(180deg, 180deg); */
+            /* } */
+
+            /* 75% { */
+            /* background-color: rgb(134, 134, 240); */
+            /* transform: rotate(270deg, 270deg); */
+            /* } */
+
+            /* 100% { */
+            /* background-color: rgb(111, 239, 243); */
+            /* transform: rotate(360deg, 360deg); */
+            /* } */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            /* background-color: rgb(217, 255, 2); */
+            background-color: rgb(255, 240, 27);
+            font-size: 4rem;
+            color: rgb(0, 0, 0);
+            border-radius: 50%;
+            /* transform: translate(50px, 50px); */
+            box-shadow: 4px 4px 4px gray;
+            border: 2px solid rgb(36, 36, 36);
+            /* background-image: url(../image/Hijab-Girls.jpg) 200px 200px; */
+
+
+        }
+
+        .box:hover {
+            /* transform: rotate(120deg); */
+            /* transform: translate(50px, 50px); */
+            /* transform: scale(0.5); */
+            /* transform: skew(30deg, 30deg); */
+            /* transform: skewX(30deg); */
+            /* transform: skewY(30deg); */
+
+            /* default */
+            /* transform: matrix(1, 0, 0, 1, 0, 0); */
+
+            /* Props */
+            /* transform: matrix(1, 0, 0, 1, 112, 112); */
+            border-radius: 20%;
+            /* transform: rotate(120deg); */
+            animation-name: waleed;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+
+
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="center">
+    <div class="box center">
+        A
+    </div>
+    <div class="box center">
+        R
+    </div>
+    <div class="box center">
+        S
+    </div>
+    <div class="box center">
+        L
+    </div>
+    <div class="box center">
+        A
+    </div>
+    <div class="box center">
+        N
+    </div>
+</body>
+
+</html>
