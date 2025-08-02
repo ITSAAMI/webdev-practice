@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: red;
+            grid-area: header;
+            /* height: auto; */
+        }
+
+        aside {
+            background-color: green;
+            grid-area: aside;
+        }
+
+        main {
+            background-color: blue;
+            grid-area: main;
+            /* height: 80%; */
+        }
+
+        footer {
+            background-color: yellow;
+            grid-area: footer;
+            /* height: auto; */
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+            'header header header header header header header'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'aside main main main main main main'
+            'footer footer footer footer footer footer footer';
+            height: 100vh;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            Header
+        </header>
+        <aside>
+            aside
+        </aside>
+        <main>
+            main
+        </main>
+        <footer>
+            footer
+        </footer>
+    </div>
+
+</body>
+
+</html>

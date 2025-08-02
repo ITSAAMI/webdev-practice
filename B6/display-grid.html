@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Grid - CSS </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            background-color: dodgerblue;
+            width: 100vw;
+            height: 100vh;
+            background: url('../image/cover.jpg') cover;
+            display: grid;
+            grid-template-columns: 15% auto 15%;
+            grid-template-rows: 10% 10% auto 10%;
+            /* grid-gap: 12px; */
+        }
+
+        .grid-items {
+            /* width: 100px; */
+            /* height: 100px; */
+            background-color: white;
+            border: 2px solid black;
+            padding: 23px;
+
+        }
+
+        #header {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        #navbar {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: rgb(37, 37, 37);
+            color: white;
+        }
+
+
+        #footer {
+            /* grid-column-start: 1;
+            grid-column-end: 4; */
+            grid-column: 1 / span 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-items" id="header">Header</div>
+        <div class="grid-items" id="navbar">Navbar</div>
+        <div class="grid-items" id="left">left</div>
+        <div class="grid-items" id="center">Center</div>
+        <div class="grid-items" id="right">right</div>
+        <div class="grid-items" id="footer">Footer</div>
+    </div>
+</body>
+
+</html>

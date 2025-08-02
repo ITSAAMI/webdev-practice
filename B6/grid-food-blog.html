@@ -1,0 +1,93 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas:
+            'header header header'
+            'aside main main'
+            'aside main main'
+            'footer footer footer';
+        height: 100vh;
+        background-color: rgb(223, 223, 223);
+    }
+
+    header {
+        grid-area: header;
+        background-color: rgb(37, 37, 37);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    aside {
+        grid-area: aside;
+        background-color: rgb(224, 224, 224);
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 12px;
+    }
+
+    .blog {
+        background-color: white;
+        padding: 23px;
+    }
+
+    .fakeimg {
+        height: 200px;
+        background-color: rgb(179, 179, 179);
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: rgb(37, 37, 37);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div class="container">
+    <header>
+        <h1>Grid Food Blog</h1>
+    </header>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="#">Breakfast</a></li>
+            <li><a href="#">Lunch</a></li>
+            <li><a href="#">Dinner</a></li>
+            <li><a href="#">Desserts</a></li>
+        </ul>
+    </aside>
+    <main>
+        <div class="blog">
+            <h2>Recipe 1</h2>
+            <img src="" alt="" class="fakeimg">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="blog">
+            <h2>Recipe 2</h2>
+            <img src="" alt="" class="fakeimg">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="blog">
+            <h2>Recipe 3</h2>
+            <img src="" alt="" class="fakeimg">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2021 Grid Food Blog</p>
+    </footer>
+</div>
