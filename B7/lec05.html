@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Lecture 05 </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 
+        .box {
+            background-color: red;
+           height: 400px;
+
+        }
+
+        .box1 {
+            opacity: 0.5;
+        }
+        .box2{
+           background-color: rgba(255, 0, 0, 0.5);
+        } */
+
+
+        ul {
+            list-style-type: none;
+            background-color: dodgerblue;
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        ul li:last-child {
+            float: right;
+        }
+
+        ul li {
+            /* border-radius: 50%; */
+        }
+
+        li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            font-size: 2rem;
+            padding: 6px 12px;
+        }
+
+        ul li:hover,
+        li a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        section {
+            height: 80vh;
+            height: 100vw;
+            background-color: rgb(112, 176, 240);
+            padding: 23px;
+        }
+
+        section .card {
+            width: 32%;
+            display: inline-block;
+            margin: 2px;
+            padding: 2px;
+            border: 3px solid black;
+            border-radius: 12px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+        }
+         .card p {
+            text-align: center;
+            font-size: 2rem;
+         }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">
+        i am box
+    </div>
+
+    <div class="box box1">
+        i am box
+    </div>
+
+
+    <div class="box box2">
+        i am box
+    </div> -->
+
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Login/Register</a></li>
+    </ul>
+
+
+
+    <section>
+        <div class="card">
+            <img src="../images/5.png" alt="NA">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+            <img src="../images/4.jpg" alt="NA">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="card">
+            <img src="../images/2.jpg" alt="NA">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </section>
+</body>
+
+</html>
