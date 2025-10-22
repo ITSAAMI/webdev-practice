@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Project Index — webdev-practice</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding-top: 3.5rem;
+        }
+
+        .file-list {
+            max-height: 65vh;
+            overflow: auto;
+        }
+
+        .file-item {
+            word-break: break-all;
+        }
+
+        .badge-path {
+            font-size: 0.72rem;
+        }
+
+        .muted-small {
+            font-size: .85rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">webdev-practice</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Index <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input id="search" class="form-control mr-sm-2" type="search"
+                    placeholder="Search files (name or folder)" aria-label="Search">
+            </form>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+                    <div>
+                        <h1 class="h3">Project Index</h1>
+                        <p class="muted-small">Browse all local .html pages in this workspace. Click any link to open
+                            it.
+                            Use the search box to filter by filename or folder.</p>
+                    </div>
+                    <div class="text-right">
+                        <span id="count" class="text-muted"></span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body file-list" id="fileList" aria-live="polite">
+                        <!-- File list rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- jQuery, Popper.js, Bootstrap JS (Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+        // Embedded file list generated from workspace scan.
+        // If you add or remove files, update this list or regenerate.
+        const files = [
+            "B5/ChangeBGColor.html",
+            "B5/Add_Remove_Elements_DOM.html",
+            "B5/bs-grid-system.html",
+            "B5/bs4-dropdown.html",
+            "B5/bs4-grid.html",
+            "B5/bs4-new-class.html",
+            "B5/bootstrap-4-model.html",
+            "B6/age calculater.html",
+            "B6/Amir.html",
+            "B6/Anabiya_imran.html",
+            "B6/animation.html",
+            "B6/Aqsa.html",
+            "B6/arsalan_ba_mani.html",
+            "B6/AS css.html",
+            "B6/attributes.html",
+            "B6/bg-props-css.html",
+            "B6/block_vs_inline.html",
+            "B6/block-inline.html",
+            "B6/bootstrap.html",
+            "B6/bs.css",
+            "B6/bs4-datatoggale.html",
+            "B6/bs4-images.html",
+            "B6/center.html",
+            "B6/center_new.html",
+            "B6/class1.html",
+            "B6/class1.js",
+            "B6/Combinator.html",
+            "B6/CSS Flexbox.html",
+            "B6/CSS Variables.html",
+            "B6/CSS_Attribute_Selectors.html",
+            "B6/CSS_Counters.html",
+            "B6/CSS_Forms.html",
+            "B6/css-class.html",
+            "B6/display-grid.html",
+            "B6/display-css-WA.html",
+            "B6/DOM.html",
+            "B6/DOM-JS.html",
+            "B6/DOM_Attributes.html",
+            "B6/dropdown.html",
+            "B6/dropdown-simple.html",
+            "B6/fa-icons.link.html",
+            "B6/file_path.html",
+            "B6/flex-in-bs4.html",
+            "B6/font-face.html",
+            "B6/fonts-in-css.html",
+            "B6/form.html",
+            "B6/form-elements.html",
+            "B6/form_last.html",
+            "B6/Formating_in_HTML.html",
+            "B6/grid-area.html",
+            "B6/grid-food-blog.html",
+            "B6/grid-system.html",
+            "B6/how-to-CSS.html",
+            "B6/iframe.html",
+            "B6/Image Sprites - Simple Example.html",
+            "B6/image-gallery.html",
+            "B6/image-tag.html",
+            "B6/index.html",
+            "B6/input.html",
+            "B6/JS_lec01.html",
+            "B6/kon-talha.html",
+            "B6/link-tags.html",
+            "B6/link_css2.html",
+            "B6/list-css.html",
+            "B6/lists.html",
+            "B6/media_querry.html",
+            "B6/media_querry_class.html",
+            "B6/mini-profile.html",
+            "B6/nav-bs4.html",
+            "B6/navbar-classes.html",
+            "B6/navbar-css-basic.html",
+            "B6/navbar.html",
+            "B6/new-data.html",
+            "B6/newJS.html",
+            "B6/newpage.html",
+            "B6/offline-BS4.html",
+            "B6/page2.html",
+            "B6/popover.html",
+            "B6/portfolio.html",
+            "B6/qandS.html",
+            "B6/rayyan.html",
+            "B6/registation_form.html",
+            "B6/registration-from-model.html",
+            "B6/Remove_add_attributes.html",
+            "B6/responsive_Design.html",
+            "B6/sania.html",
+            "B6/Sania_Saleem1.html",
+            "B6/script.html",
+            "B6/shadow-box-text.html",
+            "B6/shadow-hijab-girl-waleed-fav.html",
+            "B6/shadow-waleed-arsalan.html",
+            "B6/slider.html",
+            "B6/Spacificity.html",
+            "B6/Style.html",
+            "B6/symentic-tags.html",
+            "B6/table-bs4.html",
+            "B6/table.html",
+            "B6/table1.html",
+            "B6/table2.html",
+            "B6/tailwind_css.html",
+            "B6/testing-box-border.html",
+            "B6/testing.html",
+            "B6/text-ka-css.html",
+            "B6/texting.html",
+            "B6/todo_list.html",
+            "B6/toster.html",
+            "B6/to_do_list_using_DOM.html",
+            "B6/tooltip.html",
+            "B6/transofmation-css.html",
+            "B6/video-audio-tags.html",
+            "B6/webs-position-AS.html",
+            "B6/wp-class.html",
+            "B6/z-index.html",
+            "B6/zindex-css.html",
+            "B7/background.html",
+            "B7/border.html",
+            "B7/box-model.html",
+            "B7/code.html",
+            "B7/counters.html",
+            "B7/CSS Attribute Selectors.html",
+            "B7/CSS_Class01_basic_intro.html",
+            "B7/css_last_class.html",
+            "B7/display.html",
+            "B7/fonts.html",
+            "B7/form.html",
+            "B7/HTML-Input-Types.html",
+            "B7/icons.html",
+            "B7/icons_girls.html",
+            "B7/image-seperator.html",
+            "B7/layout.html",
+            "B7/lec05.html",
+            "B7/lec06.html",
+            "B7/links-girls.html",
+            "B7/links.html",
+            "B7/list_props_css.html",
+            "B7/navabar.html",
+            "B7/new.html",
+            "B7/positions-css.html",
+            "B7/sepectors-css.html",
+            "B7/spcificity.html",
+            "B7/table.html",
+            "B7/testing.html",
+            "B7/text-props.html",
+            "B7/video-audio-tags.html",
+            "Assignments/B5/1. Junaid Ahmad/hello.html",
+            "Assignments/B6/1. Muhammad Waleed/1_web_page.html",
+            "Assignments/B6/2. Masood Khan/1_web_project.html",
+            "Assignments/B7/2. Aqsa Khan/registration_form.html",
+            "Assignments/B7/3. Abdur Rehman/registration_form.html",
+            "Assignments/B7/4. Ihtisham Ali/registration_form.html",
+            "Assignments/B7/5. Hafeez ur rehman/registration_form.html",
+            "index.html"
+        ];
+
+        function groupByFolder(list) {
+            const groups = {};
+            list.forEach(path => {
+                const parts = path.split('/');
+                const folder = parts.length > 1 ? parts[0] : '.';
+                if (!groups[folder]) groups[folder] = [];
+                groups[folder].push(path);
+            });
+            // sort folders and files
+            Object.keys(groups).forEach(k => groups[k].sort((a, b) => a.localeCompare(b)));
+            return Object.keys(groups).sort().reduce((acc, k) => { acc[k] = groups[k]; return acc; }, {})
+        }
+
+        function render(list) {
+            const container = document.getElementById('fileList');
+            container.innerHTML = '';
+            const grouped = groupByFolder(list);
+            let total = 0;
+            Object.keys(grouped).forEach(folder => {
+                const files = grouped[folder];
+                total += files.length;
+
+                const section = document.createElement('div');
+                section.className = 'mb-3';
+
+                const header = document.createElement('h5');
+                header.textContent = folder === '.' ? 'Root' : folder;
+                header.className = 'mb-2';
+                section.appendChild(header);
+
+                const listEl = document.createElement('div');
+                listEl.className = 'list-group';
+
+                files.forEach(f => {
+                    const a = document.createElement('a');
+                    a.className = 'list-group-item list-group-item-action file-item';
+                    a.href = f;
+                    a.textContent = f.split('/').slice(-1)[0];
+                    a.title = f;
+                    const badge = document.createElement('span');
+                    badge.className = 'badge badge-secondary float-right badge-path';
+                    badge.textContent = f;
+                    a.appendChild(badge);
+                    listEl.appendChild(a);
+                });
+
+                section.appendChild(listEl);
+                container.appendChild(section);
+            });
+
+            document.getElementById('count').textContent = total + ' files';
+        }
+
+        function filterFiles(q) {
+            const lower = q.trim().toLowerCase();
+            if (!lower) return files.slice();
+            return files.filter(f => f.toLowerCase().includes(lower));
+        }
+
+        // initial render
+        render(files);
+
+        // search handler
+        const searchEl = document.getElementById('search');
+        let debounce;
+        searchEl.addEventListener('input', (e) => {
+            clearTimeout(debounce);
+            debounce = setTimeout(() => {
+                const q = e.target.value;
+                const filtered = filterFiles(q);
+                render(filtered);
+            }, 120);
+        });
+
+        // keyboard '/' focus search
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchEl) {
+                e.preventDefault();
+                searchEl.focus();
+                searchEl.select();
+            }
+        });
+    </script>
+</body>
+
+</html>
