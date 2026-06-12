@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+            <br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Gender</legend>
+
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Skills</legend>
+
+            <input type="checkbox" id="html" name="skills" value="HTML">
+            <label for="html">HTML</label>
+
+            <input type="checkbox" id="css" name="skills" value="CSS">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" id="js" name="skills" value="JavaScript">
+            <label for="js">JavaScript</label>
+
+        </fieldset>
+
+        <br>
+
+        <label for="course">Select Course:</label>
+        <select id="course" name="course">
+            <option value="">Choose Course</option>
+            <option>Web Development</option>
+            <option>Graphic Design</option>
+            <option>Digital Marketing</option>
+        </select>
+
+        <br><br>
+
+        <label for="city">City:</label>
+        <input list="cities" id="city" name="city">
+
+        <datalist id="cities">
+            <option value="Nowshera">
+            <option value="Peshawar">
+            <option value="Islamabad">
+            <option value="Lahore">
+        </datalist>
+
+        <br><br>
+
+        <label for="picture">Upload Picture:</label>
+        <input type="file" id="picture" name="picture">
+        
+        <br><br>
+
+        <label for="about">About Yourself:</label>
+        <br>
+        <textarea id="about" rows="5" cols="40"></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</body>
+</html>
