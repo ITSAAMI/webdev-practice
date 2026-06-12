@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDev Projects Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --accent-1: #3b82f6;
+            --accent-2: #8b5cf6;
+            --accent-3: #ec4899;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Elements */
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            animation: float 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(59, 130, 246, 0.4);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(139, 92, 246, 0.4);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+        
+        .shape-3 {
+            width: 600px;
+            height: 600px;
+            background: rgba(236, 72, 153, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 100px) scale(1.1); }
+            100% { transform: translate(-50px, -50px) scale(0.9); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: slideDown 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent-1), var(--accent-2), var(--accent-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.05em;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            opacity: 0.8;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            padding-left: 3.5rem;
+            border-radius: 50px;
+            border: 1px solid var(--card-border);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-2);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2), 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            width: 20px;
+            height: 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes cardEntrance {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(45, 61, 86, 0.8);
+        }
+
+        .project-card:hover::before {
+            left: 200%;
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .project-link-text {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--accent-1);
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .project-card:hover .project-link-text {
+            gap: 0.8rem;
+            color: #60a5fa;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Initial delay for grid items */
+        .projects-grid > a:nth-child(1) { animation-delay: 0.1s; }
+        .projects-grid > a:nth-child(2) { animation-delay: 0.2s; }
+        .projects-grid > a:nth-child(3) { animation-delay: 0.3s; }
+        .projects-grid > a:nth-child(4) { animation-delay: 0.4s; }
+        .projects-grid > a:nth-child(5) { animation-delay: 0.5s; }
+        .projects-grid > a:nth-child(6) { animation-delay: 0.6s; }
+        .projects-grid > a:nth-child(7) { animation-delay: 0.7s; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .container { padding: 2rem 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="container">
+        <header>
+            <h1>Projects Explorer</h1>
+            <p class="subtitle">Discover and navigate through your HTML templates and resources</p>
+        </header>
+
+        <div class="search-container">
+            <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search projects by name or description..." autocomplete="off">
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Project cards will be injected here via JavaScript -->
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <h3>No projects found</h3>
+            <p style="color: #94a3b8; margin-top: 0.5rem;">Try adjusting your search terms</p>
+        </div>
+    </div>
+
+    <script>
+        const projects = [
+            { title: "HTML Code", file: "code.html", icon: "💻", description: "HTML code snippets, tags, and general layout examples." },
+            { title: "Color Styles", file: "color.html", icon: "🎨", description: "Color formatting, palettes, and styling demonstrations." },
+            { title: "Typography", file: "fonts.html", icon: "Aa", description: "Font families, text sizing, and typography showcase." },
+            { title: "JS Functions", file: "function_in_JS.html", icon: "⚡", description: "Core JavaScript function implementations and logic." },
+            { title: "List Layouts", file: "list.html", icon: "📝", description: "Ordered, unordered, and definition list demonstrations." },
+            { title: "CSS Classes", file: "myclass.html", icon: "✨", description: "Custom CSS classes and component styling patterns." },
+            { title: "Modern Forms", file: "newform.html", icon: "📋", description: "Form layout, input elements, and validation structures." }
+        ];
+
+        const grid = document.getElementById('projectsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
+
+        function renderProjects(filterText = '') {
+            grid.innerHTML = '';
+            let hasResults = false;
+
+            const lowerFilter = filterText.toLowerCase();
+
+            projects.forEach((proj, index) => {
+                if (proj.title.toLowerCase().includes(lowerFilter) || 
+                    proj.description.toLowerCase().includes(lowerFilter) ||
+                    proj.file.toLowerCase().includes(lowerFilter)) {
+                    
+                    hasResults = true;
+                    const card = document.createElement('a');
+                    card.href = proj.file;
+                    card.className = 'project-card';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    
+                    card.innerHTML = `
+                        <div class="project-icon">${proj.icon}</div>
+                        <h2 class="project-title">${proj.title}</h2>
+                        <p class="project-desc">${proj.description}</p>
+                        <div class="project-link-text">
+                            View Project
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }
+            });
+
+            if (!hasResults) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        // Initial render
+        renderProjects();
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            renderProjects(e.target.value);
+        });
+    </script>
+</body>
+</html>
