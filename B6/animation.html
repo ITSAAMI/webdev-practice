@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved CSS Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes cornerMove {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(calc(100vw - 170px), 0);
+            }
+
+            50% {
+                transform: translate(calc(100vw - 170px), calc(100vh - 170px));
+            }
+
+            75% {
+                transform: translate(0, calc(100vh - 170px));
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        body {
+            background-color: dodgerblue;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .box {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid black;
+            box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+            animation: cornerMove 10s infinite ease-in-out;
+            background-color: #ad0a0a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

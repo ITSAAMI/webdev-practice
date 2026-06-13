@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counters - CSS </title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            counter-reset: heading;
+        }
+
+        h1::before {
+            counter-increment: heading;
+            content: counter(heading) ". ";
+            counter-reset: subheading;
+        }
+
+        h2 {
+            counter-increment: subheading;
+            counter-reset: ssubheading;
+        }
+
+        h2::before {
+
+            content: counter(heading) "." counter(subheading) ". ";
+        }
+
+        h3 {
+            counter-increment: ssubheading;
+        }
+
+        h3::before {
+            content: counter(heading) "." counter(subheading) "." counter(ssubheading) ". ";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>What is RAM?</h1>
+        <p>RAM stands for Random Access Memory.
+            It is the short-term memory of a computer, where data is stored temporarily while the computer is running.
+            Think of RAM like a whiteboard in a classroom — you can write on it quickly, erase it, and write again, but
+            once
+            you wipe it, it’s gone.</p>
+
+        <h2>Types of RAM</h2>
+        <h3>DRAM (Dynamic RAM)</h3>
+        <ul>
+            <li>Needs to be refreshed many times per second.</li>
+            <li>Slower but cheaper.</li>
+            <li>Like a chalkboard — you can write, but you need to keep re-writing before it fades.</li>
+        </ul>
+        <li>Sub-types of DRAM</li>
+        <ul>
+            <li>
+                <h4>SDRAM (Synchronous DRAM)</h4>
+                <p>Works in sync with the computer’s clock speed.</p>
+                <p>Example: Like walking in step with your friend — both move together in rhythm.</p>
+            </li>
+
+            <li>
+                <h4>DDR SDRAM (Double Data Rate SDRAM)</h4>
+                <p>Transfers data twice per clock cycle.</p>
+                <p>Example: Like carrying two shopping bags instead of one per trip.</p>
+            </li>
+
+            <li>
+                <h4>DDR2, DDR3, DDR4, DDR5</h4>
+                <p>Each new generation is faster and uses less power.</p>
+                <p>Example: Upgrading from a bicycle to a motorcycle to a car — each is faster and more efficient.</p>
+            </li>
+        </ul>
+
+
+        <h3>SRAM (Static RAM)</h3>
+        <ul>
+            <li>Does not need frequent refreshing.</li>
+            <li>Faster but more expensive.</li>
+            <li>Like sticky notes — stays there until you remove it.</li>
+        </ul>
+        <h2>Why is RAM Important?</h2>
+        <ul>
+            <li>More RAM = more programs open at the same time without slowing down.</li>
+            <li>Example: Like having a bigger table to work on — you can keep more books open at once.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

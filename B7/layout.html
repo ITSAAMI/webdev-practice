@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout - CSS </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li:hover {
+            background-color: #555;
+            cursor: pointer;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #007bff;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            AbdurRehmanTigerKing.com
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="row">
+            <div class="col">
+                <img src="../image/cover.jpg" alt="NA" width="100%">
+                <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                    <li>List item four</li>
+                </ul>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" style="width: 25%" role="progressbar" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">25%</div>
+                </div>
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis esse voluptate est, illum, nam sint
+                nostrum facilis nisi aut itaque repudiandae iste quis dignissimos debitis, at fuga tenetur vero
+                voluptatibus?
+            </div>
+            <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis autem in nihil. Quae
+                accusantium nulla mollitia ex deleniti eligendi, corrupti necessitatibus velit accusamus tempore ipsa
+                aperiam, pariatur ducimus minima voluptatum!</div>
+        </div>
+    </section>
+    <footer>
+        <p>Footer</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar CSS - Testing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            padding: 9px 26px;
+            font-size: 2em;
+        }
+
+        ul li:last-child,
+        ul li:nth-last-child(2) {
+            float: right;
+        }
+
+        li:hover,
+        li:hover a {
+            background-color: yellow;
+            border-radius: 12px;
+            color: #000;
+        }
+
+        .section {
+            width: 100vw;
+            height: 100vh;
+            /* border: 2px solid red; */
+            background-color: #111;
+            background-image: url(image/);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+    </ul>
+    <div id="slider" class="container section">
+
+    </div>
+</body>
+
+</html>

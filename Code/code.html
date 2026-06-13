@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #111827;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+      --accent-strong: #0ea5e9;
+      --muted: #94a3b8;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.35);
+      font-size: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0b1122 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 30px 24px 60px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0 32px;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 26px;
+      font-weight: 500;
+      transition: color 160ms ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.8rem, 4vw, 4.5rem);
+      margin-bottom: 18px;
+      line-height: 1.05;
+    }
+
+    .hero-copy p {
+      max-width: 680px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-copy .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.25);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .button:hover,
+    .button-secondary:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-visual {
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: var(--text);
+    }
+
+    .section-title::before {
+      content: "";
+      width: 40px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .projects,
+    .skills {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project-item,
+    .skill-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .project-item h3,
+    .skill-item h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .project-item p,
+    .skill-item p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat-card {
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.08);
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .contact {
+      margin-top: 64px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      margin-top: 20px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 14px;
+      font-size: 2rem;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: fit-content;
+      margin-top: 8px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 52px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .projects,
+      .skills,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header>
+      <div class="brand">Syed Amir</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p>Designing digital experiences with clean code, strong visuals, and modern interactions.</p>
+        <h1>Awesome portfolio for ambitious web creators.</h1>
+        <p>Hi, I am Syed Amir — a frontend developer crafting accessible, responsive websites and interactive user interfaces.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">Hire Me</a>
+          <a class="button-secondary" href="#projects">View Work</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card">
+          <h3>Featured Project</h3>
+          <p>Modern landing page with animated cards, polished typography, and smooth transitions designed for conversion.</p>
+          <div class="project-links">
+            <a href="#">Live demo</a>
+            <a href="#">Source code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">Projects</div>
+      <div class="projects">
+        <article class="project-item">
+          <h3>Brand identity studio site</h3>
+          <p>A responsive marketing website built using HTML, CSS, and JavaScript with subtle scroll animations and rich imagery.</p>
+          <div class="project-links">
+            <a href="#">Case study</a>
+            <a href="#">Preview</a>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <h3>Product launch dashboard</h3>
+          <p>A data-driven dashboard interface designed for quick insights, clear layouts, and accessible controls.</p>
+          <div class="project-links">
+            <a href="#">Case study</a>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <h3>Portfolio website redesign</h3>
+          <p>A polished portfolio with adaptive breakpoints, a dark theme, and a focus on modern interaction design.</p>
+          <div class="project-links">
+            <a href="#">Live demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" style="margin-top: 60px;">
+      <div class="section-title">Skills</div>
+      <div class="skills">
+        <article class="skill-item">
+          <h3>Frontend Development</h3>
+          <p>HTML, CSS, JavaScript, React, Vue, responsive layouts, accessibility, performance optimization.</p>
+        </article>
+        <article class="skill-item">
+          <h3>UI / UX Design</h3>
+          <p>Design systems, visual hierarchy, motion design, wireframes, prototyping, branding.</p>
+        </article>
+        <article class="skill-item">
+          <h3>Tools</h3>
+          <p>Git, Figma, VS Code, Webpack, Tailwind CSS, Framer Motion, Chrome DevTools.</p>
+        </article>
+      </div>
+      <div class="stats">
+        <div class="stat-card">
+          <strong>5+</strong>
+          Years experience
+        </div>
+        <div class="stat-card">
+          <strong>12</strong>
+          Completed projects
+        </div>
+        <div class="stat-card">
+          <strong>24/7</strong>
+          Client support
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-title">Get in touch</div>
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <h2>Let's build something great together.</h2>
+          <p>Ready to start your next project? Send a message and I will get back to you soon with ideas and a plan.</p>
+        </div>
+        <form class="contact-form">
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Your email" required />
+          <textarea rows="5" placeholder="Project details" required></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      Crafted with code and creativity. © 2026 Syed Amir.
+    </footer>
+  </div>
+</body>
+</html>

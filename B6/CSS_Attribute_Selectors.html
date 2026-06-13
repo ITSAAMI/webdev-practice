@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS [attribute="value"] Selector</title>
+    <style>
+        [hreflang|="en"] {
+            background-color: yellow;
+        }
+        [hreflang~="en"] {
+            background-color: green;
+        }
+        [hreflang*="en"] {
+            background-color: blue;
+        }
+        [hreflang^="en"] {
+            background-color: red;
+        }
+        [hreflang$="en"] {
+            background-color: purple;
+        }
+        [hreflang="en"] {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <a hreflang="en">English</a> <br>
+    <a hreflang="en-us">English (US)</a> <br>
+    <a hreflang="en-uk">English (UK)</a> <br>
+    <a hreflang="en-au">English (AU)</a> <br>
+    <a hreflang="en-in">English (IN)</a> <br>
+    <a hreflang="en-za">English (ZA)</a> <br>
+    <a hreflang="en-gb">English (GB)</a> <br>
+    <a hreflang="en-nz">English (NZ)</a> <br>
+    <a hreflang="en-ie">English (IE)</a> <br>
+    <a hreflang="en-ca">English (CA)</a> <br>
+    <a hreflang="en-nz">English (NZ)</a> <br>
+    <a hreflang="en-ph">English (PH)</a> <br>
+    <a hreflang="en-sg">English (SG)</a> <br>
+</body>
+</html>

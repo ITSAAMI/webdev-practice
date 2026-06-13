@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing</title>
+    <style>
+        body{
+            counter-reset: plar;
+        }
+        h1{
+            counter-reset: cast;
+            counter-increment: plar;
+        }
+        h1::before{
+            content: counter(plar) " : ";
+        }
+        h2::before{
+            counter-increment: cast;
+            content: counter(plar) 
+            "." counter(cast) " : ";
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jangal Book</h1>
+    <h2>Mowgli </h2>
+    <h2>Bagheera</h2>
+    <h2>Baloo </h2>
+    <h2>Shere Khan </h2>
+    <h2>Kaa </h2>
+    <h2>Akela </h2>
+    <h2>Raksha </h2>
+    <h2>King Louie </h2>
+    <h1>How to Train Dragon 1 </h1>
+</body>
+
+</html>

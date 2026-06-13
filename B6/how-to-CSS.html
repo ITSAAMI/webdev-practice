@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        .box {
+            border: 2px solid red;
+            width: 400px;
+            padding: 100px;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            margin: 20px;
+            box-sizing: content-box;
+            border: 2px solid red;
+            width: 400px;
+            /* padding: 20px; */
+            /* margin: 20px; */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dicta commodi ad ab, dolorum officiis nihil
+        obcaecati, quod atque soluta assumenda unde beatae? Consequuntur voluptate, quam officia minima ipsum
+        perferendis!
+    </div>
+
+    <div class="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus minus necessitatibus ratione iste eligendi
+        nostrum culpa ex. Doloremque alias assumenda natus temporibus nisi qui, quisquam eligendi similique maxime
+        molestiae nemo.
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove add attributes </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('cover.jpg') no-repeat center center fixed;
+            background-color: #eb6dd6;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* border: 2px solid red ; */
+        }
+
+        form {
+            background-color: #ffffff transparent;
+            /* border: 2px solid #ccc; */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"],
+        button[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover,
+        button[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        button[type="button"] {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="button"]:hover {
+            background-color: #007B9E;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #e53935;
+        }
+
+        button[type="button"] {
+            margin-top: 10px;
+        }
+
+        button[type="reset"] {
+            margin-left: 10px;
+        }
+
+        button[type="submit"] {
+            margin-left: 10px;
+        }
+
+        button[type="reset"] {
+            margin-left: 10px;
+        }
+
+        button[type="submit"] {
+            margin-left: 10px;
+        }
+
+        button[type="reset"] {
+            margin-left: 10px;
+        }
+
+        button[type="submit"] {
+            margin-left: 10px;
+        }
+
+        button[type="reset"] {
+            margin-left: 10px;
+        }
+
+        button[type="submit"] {
+            margin-left: 10px;
+        }
+
+        button[type="reset"] {
+            margin-left: 10px;
+        }
+
+        button[type="submit"] {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Enter You Username" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Login</button>
+        <button type="reset">Reset</button>
+
+
+    </form>
+    <script>
+        const username1 = document.querySelector('#username');
+
+        function removeHahaha() {
+            username1.removeAttribute('class');
+            // username.setAttribute('class', 'hehehehe');
+        }
+
+        removeHahaha();
+
+    </script>
+</body>
+
+</html>

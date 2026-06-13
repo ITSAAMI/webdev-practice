@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section~p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <section>
+            <p> div Section p </p>
+        </section>
+        <p> inside wala p</p>
+        <p> inside wala p</p>
+        <p> inside wala p</p>
+        <p> inside wala p</p>
+        <p> inside wala p</p>
+        <p> inside wala p</p>
+    </div>
+
+    <p>ouside wala p</p>
+</body>
+
+</html>

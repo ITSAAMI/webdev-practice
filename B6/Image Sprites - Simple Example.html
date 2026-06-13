@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sprites - Simple Example</title>
+    <style>
+        #home {
+            width: 45px;
+            height: 44px;
+            background-image: url(image/img_navsprites.gif);
+            background-position: 0px 0px;
+        }
+
+        #Prev {
+            width: 43px;
+            height: 44px;
+            background-image: url(image/img_navsprites.gif);
+            background-position: 87px 0px;
+        }
+
+        #next {
+            width: 43px;
+            height: 44px;
+            background-image: url(image/img_navsprites.gif);
+            background-position: -91px 0px;
+        }
+
+        div {
+            float: left;
+            margin: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div width="1" height="1" id="home"></div>
+    <div width="1" height="1" id="Prev"></div>
+    <div width="1" height="1" id="next"></div>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar - CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            background-color: #007bff;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        ul li:last-child {
+            float: right;
+        }
+
+        li a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+            padding: 15px;
+            font-size: 1.25rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        ul li:hover,
+        li a:hover {
+            background-color: #0056b3;
+            color: #fff;
+            border-radius: 12px;
+        }
+
+        section {
+            height: 100vh;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .box {
+            width: 23%;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: #fff;
+            border-radius: 12px;
+            margin: 12px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 11px;
+        }
+
+        .box p {
+            overflow: hidden;
+            padding: 12px;
+            height: auto;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#"><i class="fas fa-download"></i> Downloads</a></li>
+            <li><a href="#"><i class="fas fa-blog"></i> Blogs</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Login/Register</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="box animate__animated animate__fadeInUp">
+            <img src="../images/1.jpg" alt="NA">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam asperiores est perferendis</p>
+        </div>
+        <div class="box animate__animated animate__fadeInUp">
+            <img src="../images/2.jpg" alt="NA">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam asperiores est perferendis</p>
+        </div>
+        <div class="box animate__animated animate__fadeInUp">
+            <img src="../images/3.jpg" alt="NA">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam asperiores est perferendis</p>
+        </div>
+        <div class="box animate__animated animate__fadeInUp">
+            <img src="../images/4.jpg" alt="NA">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam asperiores est perferendis</p>
+        </div>
+    </section>
+
+
+<section>
+    <h2>Testimonials</h2>
+    <div class="box animate__animated animate__fadeInUp">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quidem."</p>
+        <p>- Adur Rehman, CEO: Ako Bako</p>
+    </div>
+    <div class="box animate__animated animate__fadeInUp">
+        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium."</p>
+        <p>- Ihtisham Khan, CEO: Persabak King</p>
+    </div>
+     <div class="box animate__animated animate__fadeInUp">
+        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium."</p>
+        <p>- Hafeez Bhai, Owner of Hakeemabad</p>
+    </div>
+</section>
+
+<footer style="background-color: #007bff; color: #fff; text-align: center; padding: 20px;">
+    <p>&copy; 2023 Your Website Name. All Rights Reserved.</p>
+    <div>
+        <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

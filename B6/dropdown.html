@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown - HTML/CSS</title>
+    <style>
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-contant {
+            display: none;
+            position: absolute;
+       
+        }
+
+        .dropdown:hover .dropdown-contant {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <span>Hover me </span>
+        <div class="dropdown-contant">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+</body>
+
+</html>
