@@ -1,0 +1,174 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML5 Web Storage
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 23 - Web Storage | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    .demo-btn { background: #e94560; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-right: 10px; margin-bottom: 10px; }
+    .demo-input { padding: 8px; width: 200px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>💾 Topic 23: HTML5 Web Storage <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Web Storage Kya Hai -->
+  <div class="card">
+    <h2>1. Web Storage API Kya Hai?</h2>
+    <!-- Browser ke andar locally data save karne ka tareeqa -->
+    <p>HTML5 Web Storage se aap user ke browser mein locally data save kar sakte hain (bina database/server ke). Yeh cookies se zyada secure aur fast hai.</p>
+
+    <table>
+      <thead><tr><th>Storage Type</th><th>Data Kab Tak Rehta Hai?</th><th>Capacity</th></tr></thead>
+      <tbody>
+        <tr><td><strong>localStorage</strong></td><td>Permanent (browser band karne ke baad bhi rehta hai)</td><td>~5MB+</td></tr>
+        <tr><td><strong>sessionStorage</strong></td><td>Temporary (tab/window close karte hi delete ho jata hai)</td><td>~5MB+</td></tr>
+        <tr><td><em>Cookies (Old)</em></td><td>Expiry date tak</td><td>Sirf 4KB</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. localStorage Methods -->
+  <div class="card">
+    <h2>2. Local Storage — Basic Methods</h2>
+    <!-- Set, Get, Remove aur Clear methods -->
+
+    <pre>
+&lt;script&gt;
+  // 1. Data Save Karna (set)
+  localStorage.setItem("username", "Amir Hayat");
+
+  // 2. Data Read Karna (get)
+  let user = localStorage.getItem("username");
+  console.log(user); // Output: Amir Hayat
+
+  // 3. Ek item Delete Karna
+  localStorage.removeItem("username");
+
+  // 4. Poora Storage Clear Karna (Sab delete)
+  localStorage.clear();
+&lt;/script&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Note:</strong> Web Storage hamesha data ko <strong>String (text)</strong> format mein save karta hai. Agar numbers ya arrays/objects save karne hon toh JSON use karna padta hai.</p>
+    </div>
+  </div>
+
+  <!-- 3. Interactive Demo -->
+  <div class="card">
+    <h2>3. Live Interactive Demo</h2>
+    <p>Apna naam save karein. Page refresh karein — naam wahi rahega!</p>
+
+    <div class="output-box" id="demo-area">
+      <input type="text" id="nameInput" class="demo-input" placeholder="Apna naam likhein...">
+      <button class="demo-btn" onclick="saveData()">Save to localStorage</button>
+      <button class="demo-btn" style="background:#666;" onclick="clearData()">Clear Data</button>
+      
+      <p style="margin-top:15px; font-size:1.1rem; color:#333;">
+        Saved Name: <strong id="displayName" style="color:#e94560;">(None)</strong>
+      </p>
+    </div>
+
+    <script>
+      function updateDisplay() {
+        let savedName = localStorage.getItem("demoName");
+        document.getElementById("displayName").innerText = savedName ? savedName : "(None)";
+      }
+      
+      function saveData() {
+        let val = document.getElementById("nameInput").value;
+        if(val) {
+          localStorage.setItem("demoName", val);
+          document.getElementById("nameInput").value = "";
+          updateDisplay();
+        }
+      }
+
+      function clearData() {
+        localStorage.removeItem("demoName");
+        updateDisplay();
+      }
+
+      // Load on page start
+      updateDisplay();
+    </script>
+
+    <h3>📝 Code for Demo:</h3>
+    <pre>
+function saveData() {
+  let val = document.getElementById("nameInput").value;
+  localStorage.setItem("demoName", val);
+}
+
+function updateDisplay() {
+  let savedName = localStorage.getItem("demoName");
+  document.getElementById("displayName").innerText = savedName;
+}
+    </pre>
+  </div>
+
+  <!-- 4. sessionStorage -->
+  <div class="card">
+    <h2>4. Session Storage</h2>
+    <!-- Tab close toh data lose -->
+    <p><code>sessionStorage</code> ke methods bilkul same hain, bas data life alag hai:</p>
+
+    <pre>
+&lt;script&gt;
+  // Tab band hote hi yeh delete ho jayega
+  sessionStorage.setItem("themeColor", "Dark");
+  
+  let theme = sessionStorage.getItem("themeColor");
+  console.log(theme);
+&lt;/script&gt;
+    </pre>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>Dark/Light Theme toggle</strong> banayein. User jo theme select kare use <code>localStorage</code> mein save karein taake page refresh hone par wahi theme wapas load ho.</li>
+      <li><strong>Task 2:</strong> Ek simple <strong>counter</strong> banayein (Plus/Minus buttons). Counter ki value localStorage mein save rakhein.</li>
+      <li><strong>Task 3:</strong> Ek contact form banayein jiska input data <code>sessionStorage</code> mein save hota rahe (taake agar ghalti se page refresh ho jaye toh data waste na ho).</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 23 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>
