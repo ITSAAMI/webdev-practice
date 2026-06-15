@@ -1,0 +1,252 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Images
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 07 - HTML Images | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice li { margin-bottom: 8px; }
+    .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 10px 0; }
+    .gallery img { width: 100%; border-radius: 8px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🖼️ Topic 07: HTML Images</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. <img> Tag Basics -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. &lt;img&gt; Tag — Image Dikhana</h2>
+
+    <!-- img tag se images dikhate hain — yeh self-closing tag hai -->
+    <p><code>&lt;img&gt;</code> tag se hum page par images dikhate hain. Yeh <strong>self-closing</strong> tag hai — isay close nahi karna.</p>
+
+    <h3>📝 Basic Syntax:</h3>
+    <pre>&lt;img src="image-path" alt="description"&gt;</pre>
+
+    <h3>Important Attributes:</h3>
+    <table>
+      <thead><tr><th>Attribute</th><th>Purpose</th><th>Zaroori?</th></tr></thead>
+      <tbody>
+        <tr><td><code>src</code></td><td>Image ka path ya URL</td><td>✅ Haan</td></tr>
+        <tr><td><code>alt</code></td><td>Image na load ho toh alternative text</td><td>✅ Haan (accessibility)</td></tr>
+        <tr><td><code>width</code></td><td>Width pixels mein</td><td>Optional</td></tr>
+        <tr><td><code>height</code></td><td>Height pixels mein</td><td>Optional</td></tr>
+        <tr><td><code>title</code></td><td>Hover par tooltip</td><td>Optional</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. Online aur Local Images -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. Online vs Local Images</h2>
+
+    <h3>📝 Online Image (URL se):</h3>
+    <pre>&lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image"&gt;</pre>
+
+    <h3>📝 Local Image (file se):</h3>
+    <pre>
+&lt;!-- Same folder mein --&gt;
+&lt;img src="photo.jpg" alt="Meri Photo"&gt;
+
+&lt;!-- Sub-folder mein --&gt;
+&lt;img src="images/photo.jpg" alt="Meri Photo"&gt;
+
+&lt;!-- Parent folder mein --&gt;
+&lt;img src="../photo.jpg" alt="Meri Photo"&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <img src="https://via.placeholder.com/300x200/0f3460/00d2ff?text=Online+Image" alt="Placeholder" style="border-radius: 5px;">
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. Alt Attribute Ki Importance -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. Alt Attribute — Kyun Zaroori Hai?</h2>
+
+    <!-- Alt text accessibility ke liye bohat zaroori hai -->
+    <p><code>alt</code> attribute <strong>3 kaam</strong> karta hai:</p>
+
+    <ul>
+      <li>🖥️ <strong>Image na load ho:</strong> Alt text dikhta hai image ki jagah</li>
+      <li>♿ <strong>Screen Readers:</strong> Blind users ke liye screen reader alt text padhta hai</li>
+      <li>🔍 <strong>SEO:</strong> Google bhi alt text padhta hai image ko samajhne ke liye</li>
+    </ul>
+
+    <h3>📝 Good vs Bad Alt Text:</h3>
+    <pre>
+&lt;!-- ❌ BAD — empty ya generic --&gt;
+&lt;img src="photo.jpg" alt=""&gt;
+&lt;img src="photo.jpg" alt="image"&gt;
+
+&lt;!-- ✅ GOOD — descriptive --&gt;
+&lt;img src="photo.jpg" alt="Code Academy Nowshera ka classroom, students coding seekh rahe hain"&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Rule:</strong> <code>alt</code> attribute HAMESHA likhein — chahe khali (<code>alt=""</code>) hi kyun na ho (decorative images ke liye).</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. Width aur Height -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. Width aur Height Set Karna</h2>
+
+    <h3>📝 HTML Attributes Se:</h3>
+    <pre>
+&lt;img src="photo.jpg" alt="Photo" width="300" height="200"&gt;
+    </pre>
+
+    <h3>📝 CSS Se (Better Way):</h3>
+    <pre>
+&lt;img src="photo.jpg" alt="Photo" style="width: 300px; height: auto;"&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>Tip:</strong> Sirf width set karein aur height ko <code>auto</code> rakhein — image ka ratio maintain rahega.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. Image Formats -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>5. Image Formats Ki Comparison</h2>
+
+    <table>
+      <thead><tr><th>Format</th><th>Full Form</th><th>Best For</th><th>Transparency?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>JPG/JPEG</strong></td><td>Joint Photographic Experts Group</td><td>Photos, realistic images</td><td>❌</td></tr>
+        <tr><td><strong>PNG</strong></td><td>Portable Network Graphics</td><td>Logos, icons, transparent images</td><td>✅</td></tr>
+        <tr><td><strong>GIF</strong></td><td>Graphics Interchange Format</td><td>Animations, simple graphics</td><td>✅ (limited)</td></tr>
+        <tr><td><strong>SVG</strong></td><td>Scalable Vector Graphics</td><td>Icons, logos (scalable)</td><td>✅</td></tr>
+        <tr><td><strong>WebP</strong></td><td>Web Picture format</td><td>Modern web — smaller size</td><td>✅</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. Responsive Images -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. Responsive Images</h2>
+
+    <!-- Responsive image har screen size par fit hoti hai -->
+    <p>Image ko <strong>responsive</strong> banane ke liye CSS use karein:</p>
+
+    <pre>
+&lt;img src="photo.jpg" alt="Responsive" style="max-width: 100%; height: auto;"&gt;
+    </pre>
+
+    <p>Yeh image apne container se badi nahi hogi, aur chhote screens par automatically chhoti ho jayegi.</p>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <img src="https://via.placeholder.com/800x300/e94560/fff?text=Responsive+Image+-+Resize+Browser" alt="Responsive Demo" style="max-width: 100%; height: auto; border-radius: 5px;">
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 7. Figure aur Figcaption -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>7. &lt;figure&gt; aur &lt;figcaption&gt;</h2>
+
+    <!-- Figure tag image ko caption ke saath group karta hai -->
+    <p>Image ko caption ke saath dikhane ke liye <code>&lt;figure&gt;</code> aur <code>&lt;figcaption&gt;</code> use karein:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;figure&gt;
+  &lt;img src="nowshera.jpg" alt="Nowshera City View" style="max-width:100%;"&gt;
+  &lt;figcaption&gt;Nowshera City ka khubsurat manzar&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <figure style="text-align:center;">
+        <img src="https://via.placeholder.com/400x200/0f3460/00d2ff?text=Nowshera+City" alt="Nowshera" style="max-width:100%; border-radius:5px;">
+        <figcaption style="color: #666; font-style: italic; margin-top: 8px;">Nowshera City ka khubsurat manzar</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 8. Image Gallery Demo -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>8. Image Gallery Demo 🎨</h2>
+
+    <p>CSS Grid se aasan gallery ban sakti hai:</p>
+
+    <div class="gallery">
+      <img src="https://via.placeholder.com/200/e94560/fff?text=1" alt="Image 1">
+      <img src="https://via.placeholder.com/200/0f3460/fff?text=2" alt="Image 2">
+      <img src="https://via.placeholder.com/200/00d2ff/333?text=3" alt="Image 3">
+      <img src="https://via.placeholder.com/200/1a1a2e/eee?text=4" alt="Image 4">
+    </div>
+
+    <p style="margin-top: 10px;"><em>(Hover karein images par — zoom effect dekhein)</em></p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>photo gallery page</strong> banayein jisme 6 images hon — har ek ke neeche <code>&lt;figcaption&gt;</code> mein caption ho. Grid layout use karein.</li>
+      <li><strong>Task 2:</strong> Ek image ko <strong>clickable link</strong> banayein — click par Google khule new tab mein.</li>
+      <li><strong>Task 3:</strong> Responsive image add karein aur browser resize karke dekhein ke image properly adjust hoti hai.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 07 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

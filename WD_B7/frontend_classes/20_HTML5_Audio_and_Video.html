@@ -1,0 +1,228 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML5 Audio and Video
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 20 - Audio & Video | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🎵 Topic 20: HTML5 Audio & Video <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Audio Tag -->
+  <div class="card">
+    <h2>1. &lt;audio&gt; Tag — Audio Play Karna</h2>
+    <!-- Audio tag se page par audio player embed kar sakte hain -->
+    <pre>
+&lt;!-- Basic audio player with controls --&gt;
+&lt;audio controls&gt;
+  &lt;source src="audio/song.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio/song.ogg" type="audio/ogg"&gt;
+  Aapka browser audio support nahi karta.
+&lt;/audio&gt;
+    </pre>
+
+    <h3>Audio Attributes:</h3>
+    <table>
+      <thead><tr><th>Attribute</th><th>Kya Karta Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>controls</code></td><td>Play, pause, volume buttons dikhata hai</td></tr>
+        <tr><td><code>autoplay</code></td><td>Page load par automatic play (muted ke saath)</td></tr>
+        <tr><td><code>loop</code></td><td>Audio khatam hone par dobara start</td></tr>
+        <tr><td><code>muted</code></td><td>By default mute</td></tr>
+        <tr><td><code>preload</code></td><td><code>auto</code> / <code>metadata</code> / <code>none</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Audio Formats:</h3>
+    <table>
+      <thead><tr><th>Format</th><th>MIME Type</th><th>Support</th></tr></thead>
+      <tbody>
+        <tr><td>MP3</td><td><code>audio/mpeg</code></td><td>✅ Sab browsers</td></tr>
+        <tr><td>OGG</td><td><code>audio/ogg</code></td><td>Firefox, Chrome, Opera</td></tr>
+        <tr><td>WAV</td><td><code>audio/wav</code></td><td>✅ Sab browsers (large files)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p>💡 <strong>Multiple &lt;source&gt;</strong> tags dein — browser jo format support karega woh play karega. MP3 sabse safe choice hai.</p>
+    </div>
+  </div>
+
+  <!-- 2. Video Tag -->
+  <div class="card">
+    <h2>2. &lt;video&gt; Tag — Video Play Karna</h2>
+    <!-- Video tag se page par video player embed kar sakte hain -->
+    <pre>
+&lt;video width="640" height="360" controls poster="thumbnail.jpg"&gt;
+  &lt;source src="video/intro.mp4" type="video/mp4"&gt;
+  &lt;source src="video/intro.webm" type="video/webm"&gt;
+  Aapka browser video support nahi karta.
+&lt;/video&gt;
+    </pre>
+
+    <h3>Video Attributes:</h3>
+    <table>
+      <thead><tr><th>Attribute</th><th>Kya Karta Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>controls</code></td><td>Play/pause, volume, fullscreen buttons</td></tr>
+        <tr><td><code>autoplay</code></td><td>Auto play (muted zaroori hai Chrome mein)</td></tr>
+        <tr><td><code>loop</code></td><td>Video repeat hota rahega</td></tr>
+        <tr><td><code>muted</code></td><td>By default mute</td></tr>
+        <tr><td><code>poster</code></td><td>Video play hone se pehle thumbnail image</td></tr>
+        <tr><td><code>width / height</code></td><td>Video ki size</td></tr>
+        <tr><td><code>preload</code></td><td>Page load par video kitna download ho</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Video Formats:</h3>
+    <table>
+      <thead><tr><th>Format</th><th>MIME Type</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>MP4 (H.264)</td><td><code>video/mp4</code></td><td>✅ Universal — sabse safe</td></tr>
+        <tr><td>WebM</td><td><code>video/webm</code></td><td>Chrome, Firefox — chhota size</td></tr>
+        <tr><td>OGG</td><td><code>video/ogg</code></td><td>Firefox, Chrome</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Background Video (Muted, Autoplay, Loop):</h3>
+    <pre>
+&lt;video autoplay muted loop style="width:100%;"&gt;
+  &lt;source src="bg-video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Chrome Rule:</strong> Autoplay sirf <code>muted</code> ke saath kaam karta hai — bina mute ke browser block kar dega.</p>
+    </div>
+  </div>
+
+  <!-- 3. Track Tag — Subtitles -->
+  <div class="card">
+    <h2>3. &lt;track&gt; Tag — Subtitles / Captions</h2>
+    <!-- Track tag se video mein subtitles add kar sakte hain -->
+    <pre>
+&lt;video controls width="640"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  
+  &lt;track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English"&gt;
+  &lt;track src="subtitles-ur.vtt" kind="subtitles" srclang="ur" label="Urdu" default&gt;
+&lt;/video&gt;
+    </pre>
+
+    <h3>VTT File Format (subtitles-ur.vtt):</h3>
+    <pre>
+WEBVTT
+
+00:00:01.000 --&gt; 00:00:05.000
+Assalam-o-Alaikum! Code Academy mein khush aamdeed.
+
+00:00:06.000 --&gt; 00:00:10.000
+Aaj hum HTML5 seekhenge.
+    </pre>
+
+    <table>
+      <thead><tr><th>kind Value</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>subtitles</code></td><td>Translation subtitles</td></tr>
+        <tr><td><code>captions</code></td><td>Same language captions (deaf users ke liye)</td></tr>
+        <tr><td><code>descriptions</code></td><td>Visual content ki description (blind users ke liye)</td></tr>
+        <tr><td><code>chapters</code></td><td>Video ke chapters/sections</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Responsive Video -->
+  <div class="card">
+    <h2>4. Responsive Video</h2>
+    <!-- Video ko responsive banana taake har screen par fit ho -->
+    <pre>
+&lt;!-- Method 1: Simple CSS --&gt;
+&lt;video controls style="max-width: 100%; height: auto;"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;!-- Method 2: 16:9 Aspect Ratio Container --&gt;
+&lt;div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;"&gt;
+  &lt;video controls style="position:absolute; top:0; left:0; width:100%; height:100%;"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+    </pre>
+  </div>
+
+  <!-- 5. JavaScript Control -->
+  <div class="card">
+    <h2>5. JavaScript Se Audio/Video Control</h2>
+    <!-- JS se play, pause, volume control kar sakte hain -->
+    <pre>
+&lt;video id="myVideo" src="video.mp4"&gt;&lt;/video&gt;
+
+&lt;button onclick="document.getElementById('myVideo').play()"&gt;▶ Play&lt;/button&gt;
+&lt;button onclick="document.getElementById('myVideo').pause()"&gt;⏸ Pause&lt;/button&gt;
+&lt;button onclick="document.getElementById('myVideo').volume = 0.5"&gt;🔉 Half Volume&lt;/button&gt;
+&lt;button onclick="document.getElementById('myVideo').currentTime = 0"&gt;⏮ Restart&lt;/button&gt;
+    </pre>
+
+    <h3>Useful Properties aur Methods:</h3>
+    <table>
+      <thead><tr><th>Property/Method</th><th>Kya Karta Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>.play()</code></td><td>Video/audio play karta hai</td></tr>
+        <tr><td><code>.pause()</code></td><td>Pause karta hai</td></tr>
+        <tr><td><code>.volume</code></td><td>Volume set (0.0 to 1.0)</td></tr>
+        <tr><td><code>.currentTime</code></td><td>Current position (seconds mein)</td></tr>
+        <tr><td><code>.duration</code></td><td>Total length (seconds)</td></tr>
+        <tr><td><code>.muted</code></td><td>true/false — mute toggle</td></tr>
+        <tr><td><code>.playbackRate</code></td><td>Speed (1.0 = normal, 2.0 = 2x)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>media player page</strong> banayein — ek audio player aur ek video player hon. Dono mein controls, proper width, aur fallback text ho.</li>
+      <li><strong>Task 2:</strong> Ek <strong>background video hero section</strong> banayein — video autoplay, muted, loop ho. Upar text overlay ho.</li>
+      <li><strong>Task 3:</strong> <strong>Custom controls</strong> banayein JavaScript se — Play, Pause, Mute, Volume Up, Volume Down buttons.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 20 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

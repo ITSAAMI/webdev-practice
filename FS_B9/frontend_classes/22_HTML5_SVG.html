@@ -1,0 +1,161 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML5 SVG
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 22 - HTML5 SVG | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; text-align: center; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📐 Topic 22: HTML5 SVG <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. SVG Kya Hai -->
+  <div class="card">
+    <h2>1. SVG Kya Hai? (Scalable Vector Graphics)</h2>
+    <!-- SVG resolution independent graphics hain -->
+    <p>SVG XML-based vector graphics hain. Inki khaasiyat yeh hai ke inhein kitna bhi zoom kar lo, inki <strong>quality kharab nahi hoti</strong> (pixelate nahi hote).</p>
+
+    <table>
+      <thead><tr><th>SVG (Vector)</th><th>Canvas (Raster)</th></tr></thead>
+      <tbody>
+        <tr><td>Zoom karne par quality same rehti hai</td><td>Zoom karne par pixelate/blur ho jate hain</td></tr>
+        <tr><td>XML syntax (tags hote hain)</td><td>JavaScript se drawing hoti hai</td></tr>
+        <tr><td>CSS se style ho sakte hain</td><td>JavaScript se style hote hain</td></tr>
+        <tr><td>Icons aur logos ke liye best hai</td><td>Games aur complex animations ke liye best hai</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. SVG Shapes -->
+  <div class="card">
+    <h2>2. Basic SVG Shapes</h2>
+    <!-- Basic shapes jaise rect, circle, line -->
+
+    <h3>Rectangle <code>&lt;rect&gt;</code></h3>
+    <pre>
+&lt;svg width="200" height="100"&gt;
+  &lt;rect width="150" height="80" x="25" y="10" fill="#e94560" rx="10" /&gt;
+&lt;/svg&gt;
+    </pre>
+    <div class="output-box">
+      <svg width="200" height="100"><rect width="150" height="80" x="25" y="10" fill="#e94560" rx="10" /></svg>
+      <p style="color:#888; font-size:0.85rem;">rx se corners round hote hain</p>
+    </div>
+
+    <h3>Circle <code>&lt;circle&gt;</code></h3>
+    <pre>
+&lt;svg width="150" height="150"&gt;
+  &lt;circle cx="75" cy="75" r="50" fill="#0f3460" stroke="#00d2ff" stroke-width="4" /&gt;
+&lt;/svg&gt;
+    </pre>
+    <div class="output-box">
+      <svg width="150" height="150"><circle cx="75" cy="75" r="50" fill="#0f3460" stroke="#00d2ff" stroke-width="4" /></svg>
+    </div>
+
+    <h3>Polygon <code>&lt;polygon&gt;</code></h3>
+    <pre>
+&lt;svg width="150" height="150"&gt;
+  &lt;polygon points="75,10 140,140 10,140" fill="#00d2ff" /&gt;
+&lt;/svg&gt;
+    </pre>
+    <div class="output-box">
+      <svg width="150" height="150"><polygon points="75,10 140,140 10,140" fill="#00d2ff" /></svg>
+    </div>
+  </div>
+
+  <!-- 3. Path & Text -->
+  <div class="card">
+    <h2>3. Complex Shapes & Text</h2>
+
+    <h3>Path <code>&lt;path&gt;</code></h3>
+    <p><code>&lt;path&gt;</code> sabse powerful shape hai. <code>d</code> attribute mein path data hota hai (M = move to, L = line to, Q/C = curve, Z = close).</p>
+    <pre>
+&lt;svg width="150" height="150"&gt;
+  &lt;path d="M 10 75 Q 75 10 140 75 T 140 140" fill="none" stroke="#e94560" stroke-width="5" /&gt;
+&lt;/svg&gt;
+    </pre>
+    <div class="output-box">
+      <svg width="150" height="150"><path d="M 10 75 Q 75 10 140 75 T 140 140" fill="none" stroke="#e94560" stroke-width="5" /></svg>
+    </div>
+
+    <h3>Text <code>&lt;text&gt;</code></h3>
+    <pre>
+&lt;svg width="250" height="50"&gt;
+  &lt;text x="10" y="35" fill="#e94560" font-size="24" font-weight="bold"&gt;Code Academy&lt;/text&gt;
+&lt;/svg&gt;
+    </pre>
+    <div class="output-box">
+      <svg width="250" height="50"><text x="10" y="35" fill="#e94560" font-size="24" font-weight="bold">Code Academy</text></svg>
+    </div>
+  </div>
+
+  <!-- 4. SVG CSS aur Animation -->
+  <div class="card">
+    <h2>4. Styling with CSS</h2>
+    <!-- SVG elements ko CSS se style kar sakte hain -->
+    <p>Inline SVG tags ko direct CSS se target kiya ja sakta hai:</p>
+
+    <pre>
+&lt;style&gt;
+  .my-circle { fill: #0f3460; transition: fill 0.3s; }
+  .my-circle:hover { fill: #e94560; }
+&lt;/style&gt;
+
+&lt;svg width="100" height="100"&gt;
+  &lt;circle class="my-circle" cx="50" cy="50" r="40" /&gt;
+&lt;/svg&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>Pro Tip:</strong> SVG mein <code>color</code> ya <code>background-color</code> nahi hota, balki <code>fill</code> aur <code>stroke</code> properties use hoti hain.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> SVG shapes use karke ek <strong>simple hut (ghar)</strong> draw karein — rectangle, polygon (roof), aur lines/rectangles (windows/doors).</li>
+      <li><strong>Task 2:</strong> SVG se ek <strong>colorful button</strong> banayein jisme text aur ek rounded rectangle ho. Hover par CSS se iska fill color change karein.</li>
+      <li><strong>Task 3:</strong> <code>&lt;path&gt;</code> use karke ek abstract curvy design banayein aur usko stroke styling dein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 22 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

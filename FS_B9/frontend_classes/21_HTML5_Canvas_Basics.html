@@ -1,0 +1,310 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML5 Canvas Basics
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 21 - Canvas Basics | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    canvas { border: 2px solid #333; border-radius: 8px; display: block; margin: 10px auto; background: #fff; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🎨 Topic 21: HTML5 Canvas <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Canvas Kya Hai -->
+  <div class="card">
+    <h2>1. Canvas Kya Hai?</h2>
+    <!-- Canvas ek drawing surface hai jis par JavaScript se draw karte hain -->
+    <p><code>&lt;canvas&gt;</code> ek <strong>drawing surface</strong> hai — JavaScript se shapes, text, images, aur animations draw kar sakte hain.</p>
+
+    <pre>
+&lt;canvas id="myCanvas" width="400" height="300"&gt;
+  Aapka browser Canvas support nahi karta.
+&lt;/canvas&gt;
+
+&lt;script&gt;
+  let canvas = document.getElementById("myCanvas");
+  let ctx = canvas.getContext("2d");   // 2D drawing context
+  // Ab ctx se drawing karein
+&lt;/script&gt;
+    </pre>
+  </div>
+
+  <!-- 2. Rectangles -->
+  <div class="card">
+    <h2>2. Rectangles Draw Karna</h2>
+
+    <pre>
+ctx.fillStyle = "#e94560";            // Fill color
+ctx.fillRect(50, 50, 200, 100);       // x, y, width, height
+
+ctx.strokeStyle = "#0f3460";          // Border color
+ctx.lineWidth = 3;
+ctx.strokeRect(50, 50, 200, 100);     // Border rectangle
+
+ctx.clearRect(80, 70, 50, 50);        // Area clear/erase karna
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <canvas id="rectCanvas" width="400" height="200"></canvas>
+    <script>
+      (function() {
+        let c = document.getElementById("rectCanvas");
+        let ctx = c.getContext("2d");
+        // Filled rectangle
+        ctx.fillStyle = "#e94560";
+        ctx.fillRect(30, 30, 150, 80);
+        // Stroked rectangle
+        ctx.strokeStyle = "#0f3460";
+        ctx.lineWidth = 3;
+        ctx.strokeRect(220, 30, 150, 80);
+        // Labels
+        ctx.fillStyle = "#333";
+        ctx.font = "14px Segoe UI";
+        ctx.fillText("fillRect()", 60, 145);
+        ctx.fillText("strokeRect()", 245, 145);
+        // Cleared area
+        ctx.clearRect(70, 50, 40, 40);
+        ctx.fillText("clearRect()", 55, 175);
+      })();
+    </script>
+  </div>
+
+  <!-- 3. Lines -->
+  <div class="card">
+    <h2>3. Lines Draw Karna</h2>
+
+    <pre>
+ctx.beginPath();           // Naya path start
+ctx.moveTo(50, 50);        // Starting point
+ctx.lineTo(200, 50);       // Line draw to
+ctx.lineTo(200, 150);      // Aur ek line
+ctx.strokeStyle = "#00d2ff";
+ctx.lineWidth = 2;
+ctx.stroke();              // Lines visible karna
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <canvas id="lineCanvas" width="400" height="180"></canvas>
+    <script>
+      (function() {
+        let c = document.getElementById("lineCanvas");
+        let ctx = c.getContext("2d");
+        // Triangle
+        ctx.beginPath();
+        ctx.moveTo(80, 150);
+        ctx.lineTo(200, 30);
+        ctx.lineTo(320, 150);
+        ctx.closePath();
+        ctx.strokeStyle = "#e94560";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        ctx.fillStyle = "rgba(233, 69, 96, 0.2)";
+        ctx.fill();
+        // Label
+        ctx.fillStyle = "#333";
+        ctx.font = "14px Segoe UI";
+        ctx.fillText("Triangle — Lines se bana", 120, 170);
+      })();
+    </script>
+  </div>
+
+  <!-- 4. Circles/Arcs -->
+  <div class="card">
+    <h2>4. Circles aur Arcs</h2>
+
+    <pre>
+// arc(centerX, centerY, radius, startAngle, endAngle, anticlockwise)
+ctx.beginPath();
+ctx.arc(200, 100, 60, 0, Math.PI * 2);  // Full circle
+ctx.fillStyle = "#0f3460";
+ctx.fill();
+
+// Half circle
+ctx.beginPath();
+ctx.arc(200, 100, 60, 0, Math.PI);      // 180 degrees = half
+ctx.stroke();
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <canvas id="circleCanvas" width="400" height="200"></canvas>
+    <script>
+      (function() {
+        let c = document.getElementById("circleCanvas");
+        let ctx = c.getContext("2d");
+        // Full circle
+        ctx.beginPath();
+        ctx.arc(100, 100, 60, 0, Math.PI * 2);
+        ctx.fillStyle = "#0f3460";
+        ctx.fill();
+        ctx.fillStyle = "#fff";
+        ctx.font = "14px Segoe UI";
+        ctx.fillText("Full", 82, 105);
+        // Half circle
+        ctx.beginPath();
+        ctx.arc(280, 100, 60, 0, Math.PI);
+        ctx.fillStyle = "#e94560";
+        ctx.fill();
+        ctx.fillStyle = "#fff";
+        ctx.fillText("Half", 262, 90);
+      })();
+    </script>
+  </div>
+
+  <!-- 5. Text -->
+  <div class="card">
+    <h2>5. Text Draw Karna</h2>
+
+    <pre>
+ctx.font = "30px Arial";
+ctx.fillStyle = "#e94560";
+ctx.fillText("Code Academy!", 50, 60);     // Filled text
+
+ctx.strokeStyle = "#0f3460";
+ctx.lineWidth = 1;
+ctx.strokeText("Nowshera", 50, 110);        // Outlined text
+
+ctx.textAlign = "center";                   // center, left, right
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <canvas id="textCanvas" width="400" height="120"></canvas>
+    <script>
+      (function() {
+        let c = document.getElementById("textCanvas");
+        let ctx = c.getContext("2d");
+        ctx.font = "28px Segoe UI";
+        ctx.fillStyle = "#e94560";
+        ctx.fillText("Code Academy!", 30, 45);
+        ctx.font = "24px Segoe UI";
+        ctx.strokeStyle = "#0f3460";
+        ctx.lineWidth = 1.5;
+        ctx.strokeText("Nowshera — Canvas Text", 30, 90);
+      })();
+    </script>
+  </div>
+
+  <!-- 6. Gradients -->
+  <div class="card">
+    <h2>6. Gradients</h2>
+    <pre>
+// Linear Gradient
+let grad = ctx.createLinearGradient(0, 0, 400, 0);
+grad.addColorStop(0, "#e94560");
+grad.addColorStop(1, "#0f3460");
+ctx.fillStyle = grad;
+ctx.fillRect(0, 0, 400, 100);
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <canvas id="gradCanvas" width="400" height="100"></canvas>
+    <script>
+      (function() {
+        let c = document.getElementById("gradCanvas");
+        let ctx = c.getContext("2d");
+        let grad = ctx.createLinearGradient(0, 0, 400, 0);
+        grad.addColorStop(0, "#e94560");
+        grad.addColorStop(0.5, "#00d2ff");
+        grad.addColorStop(1, "#0f3460");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 400, 100);
+        ctx.font = "20px Segoe UI";
+        ctx.fillStyle = "#fff";
+        ctx.fillText("Linear Gradient ✨", 110, 58);
+      })();
+    </script>
+  </div>
+
+  <!-- 7. Pakistani Flag -->
+  <div class="card">
+    <h2>7. Pakistani Flag 🇵🇰 — Canvas Drawing!</h2>
+
+    <canvas id="flagCanvas" width="400" height="267"></canvas>
+    <script>
+      (function() {
+        let c = document.getElementById("flagCanvas");
+        let ctx = c.getContext("2d");
+        let w = 400, h = 267;
+        // White strip (left 1/4)
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, w/4, h);
+        // Green area (right 3/4)
+        ctx.fillStyle = "#01411C";
+        ctx.fillRect(w/4, 0, w*3/4, h);
+        // Crescent (two circles)
+        let cx = w * 0.58, cy = h * 0.5, r = h * 0.28;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(cx + r*0.25, cy - r*0.05, r*0.82, 0, Math.PI * 2);
+        ctx.fillStyle = "#01411C";
+        ctx.fill();
+        // Star
+        let sx = cx + r*0.45, sy = cy - r*0.05, sr = r*0.22;
+        ctx.beginPath();
+        for (let i = 0; i < 5; i++) {
+          let angle = (i * 4 * Math.PI / 5) - Math.PI / 2;
+          let x = sx + sr * Math.cos(angle);
+          let y = sy + sr * Math.sin(angle);
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+        // Border
+        ctx.strokeStyle = "#ccc";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(0, 0, w, h);
+      })();
+    </script>
+    <p style="text-align:center; margin-top:5px; color:#888;">🇵🇰 Canvas se bana Pakistani Flag!</p>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Canvas par <strong>smiley face</strong> draw karein — circle (face), arcs (eyes, mouth).</li>
+      <li><strong>Task 2:</strong> Canvas par <strong>5 different shapes</strong> draw karein — rectangle, circle, triangle, line, text — sab different colors mein.</li>
+      <li><strong>Task 3:</strong> Canvas par apna <strong>naam</strong> gradient text mein likhein — colorful aur large.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 21 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

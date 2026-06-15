@@ -1,0 +1,429 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Introduction
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 01 - HTML Introduction | Code Academy Nowshera</title>
+  <style>
+    /* === Global Reset aur Base Styles === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a;
+      color: #eee;
+      line-height: 1.8;
+      padding: 20px;
+    }
+
+    /* === Header Banner === */
+    .header {
+      background: linear-gradient(135deg, #0f3460, #e94560);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+
+    /* === Content Cards === */
+    .card {
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 4px solid #e94560;
+    }
+    .card h2 {
+      color: #e94560;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+    .card h3 {
+      color: #00d2ff;
+      margin: 15px 0 8px;
+      font-size: 1.1rem;
+    }
+
+    /* === Code Blocks === */
+    pre {
+      background: #16213e;
+      color: #00d2ff;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 10px 0;
+      font-size: 0.95rem;
+      border: 1px solid #0f3460;
+    }
+    code {
+      background: #16213e;
+      color: #00d2ff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* === Output Demo === */
+    .output-box {
+      background: #fff;
+      color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 10px 0;
+      border: 2px dashed #e94560;
+    }
+    .output-label {
+      color: #e94560;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+    }
+
+    /* === Practice Section === */
+    .practice {
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 4px solid #00d2ff;
+    }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice ul { padding-left: 20px; }
+    .practice li { margin-bottom: 8px; }
+
+    /* === Footer === */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      border-top: 1px solid #333;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    /* === Highlight Box === */
+    .highlight {
+      background: #0f3460;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin: 10px 0;
+      border-left: 3px solid #00d2ff;
+    }
+
+    /* === Table === */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px 15px;
+      text-align: left;
+    }
+    th {
+      background: #0f3460;
+      color: #00d2ff;
+    }
+    td { background: #16213e; }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================= -->
+  <!-- HEADER SECTION -->
+  <!-- ========================================= -->
+  <div class="header">
+    <h1>📘 Topic 01: HTML Introduction</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. HTML Kya Hai? -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. HTML Kya Hai?</h2>
+
+    <!-- HTML ka full form samjho -->
+    <p>
+      <strong>HTML</strong> ka full form hai <strong>HyperText Markup Language</strong>.
+    </p>
+
+    <!-- Har word ka matlab -->
+    <ul>
+      <li><strong>HyperText:</strong> Aisa text jis mein links hon — ek page se doosre page par ja sakein.</li>
+      <li><strong>Markup:</strong> Tags ka use karke content ko structure dena — jaise heading, paragraph, image.</li>
+      <li><strong>Language:</strong> Yeh ek language hai jo browser samajhta hai — lekin yeh programming language NAHI hai.</li>
+    </ul>
+
+    <div class="highlight">
+      <!-- Important point for students -->
+      <p>💡 <strong>Yaad rakhein:</strong> HTML ek <em>markup language</em> hai, programming language nahi. Yeh sirf content ko structure deti hai. Logic aur calculations ke liye JavaScript use hoti hai.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. HTML Ki History -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. HTML Ki Mukhtasir History</h2>
+
+    <!-- Timeline table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Saal</th>
+          <th>Version</th>
+          <th>Kya Hua?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1991</td>
+          <td>HTML 1.0</td>
+          <td>Tim Berners-Lee ne pehli baar HTML banai — sirf 18 tags the</td>
+        </tr>
+        <tr>
+          <td>1995</td>
+          <td>HTML 2.0</td>
+          <td>Standard version release hua — forms add hue</td>
+        </tr>
+        <tr>
+          <td>1997</td>
+          <td>HTML 3.2 / 4.0</td>
+          <td>Tables, scripts, aur stylesheets ka support aaya</td>
+        </tr>
+        <tr>
+          <td>2014</td>
+          <td>HTML5</td>
+          <td>Modern version — audio, video, canvas, semantic tags sab add hue</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Aaj kal hum <strong>HTML5</strong> use karte hain jo sabse latest aur powerful version hai.</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. HTML Kahan Use Hota Hai? -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. HTML Kahan Use Hota Hai?</h2>
+
+    <!-- Real-world uses -->
+    <p>HTML har jagah use hota hai jahan website ya web app banana ho:</p>
+    <ul>
+      <li>🌐 <strong>Websites:</strong> Google, Facebook, YouTube — sab HTML par based hain</li>
+      <li>📱 <strong>Web Apps:</strong> Gmail, WhatsApp Web — HTML + CSS + JavaScript se bante hain</li>
+      <li>📧 <strong>Emails:</strong> Rich HTML emails (images, buttons wale)</li>
+      <li>📄 <strong>Documents:</strong> Online documents aur reports</li>
+      <li>🎮 <strong>Games:</strong> Simple browser games bhi HTML5 Canvas se bante hain</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. Browser HTML Kaise Read Karta Hai? -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. Browser HTML Kaise Read Karta Hai?</h2>
+
+    <!-- Step by step process -->
+    <p>Jab aap browser mein koi website kholte ho, yeh hota hai:</p>
+    <ol>
+      <li>Browser <strong>HTML file</strong> ko server se download karta hai</li>
+      <li>HTML code ko <strong>parse</strong> (read) karta hai — upar se neeche</li>
+      <li>Har tag ko samajh kar ek <strong>DOM Tree</strong> (Document Object Model) banata hai</li>
+      <li>CSS styles apply karta hai</li>
+      <li>Final result screen par <strong>render</strong> (display) karta hai</li>
+    </ol>
+
+    <div class="highlight">
+      <p>💡 <strong>Samjho:</strong> Browser ek "translator" hai — woh HTML code ko visual output mein convert karta hai.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. Pehla HTML Program: Hello World -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>5. Pehla HTML Program: Hello World 🎉</h2>
+
+    <!-- Yeh sabse basic HTML file hai -->
+    <p>Chalein apna pehla HTML page likhte hain:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Mera Pehla Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;p&gt;Yeh mera pehla HTML page hai.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <!-- Browser mein kaise dikhega -->
+    <h3>🖥️ Browser Output:</h3>
+    <div class="output-box">
+      <h1 style="color: #333; margin-bottom: 10px;">Hello World!</h1>
+      <p style="color: #555;">Yeh mera pehla HTML page hai.</p>
+    </div>
+
+    <!-- Har line ka explanation -->
+    <h3>📖 Code Ka Explanation:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Kya Karta Hai</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;!DOCTYPE html&gt;</code></td>
+          <td>Browser ko batata hai ke yeh HTML5 document hai</td>
+        </tr>
+        <tr>
+          <td><code>&lt;html&gt;</code></td>
+          <td>Root element — sab kuch iske andar hota hai</td>
+        </tr>
+        <tr>
+          <td><code>&lt;head&gt;</code></td>
+          <td>Metadata area — title, CSS, settings yahan hoti hain</td>
+        </tr>
+        <tr>
+          <td><code>&lt;title&gt;</code></td>
+          <td>Browser ke tab mein dikhne wala title</td>
+        </tr>
+        <tr>
+          <td><code>&lt;body&gt;</code></td>
+          <td>Visible content — jo screen par dikhta hai</td>
+        </tr>
+        <tr>
+          <td><code>&lt;h1&gt;</code></td>
+          <td>Sabse bada heading</td>
+        </tr>
+        <tr>
+          <td><code>&lt;p&gt;</code></td>
+          <td>Paragraph — normal text</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. HTML File Kaise Banate Hain -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. HTML File Kaise Banate Hain?</h2>
+
+    <!-- Step by step guide -->
+    <ol>
+      <li>Apna code editor kholein (VS Code recommended hai)</li>
+      <li>New file banayein</li>
+      <li>File ko <code>.html</code> extension se save karein — jaise <code>index.html</code></li>
+      <li>HTML code likhein</li>
+      <li>File ko save karein (<code>Ctrl + S</code>)</li>
+      <li>File par double-click karein — browser mein khul jayegi!</li>
+    </ol>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Zaroori:</strong> File ka extension <code>.html</code> hona chahiye — <code>.txt</code> ya kuch aur nahi!</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 7. Code Editor: VS Code -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>7. Code Editor: Visual Studio Code</h2>
+
+    <!-- VS Code ki introduction -->
+    <p>Hum coding ke liye <strong>VS Code</strong> use karenge. Yeh Microsoft ka free code editor hai.</p>
+
+    <h3>VS Code Ke Faiday:</h3>
+    <ul>
+      <li>✅ Free aur open-source</li>
+      <li>✅ Syntax highlighting — code ko colorful banata hai</li>
+      <li>✅ Auto-complete — tags automatically suggest karta hai</li>
+      <li>✅ Live Server extension — changes turant browser mein dikhte hain</li>
+      <li>✅ Emmet shortcuts — fast coding ke liye (e.g., <code>!</code> + Tab = full boilerplate)</li>
+    </ul>
+
+    <h3>VS Code Download:</h3>
+    <p>Website: <code>https://code.visualstudio.com</code></p>
+
+    <h3>Useful Extension:</h3>
+    <p>Install karein: <strong>Live Server</strong> by Ritwick Dey — right-click karke "Open with Live Server" se page auto-refresh hota rahega.</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 8. HTML Tags Ka Basic Concept -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>8. HTML Tags Ka Basic Concept</h2>
+
+    <!-- Tags kya hain -->
+    <p>HTML mein sab kuch <strong>tags</strong> se banta hai. Tags angle brackets <code>&lt; &gt;</code> mein likhay jate hain.</p>
+
+    <h3>Tag Ki Structure:</h3>
+    <pre>
+&lt;tagname&gt; Content yahan aata hai &lt;/tagname&gt;
+
+Opening Tag:  &lt;tagname&gt;
+Closing Tag:  &lt;/tagname&gt;  (slash / ke saath)
+    </pre>
+
+    <h3>Self-Closing Tags:</h3>
+    <!-- Kuch tags ko close nahi karte — yeh self-closing hain -->
+    <p>Kuch tags ko close nahi karna parta:</p>
+    <pre>
+&lt;br&gt;      &lt;!-- Line break --&gt;
+&lt;hr&gt;      &lt;!-- Horizontal line --&gt;
+&lt;img&gt;     &lt;!-- Image --&gt;
+&lt;input&gt;   &lt;!-- Input field --&gt;
+    </pre>
+
+    <h3>Example:</h3>
+    <pre>
+&lt;p&gt;Yeh ek paragraph hai.&lt;/p&gt;
+&lt;h1&gt;Yeh heading hai.&lt;/h1&gt;
+&lt;br&gt;  &lt;!-- Yeh self-closing hai --&gt;
+    </pre>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <p>Ab aap khud try karein:</p>
+    <ul>
+      <li><strong>Task 1:</strong> VS Code mein ek nayi file banayein <code>mera_page.html</code> naam se. Usme Hello World likhein aur browser mein kholein.</li>
+      <li><strong>Task 2:</strong> Apna naam, class, aur favorite subject <code>&lt;h1&gt;</code> aur <code>&lt;p&gt;</code> tags mein likhein.</li>
+      <li><strong>Task 3:</strong> Apne page ka title change karein (browser tab mein dikhne wala) — <code>&lt;title&gt;</code> tag use karein.</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================= -->
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 01 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

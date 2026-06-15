@@ -1,0 +1,300 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Basic Structure
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 02 - HTML Basic Structure | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px;
+    }
+    .header {
+      background: linear-gradient(135deg, #0f3460, #e94560);
+      padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;
+    }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+    .card {
+      background: #1a1a2e; border-radius: 10px; padding: 25px;
+      margin-bottom: 20px; border-left: 4px solid #e94560;
+    }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre {
+      background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px;
+      overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460;
+    }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box {
+      background: #fff; color: #333; padding: 15px; border-radius: 8px;
+      margin: 10px 0; border: 2px dashed #e94560;
+    }
+    .highlight {
+      background: #0f3460; padding: 12px 18px; border-radius: 8px;
+      margin: 10px 0; border-left: 3px solid #00d2ff;
+    }
+    .practice {
+      background: #1a1a2e; border-radius: 10px; padding: 25px;
+      margin-bottom: 20px; border-left: 4px solid #00d2ff;
+    }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice li { margin-bottom: 8px; }
+    .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; }
+    td { background: #16213e; }
+    .footer {
+      text-align: center; padding: 20px; color: #888;
+      border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem;
+    }
+    .tree { background: #16213e; padding: 15px; border-radius: 8px; font-family: monospace; color: #00d2ff; margin: 10px 0; }
+    .tree span { color: #e94560; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🏗️ Topic 02: HTML Basic Structure</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. HTML Document Ka Structure -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. HTML Document Ka Structure</h2>
+
+    <!-- Har HTML file ka ek fixed structure hota hai -->
+    <p>Har HTML page ka ek <strong>fixed structure</strong> hota hai — jaise ghar banane ke liye neev, deewarein aur chhat zaroori hain, waise hi HTML page ke liye kuch zaroori tags hain:</p>
+
+    <h3>📝 Complete HTML Boilerplate:</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page Ka Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yeh visible content hai&lt;/h1&gt;
+  &lt;p&gt;Browser mein yeh dikhega.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>VS Code Shortcut:</strong> Nayi HTML file mein <code>!</code> type karke <code>Tab</code> ya <code>Enter</code> dabayein — poora boilerplate automatic aa jayega!</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. DOCTYPE Declaration -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. &lt;!DOCTYPE html&gt; — Document Type Declaration</h2>
+
+    <!-- DOCTYPE browser ko batata hai ke yeh HTML5 hai -->
+    <p>Yeh line browser ko batati hai ke yeh document <strong>HTML5</strong> standard mein likha gaya hai.</p>
+
+    <pre>&lt;!DOCTYPE html&gt;</pre>
+
+    <h3>Key Points:</h3>
+    <ul>
+      <li>Yeh tag <strong>sabse pehle</strong> likhna hai — <code>&lt;html&gt;</code> se bhi pehle</li>
+      <li>Yeh ek <strong>declaration</strong> hai, tag nahi — isay close nahi karte</li>
+      <li>Case-insensitive hai — <code>&lt;!doctype html&gt;</code> bhi chalega</li>
+      <li>Agar nahi likhein toh browser "quirks mode" mein chala jayega — page sahi nahi dikhega</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. <html> Root Element -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. &lt;html&gt; — Root Element</h2>
+
+    <!-- Sab kuch html tag ke andar hota hai -->
+    <p>Yeh <strong>root element</strong> hai — poora HTML document iske andar wrap hota hai.</p>
+
+    <pre>
+&lt;html lang="en"&gt;
+  &lt;!-- Sab kuch yahan andar aayega --&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h3><code>lang</code> Attribute:</h3>
+    <ul>
+      <li><code>lang="en"</code> — English content ke liye</li>
+      <li><code>lang="ur"</code> — Urdu content ke liye</li>
+      <li>Search engines aur screen readers ko content ki language batata hai</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. <head> Tag — Metadata Area -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. &lt;head&gt; — Metadata Area (Invisible Section)</h2>
+
+    <!-- Head ke andar woh cheezein hoti hain jo browser mein nahi dikhteen -->
+    <p>Head section mein woh information hoti hai jo <strong>browser mein nahi dikhti</strong> lekin important hai:</p>
+
+    <pre>
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Mera Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+    </pre>
+
+    <h3>Head Mein Kya Kya Aa Sakta Hai:</h3>
+    <table>
+      <thead>
+        <tr><th>Tag</th><th>Kya Karta Hai</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>&lt;title&gt;</code></td><td>Browser tab ka title set karta hai</td></tr>
+        <tr><td><code>&lt;meta charset&gt;</code></td><td>Character encoding batata hai (UTF-8 sab characters support karta hai)</td></tr>
+        <tr><td><code>&lt;meta viewport&gt;</code></td><td>Mobile responsiveness ke liye zaroori hai</td></tr>
+        <tr><td><code>&lt;link&gt;</code></td><td>External CSS file connect karta hai</td></tr>
+        <tr><td><code>&lt;script&gt;</code></td><td>JavaScript file connect karta hai</td></tr>
+        <tr><td><code>&lt;style&gt;</code></td><td>Internal CSS likhne ke liye</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. <body> Tag — Visible Content -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>5. &lt;body&gt; — Visible Content Area</h2>
+
+    <!-- Body mein woh sab hota hai jo user ko dikhai deta hai -->
+    <p>Jitna bhi content aapko screen par dikhana hai — headings, paragraphs, images, buttons — sab <code>&lt;body&gt;</code> ke andar likhein:</p>
+
+    <pre>
+&lt;body&gt;
+  &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;p&gt;Yeh mera content hai.&lt;/p&gt;
+  &lt;img src="photo.jpg" alt="Meri Photo"&gt;
+&lt;/body&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>📌 <strong>Rule:</strong> Ek HTML document mein sirf <strong>ek &lt;body&gt;</strong> tag hota hai!</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. <title> Tag -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. &lt;title&gt; — Browser Tab Ka Title</h2>
+
+    <!-- Title browser ke tab mein dikhta hai -->
+    <p>Title tag se jo text likhein woh <strong>browser ke tab</strong> mein dikhta hai:</p>
+
+    <pre>&lt;title&gt;Code Academy Nowshera - Home&lt;/title&gt;</pre>
+
+    <h3>Title Ki Importance:</h3>
+    <ul>
+      <li>Browser tab mein dikhta hai</li>
+      <li>Google search results mein page ka title banta hai (SEO)</li>
+      <li>Bookmarks mein save hone wala naam yahi hota hai</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 7. Nesting Concept -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>7. Nesting — Tags Ke Andar Tags</h2>
+
+    <!-- Nesting matlab ek tag ke andar doosra tag -->
+    <p><strong>Nesting</strong> ka matlab hai ek tag ke andar doosra tag rakhna. HTML ek tree structure follow karta hai:</p>
+
+    <div class="tree">
+      <span>&lt;html&gt;</span><br>
+      &nbsp;&nbsp;├── <span>&lt;head&gt;</span><br>
+      &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── &lt;meta&gt;<br>
+      &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── &lt;title&gt;<br>
+      &nbsp;&nbsp;└── <span>&lt;body&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── &lt;h1&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── &lt;p&gt;<br>
+    </div>
+
+    <h3>✅ Sahi Nesting:</h3>
+    <pre>&lt;p&gt;&lt;strong&gt;Yeh bold text hai&lt;/strong&gt;&lt;/p&gt;</pre>
+
+    <h3>❌ Galat Nesting:</h3>
+    <pre>&lt;p&gt;&lt;strong&gt;Yeh galat hai&lt;/p&gt;&lt;/strong&gt;</pre>
+
+    <div class="highlight">
+      <p>⚠️ Jo tag pehle khulta hai, woh baad mein band hota hai — LIFO (Last In, First Out) rule.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 8. Indentation Ki Importance -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>8. Indentation — Code Ko Readable Banayein</h2>
+
+    <!-- Indentation se code readable hota hai -->
+    <p>Indentation matlab har nested tag ko <strong>2 ya 4 spaces</strong> andar likhna. Browser ko fark nahi parta, lekin:</p>
+
+    <h3>❌ Bina Indentation (Mushkil padhna):</h3>
+    <pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Hello&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+    </pre>
+
+    <h3>✅ Indentation Ke Saath (Easy padhna):</h3>
+    <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>VS Code Shortcut:</strong> Code select karke <code>Shift + Alt + F</code> dabayein — auto-format ho jayega!</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> VS Code mein nayi file <code>my_structure.html</code> banayein. <code>!</code> + Tab shortcut se boilerplate generate karein. Title change karein "Mera Pehla Structured Page".</li>
+      <li><strong>Task 2:</strong> Body mein ek <code>&lt;h1&gt;</code>, do <code>&lt;p&gt;</code> tags, aur ek <code>&lt;h2&gt;</code> add karein — proper indentation ke saath.</li>
+      <li><strong>Task 3:</strong> Galat nesting ka example likhein (jaise <code>&lt;p&gt;&lt;strong&gt;text&lt;/p&gt;&lt;/strong&gt;</code>) aur dekho browser kya karta hai.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 02 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

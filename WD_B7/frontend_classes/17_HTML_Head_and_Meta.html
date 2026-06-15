@@ -1,0 +1,245 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Head and Meta Tags
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 17 - Head & Meta Tags | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🧠 Topic 17: Head & Meta Tags <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Head Section -->
+  <div class="card">
+    <h2>1. &lt;head&gt; Section Ka Purpose</h2>
+    <!-- Head mein woh sab hota hai jo browser/search engines ke liye zaroori hai lekin screen par nahi dikhta -->
+    <p>Head section mein <strong>metadata</strong> hota hai — jo screen par nahi dikhta lekin browser, search engines, aur social media ke liye zaroori hai.</p>
+
+    <h3>Complete Head Template:</h3>
+    <pre>
+&lt;head&gt;
+  &lt;!-- Character Set --&gt;
+  &lt;meta charset="UTF-8"&gt;
+  
+  &lt;!-- Responsive Design --&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  
+  &lt;!-- SEO --&gt;
+  &lt;title&gt;Code Academy Nowshera - Web Development Courses&lt;/title&gt;
+  &lt;meta name="description" content="Learn HTML, CSS, JavaScript at Code Academy Nowshera"&gt;
+  &lt;meta name="author" content="Syed Amir Hayat"&gt;
+  
+  &lt;!-- Favicon --&gt;
+  &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+  
+  &lt;!-- CSS --&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+  
+  &lt;!-- Open Graph (Social Media) --&gt;
+  &lt;meta property="og:title" content="Code Academy Nowshera"&gt;
+  &lt;meta property="og:description" content="Best coding academy in Nowshera"&gt;
+  &lt;meta property="og:image" content="https://example.com/og-image.jpg"&gt;
+&lt;/head&gt;
+    </pre>
+  </div>
+
+  <!-- 2. Meta Charset -->
+  <div class="card">
+    <h2>2. &lt;meta charset="UTF-8"&gt;</h2>
+    <!-- UTF-8 se duniya ke tamam characters support hote hain -->
+    <p><strong>UTF-8</strong> character encoding se tamam languages ke characters support hote hain — English, Urdu, Arabic, Chinese sab.</p>
+
+    <pre>&lt;meta charset="UTF-8"&gt;</pre>
+
+    <div class="highlight">
+      <p>⚠️ Yeh hamesha <strong>sabse pehle</strong> head mein likhein — warna special characters toot sakte hain.</p>
+    </div>
+  </div>
+
+  <!-- 3. Viewport Meta -->
+  <div class="card">
+    <h2>3. Viewport Meta Tag — Responsive Design</h2>
+    <!-- Bina viewport tag ke mobile par page zoomed out dikhta hai -->
+    <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
+
+    <table>
+      <thead><tr><th>Value</th><th>Matlab</th></tr></thead>
+      <tbody>
+        <tr><td><code>width=device-width</code></td><td>Page ki width device ki screen jitni ho</td></tr>
+        <tr><td><code>initial-scale=1.0</code></td><td>Page 100% zoom par khule (zoomed out nahi)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p>❌ <strong>Bina viewport:</strong> Mobile par page chhota sa dikhta hai (desktop view).<br>
+      ✅ <strong>Viewport ke saath:</strong> Page mobile screen ke mutabiq adjust hota hai.</p>
+    </div>
+  </div>
+
+  <!-- 4. Title Tag -->
+  <div class="card">
+    <h2>4. &lt;title&gt; Tag — SEO Ka King</h2>
+    <!-- Title tag SEO ke liye sabse important tag hai -->
+    <pre>&lt;title&gt;Code Academy Nowshera - Learn Web Development&lt;/title&gt;</pre>
+
+    <p>Title <strong>3 jagah</strong> dikhta hai:</p>
+    <ul>
+      <li>🔖 <strong>Browser tab</strong> mein</li>
+      <li>🔍 <strong>Google search results</strong> mein blue link ke taur par</li>
+      <li>⭐ <strong>Bookmarks</strong> mein save hone wala naam</li>
+    </ul>
+
+    <h3>Best Practices:</h3>
+    <ul>
+      <li>50-60 characters rakhein</li>
+      <li>Primary keyword pehle likhein</li>
+      <li>Har page ka title <strong>unique</strong> ho</li>
+      <li>Format: <code>Topic - Site Name</code></li>
+    </ul>
+  </div>
+
+  <!-- 5. Meta Description -->
+  <div class="card">
+    <h2>5. Meta Description — Google Snippet</h2>
+    <!-- Meta description Google search results mein chhota sa description dikhata hai -->
+    <pre>
+&lt;meta name="description" 
+      content="Code Academy Nowshera offers professional web development courses 
+               including HTML, CSS, JavaScript, React, and Node.js. Join today!"&gt;
+    </pre>
+
+    <p>Yeh Google search results mein title ke <strong>neeche</strong> chhota sa text dikhata hai.</p>
+
+    <h3>Best Practices:</h3>
+    <ul>
+      <li>150-160 characters rakhein</li>
+      <li>Compelling aur descriptive likhein</li>
+      <li>Call-to-action shamil karein ("Join today!", "Learn more")</li>
+      <li>Har page ka description unique ho</li>
+    </ul>
+  </div>
+
+  <!-- 6. Open Graph Tags -->
+  <div class="card">
+    <h2>6. Open Graph Tags — Social Media Preview</h2>
+    <!-- OG tags se Facebook, WhatsApp, Twitter par link share karne par preview achi dikhti hai -->
+    <p>Jab aap link <strong>WhatsApp, Facebook, Twitter</strong> par share karein toh acha preview dikhane ke liye:</p>
+
+    <pre>
+&lt;meta property="og:title" content="Code Academy Nowshera"&gt;
+&lt;meta property="og:description" content="Best coding academy in KPK"&gt;
+&lt;meta property="og:image" content="https://example.com/preview.jpg"&gt;
+&lt;meta property="og:url" content="https://codeacademy-nowshera.com"&gt;
+&lt;meta property="og:type" content="website"&gt;
+
+&lt;!-- Twitter specific --&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:title" content="Code Academy Nowshera"&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 OG image ka recommended size: <strong>1200 x 630 pixels</strong>. Isse acha preview aayega WhatsApp aur Facebook par.</p>
+    </div>
+  </div>
+
+  <!-- 7. Favicon -->
+  <div class="card">
+    <h2>7. Favicon — Browser Tab Icon</h2>
+    <!-- Favicon woh chhoti icon hai jo browser ke tab mein dikhti hai -->
+    <pre>
+&lt;!-- .ico format (classic) --&gt;
+&lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+
+&lt;!-- .png format (modern) --&gt;
+&lt;link rel="icon" href="images/favicon.png" type="image/png"&gt;
+
+&lt;!-- Different sizes --&gt;
+&lt;link rel="icon" sizes="32x32" href="favicon-32x32.png"&gt;
+&lt;link rel="icon" sizes="16x16" href="favicon-16x16.png"&gt;
+
+&lt;!-- Apple Touch Icon (iPhone bookmark ke liye) --&gt;
+&lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;
+    </pre>
+  </div>
+
+  <!-- 8. Other Head Elements -->
+  <div class="card">
+    <h2>8. Other Head Elements</h2>
+
+    <pre>
+&lt;!-- External CSS --&gt;
+&lt;link rel="stylesheet" href="css/style.css"&gt;
+
+&lt;!-- Google Fonts --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet"&gt;
+
+&lt;!-- Internal CSS --&gt;
+&lt;style&gt;
+  body { font-family: 'Poppins', sans-serif; }
+&lt;/style&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script src="js/script.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- Base URL --&gt;
+&lt;base href="https://www.codeacademy.com/"&gt;
+
+&lt;!-- Auto Refresh (5 seconds baad) --&gt;
+&lt;meta http-equiv="refresh" content="5"&gt;
+
+&lt;!-- Redirect (3 seconds baad doosre page par) --&gt;
+&lt;meta http-equiv="refresh" content="3;url=https://newsite.com"&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <code>defer</code> attribute JS file ko page load hone ke <strong>baad</strong> run karta hai — page fast load hota hai.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek page ka <strong>complete head section</strong> likhein — charset, viewport, title, description, author, favicon, aur Open Graph tags sab shamil hon.</li>
+      <li><strong>Task 2:</strong> <strong>3 alag pages</strong> banayein (home, about, contact) — har ek ka title aur description unique ho.</li>
+      <li><strong>Task 3:</strong> Google Fonts se ek font import karein head mein aur apne page par apply karein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 17 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

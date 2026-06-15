@@ -1,0 +1,321 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Form Elements - Advanced
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 11 - Form Elements Advanced | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 20px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    .demo-form label { display: block; font-weight: bold; margin: 10px 0 4px; color: #333; }
+    .demo-form select, .demo-form textarea { padding: 8px; border: 1px solid #ccc; border-radius: 5px; width: 100%; max-width: 350px; font-size: 0.95rem; }
+    .demo-form textarea { min-height: 80px; resize: vertical; }
+    .demo-form select:focus, .demo-form textarea:focus { outline: none; border-color: #0f3460; }
+    .demo-form fieldset { border: 2px solid #0f3460; border-radius: 8px; padding: 15px; margin: 10px 0; }
+    .demo-form legend { color: #0f3460; font-weight: bold; padding: 0 8px; }
+    .demo-form input[type="radio"], .demo-form input[type="checkbox"] { width: auto; margin-right: 5px; }
+    .demo-form .radio-group label, .demo-form .check-group label { display: inline-block; margin-right: 15px; font-weight: normal; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📋 Topic 11: Form Elements — Advanced</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Textarea -->
+  <div class="card">
+    <h2>1. &lt;textarea&gt; — Multi-Line Text Input</h2>
+    <!-- Textarea se zyada text likh sakte hain jaise message, comment -->
+    <p>Jab bohat zyada text likhna ho (message, comments, bio) toh <code>&lt;textarea&gt;</code> use karein:</p>
+
+    <pre>
+&lt;label for="msg"&gt;Message:&lt;/label&gt;
+&lt;textarea id="msg" rows="5" cols="40" placeholder="Apna message likhein..."&gt;&lt;/textarea&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <label for="d-msg">Message:</label>
+        <textarea id="d-msg" rows="4" placeholder="Apna message likhein..."></textarea>
+      </form>
+    </div>
+
+    <div class="highlight">
+      <p>📌 <code>rows</code> = visible lines ki tadaad. <code>cols</code> = visible width (characters). CSS se bhi control ho sakta hai.</p>
+    </div>
+  </div>
+
+  <!-- 2. Select Dropdown -->
+  <div class="card">
+    <h2>2. &lt;select&gt; — Dropdown Menu</h2>
+    <!-- Dropdown se ek ya zyada options select kar sakte hain -->
+
+    <h3>📝 Basic Dropdown:</h3>
+    <pre>
+&lt;label for="city"&gt;City:&lt;/label&gt;
+&lt;select id="city"&gt;
+  &lt;option value="" disabled selected&gt;-- Select City --&lt;/option&gt;
+  &lt;option value="nowshera"&gt;Nowshera&lt;/option&gt;
+  &lt;option value="peshawar"&gt;Peshawar&lt;/option&gt;
+  &lt;option value="islamabad"&gt;Islamabad&lt;/option&gt;
+  &lt;option value="lahore"&gt;Lahore&lt;/option&gt;
+&lt;/select&gt;
+    </pre>
+
+    <h3>📝 Grouped Dropdown (optgroup):</h3>
+    <pre>
+&lt;select&gt;
+  &lt;optgroup label="Frontend"&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+    &lt;option&gt;JavaScript&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Backend"&gt;
+    &lt;option&gt;Node.js&lt;/option&gt;
+    &lt;option&gt;Python&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <label>City:</label>
+        <select>
+          <option value="" disabled selected>-- Select City --</option>
+          <option>Nowshera</option><option>Peshawar</option><option>Islamabad</option><option>Lahore</option>
+        </select>
+
+        <label>Course (Grouped):</label>
+        <select>
+          <optgroup label="Frontend">
+            <option>HTML</option><option>CSS</option><option>JavaScript</option>
+          </optgroup>
+          <optgroup label="Backend">
+            <option>Node.js</option><option>Python</option>
+          </optgroup>
+        </select>
+
+        <label>Multiple Select (Ctrl+Click):</label>
+        <select multiple size="4">
+          <option>HTML</option><option>CSS</option><option>JavaScript</option><option>React</option><option>Node.js</option>
+        </select>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Radio Buttons -->
+  <div class="card">
+    <h2>3. Radio Buttons — Ek Option Select Karna</h2>
+    <!-- Radio buttons se sirf EK option choose kar sakte hain -->
+    <p>Jab sirf <strong>ek option</strong> select karwana ho. Sab radio buttons ka <code>name</code> same hona chahiye:</p>
+
+    <pre>
+&lt;p&gt;Gender:&lt;/p&gt;
+&lt;label&gt;&lt;input type="radio" name="gender" value="male"&gt; Male&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="gender" value="female"&gt; Female&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="gender" value="other"&gt; Other&lt;/label&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <p style="font-weight:bold; color:#333;">Gender:</p>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="male"> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="highlight">
+      <p>📌 <strong>Key Rule:</strong> Same group ke radio buttons ka <code>name</code> attribute <strong>same</strong> hona chahiye — tabhi ek waqt mein sirf ek select hoga.</p>
+    </div>
+  </div>
+
+  <!-- 4. Checkboxes -->
+  <div class="card">
+    <h2>4. Checkboxes — Multiple Options Select Karna</h2>
+    <!-- Checkbox se multiple options select kar sakte hain -->
+    <p>Jab <strong>ek se zyada options</strong> select karwa sakte hain:</p>
+
+    <pre>
+&lt;p&gt;Konse courses seekhne hain?&lt;/p&gt;
+&lt;label&gt;&lt;input type="checkbox" name="course" value="html" checked&gt; HTML&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox" name="course" value="css"&gt; CSS&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox" name="course" value="js"&gt; JavaScript&lt;/label&gt;
+&lt;label&gt;&lt;input type="checkbox" name="course" value="react"&gt; React&lt;/label&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <p style="font-weight:bold; color:#333;">Konse courses seekhne hain?</p>
+        <div class="check-group">
+          <label><input type="checkbox" name="course" value="html" checked> HTML</label>
+          <label><input type="checkbox" name="course" value="css"> CSS</label>
+          <label><input type="checkbox" name="course" value="js"> JavaScript</label>
+          <label><input type="checkbox" name="course" value="react"> React</label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. Fieldset aur Legend -->
+  <div class="card">
+    <h2>5. &lt;fieldset&gt; aur &lt;legend&gt; — Form Sections</h2>
+    <!-- Fieldset se form ko sections mein divide karte hain -->
+    <p>Form ko <strong>groups/sections</strong> mein divide karne ke liye:</p>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label>Naam: <input type="text" placeholder="Full Name"></label>
+          <label>Email: <input type="email" placeholder="email@example.com"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Course Selection</legend>
+          <div class="check-group">
+            <label><input type="checkbox" name="c" value="html"> HTML</label>
+            <label><input type="checkbox" name="c" value="css"> CSS</label>
+            <label><input type="checkbox" name="c" value="js"> JavaScript</label>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Datalist -->
+  <div class="card">
+    <h2>6. &lt;datalist&gt; — Autocomplete Suggestions</h2>
+    <!-- Datalist input mein suggestions deta hai jaise Google search -->
+    <p>Input mein <strong>suggestions</strong> dikhata hai — jaise search bar:</p>
+
+    <pre>
+&lt;label for="lang"&gt;Programming Language:&lt;/label&gt;
+&lt;input list="languages" id="lang" placeholder="Type karein..."&gt;
+&lt;datalist id="languages"&gt;
+  &lt;option value="JavaScript"&gt;
+  &lt;option value="Python"&gt;
+  &lt;option value="Java"&gt;
+  &lt;option value="C++"&gt;
+  &lt;option value="PHP"&gt;
+&lt;/datalist&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <label for="d-lang">Programming Language:</label>
+        <input list="languages" id="d-lang" placeholder="Type karein...">
+        <datalist id="languages">
+          <option value="JavaScript"></option>
+          <option value="Python"></option>
+          <option value="Java"></option>
+          <option value="C++"></option>
+          <option value="PHP"></option>
+          <option value="Ruby"></option>
+          <option value="TypeScript"></option>
+        </datalist>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. Button Tag vs Input Submit -->
+  <div class="card">
+    <h2>7. &lt;button&gt; vs &lt;input type="submit"&gt;</h2>
+
+    <table>
+      <thead><tr><th>Feature</th><th>&lt;input type="submit"&gt;</th><th>&lt;button&gt;</th></tr></thead>
+      <tbody>
+        <tr><td>Content</td><td>Sirf text (value attribute)</td><td>Text + HTML (icons, images)</td></tr>
+        <tr><td>Flexibility</td><td>Limited</td><td>Zyada flexible</td></tr>
+        <tr><td>Styling</td><td>Mushkil</td><td>Aasaan</td></tr>
+      </tbody>
+    </table>
+
+    <pre>
+&lt;!-- Input submit — sirf text --&gt;
+&lt;input type="submit" value="Submit"&gt;
+
+&lt;!-- Button — HTML content support karta hai --&gt;
+&lt;button type="submit"&gt;
+  🚀 Submit Form
+&lt;/button&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>Recommendation:</strong> <code>&lt;button&gt;</code> use karein — zyada flexible aur powerful hai.</p>
+    </div>
+  </div>
+
+  <!-- 8. Form Validation Attributes -->
+  <div class="card">
+    <h2>8. Form Validation Attributes</h2>
+    <!-- Browser built-in validation attributes -->
+    <table>
+      <thead><tr><th>Attribute</th><th>Purpose</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>required</code></td><td>Field khali nahi chhod sakte</td><td><code>&lt;input required&gt;</code></td></tr>
+        <tr><td><code>minlength</code></td><td>Minimum characters</td><td><code>minlength="5"</code></td></tr>
+        <tr><td><code>maxlength</code></td><td>Maximum characters</td><td><code>maxlength="50"</code></td></tr>
+        <tr><td><code>min / max</code></td><td>Number ka range</td><td><code>min="18" max="65"</code></td></tr>
+        <tr><td><code>pattern</code></td><td>Regex pattern match</td><td><code>pattern="[0-9]{11}"</code> (11 digits)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Pattern Example (Pakistani Phone):</h3>
+    <pre>
+&lt;input type="tel" pattern="03[0-9]{9}" 
+       placeholder="03XXXXXXXXX" 
+       title="Pakistani mobile number: 03 ke baad 9 digits"&gt;
+    </pre>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> <strong>Student Survey Form</strong> banayein — Name (text), Email (email), Gender (radio), Courses (checkboxes), City (dropdown), Message (textarea), Submit button. <code>&lt;fieldset&gt;</code> se group karein.</li>
+      <li><strong>Task 2:</strong> <strong>Job Application Form</strong> banayein — datalist ke saath skills input, file upload for CV, aur pattern validation for phone number.</li>
+      <li><strong>Task 3:</strong> Form ko CSS se <strong>professionally style</strong> karein — rounded inputs, focus effects, colored buttons, aur proper spacing.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 11 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Lists
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 08 - HTML Lists | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📋 Topic 08: HTML Lists</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Unordered List -->
+  <div class="card">
+    <h2>1. Unordered List — &lt;ul&gt;</h2>
+    <!-- Bina number ke bullet points wali list -->
+    <p>Bullet points wali list — jab items ka order important nahi hota:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+  &lt;li&gt;React&lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <ul style="color:#333; padding-left:20px;">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. Ordered List -->
+  <div class="card">
+    <h2>2. Ordered List — &lt;ol&gt;</h2>
+    <!-- Numbers wali list — jab sequence zaroori ho -->
+    <p>Numbered list — jab items ka <strong>order important</strong> ho:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;ol&gt;
+  &lt;li&gt;HTML seekhein&lt;/li&gt;
+  &lt;li&gt;CSS seekhein&lt;/li&gt;
+  &lt;li&gt;JavaScript seekhein&lt;/li&gt;
+  &lt;li&gt;Projects banayein&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <ol style="color:#333; padding-left:20px;">
+        <li>HTML seekhein</li><li>CSS seekhein</li><li>JavaScript seekhein</li><li>Projects banayein</li>
+      </ol>
+    </div>
+
+    <h3>OL Ke Special Attributes:</h3>
+    <table>
+      <thead><tr><th>Attribute</th><th>Example</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><code>type="A"</code></td><td><code>&lt;ol type="A"&gt;</code></td><td>A, B, C, D...</td></tr>
+        <tr><td><code>type="a"</code></td><td><code>&lt;ol type="a"&gt;</code></td><td>a, b, c, d...</td></tr>
+        <tr><td><code>type="I"</code></td><td><code>&lt;ol type="I"&gt;</code></td><td>I, II, III, IV...</td></tr>
+        <tr><td><code>type="i"</code></td><td><code>&lt;ol type="i"&gt;</code></td><td>i, ii, iii, iv...</td></tr>
+        <tr><td><code>start="5"</code></td><td><code>&lt;ol start="5"&gt;</code></td><td>5 se start hoga</td></tr>
+        <tr><td><code>reversed</code></td><td><code>&lt;ol reversed&gt;</code></td><td>Ulti counting (5, 4, 3...)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Type Examples:</h3>
+    <pre>
+&lt;ol type="A"&gt;
+  &lt;li&gt;Islamabad&lt;/li&gt;
+  &lt;li&gt;Lahore&lt;/li&gt;
+  &lt;li&gt;Karachi&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="I" start="3"&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+  &lt;li&gt;Fourth item&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <ol type="A" style="color:#333; padding-left:20px;">
+        <li>Islamabad</li><li>Lahore</li><li>Karachi</li>
+      </ol>
+      <br>
+      <ol type="I" start="3" style="color:#333; padding-left:20px;">
+        <li>Third item</li><li>Fourth item</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- 3. Nested Lists -->
+  <div class="card">
+    <h2>3. Nested Lists — Lists Ke Andar Lists</h2>
+    <!-- List ke andar list rakhna nested list kehlata hai -->
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;Frontend
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+      &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Backend
+    &lt;ul&gt;
+      &lt;li&gt;Node.js&lt;/li&gt;
+      &lt;li&gt;Python&lt;/li&gt;
+      &lt;li&gt;PHP&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Database
+    &lt;ul&gt;
+      &lt;li&gt;MongoDB&lt;/li&gt;
+      &lt;li&gt;MySQL&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <ul style="color:#333; padding-left:20px;">
+        <li>Frontend
+          <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        </li>
+        <li>Backend
+          <ul><li>Node.js</li><li>Python</li><li>PHP</li></ul>
+        </li>
+        <li>Database
+          <ul><li>MongoDB</li><li>MySQL</li></ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. Description List -->
+  <div class="card">
+    <h2>4. Description List — &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</h2>
+    <!-- Term aur uski definition ke liye description list use karte hain -->
+    <p>Term aur uski <strong>definition/description</strong> dikhane ke liye:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Web pages ka structure banane ki language&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Web pages ko design aur style karne ki language&lt;/dd&gt;
+
+  &lt;dt&gt;JavaScript&lt;/dt&gt;
+  &lt;dd&gt;Web pages mein interactivity add karne ki language&lt;/dd&gt;
+&lt;/dl&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <dl style="color:#333;">
+        <dt style="font-weight:bold;">HTML</dt>
+        <dd style="margin-left:20px; margin-bottom:10px;">Web pages ka structure banane ki language</dd>
+        <dt style="font-weight:bold;">CSS</dt>
+        <dd style="margin-left:20px; margin-bottom:10px;">Web pages ko design aur style karne ki language</dd>
+        <dt style="font-weight:bold;">JavaScript</dt>
+        <dd style="margin-left:20px;">Web pages mein interactivity add karne ki language</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- 5. List Styling -->
+  <div class="card">
+    <h2>5. CSS Se List Styling</h2>
+    <!-- CSS se list ka bullet style change kar sakte hain -->
+    <h3>📝 list-style-type Values:</h3>
+    <pre>
+&lt;ul style="list-style-type: disc;"&gt;   &lt;!-- ● Default --&gt;
+&lt;ul style="list-style-type: circle;"&gt; &lt;!-- ○ Khali gola --&gt;
+&lt;ul style="list-style-type: square;"&gt; &lt;!-- ■ Square --&gt;
+&lt;ul style="list-style-type: none;"&gt;  &lt;!-- Koi bullet nahi --&gt;
+    </pre>
+
+    <h3>🖥️ Live Demos:</h3>
+    <div class="output-box">
+      <p style="color:#333; font-weight:bold;">disc (default):</p>
+      <ul style="list-style-type:disc; color:#333; padding-left:25px; margin-bottom:10px;"><li>Item A</li><li>Item B</li></ul>
+      <p style="color:#333; font-weight:bold;">circle:</p>
+      <ul style="list-style-type:circle; color:#333; padding-left:25px; margin-bottom:10px;"><li>Item A</li><li>Item B</li></ul>
+      <p style="color:#333; font-weight:bold;">square:</p>
+      <ul style="list-style-type:square; color:#333; padding-left:25px; margin-bottom:10px;"><li>Item A</li><li>Item B</li></ul>
+      <p style="color:#333; font-weight:bold;">none (no bullets):</p>
+      <ul style="list-style-type:none; color:#333; padding-left:25px;"><li>Item A</li><li>Item B</li></ul>
+    </div>
+  </div>
+
+  <!-- 6. Horizontal List (Nav Menu) -->
+  <div class="card">
+    <h2>6. Horizontal List — Navigation Menu</h2>
+    <!-- List ko horizontal banana navigation ke liye common hai -->
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;style&gt;
+  .nav-list { list-style: none; display: flex; gap: 20px; background: #0f3460; padding: 15px; border-radius: 8px; }
+  .nav-list li a { color: #00d2ff; text-decoration: none; padding: 5px 10px; }
+  .nav-list li a:hover { color: #e94560; }
+&lt;/style&gt;
+
+&lt;ul class="nav-list"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Courses&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <ul style="list-style:none; display:flex; gap:20px; background:#16213e; padding:15px; border-radius:8px; margin:10px 0;">
+      <li><a href="#" style="color:#00d2ff; text-decoration:none;">Home</a></li>
+      <li><a href="#" style="color:#00d2ff; text-decoration:none;">About</a></li>
+      <li><a href="#" style="color:#00d2ff; text-decoration:none;">Courses</a></li>
+      <li><a href="#" style="color:#00d2ff; text-decoration:none;">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>recipe page</strong> banayein — ingredients <code>&lt;ul&gt;</code> mein aur cooking steps <code>&lt;ol&gt;</code> mein likhein. Nested list bhi use karein.</li>
+      <li><strong>Task 2:</strong> HTML, CSS, aur JavaScript ke topics ki <strong>description list</strong> banayein (<code>&lt;dl&gt;</code>) jisme har topic ki definition ho.</li>
+      <li><strong>Task 3:</strong> <strong>Horizontal navigation bar</strong> banayein jisme 5 links hon — CSS se styled aur hover effects ke saath.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 08 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

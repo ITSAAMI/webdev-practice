@@ -1,0 +1,263 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Text Formatting
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 05 - Text Formatting | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice li { margin-bottom: 8px; }
+    .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>✍️ Topic 05: HTML Text Formatting</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. Bold — <b> aur <strong> -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. Bold Text — &lt;b&gt; aur &lt;strong&gt;</h2>
+
+    <!-- Dono bold banate hain lekin semantic difference hai -->
+    <p>Dono tags text ko <strong>bold</strong> banate hain, lekin meaning alag hai:</p>
+
+    <table>
+      <thead><tr><th>Tag</th><th>Purpose</th><th>SEO / Screen Reader</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;b&gt;</code></td><td>Sirf visually bold — koi extra meaning nahi</td><td>❌ Koi importance nahi</td></tr>
+        <tr><td><code>&lt;strong&gt;</code></td><td>Important content — bold + semantic meaning</td><td>✅ Screen reader emphasis deta hai</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;p&gt;&lt;b&gt;Yeh sirf bold hai&lt;/b&gt; — visual formatting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yeh important hai&lt;/strong&gt; — semantic + bold.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;"><b>Yeh sirf bold hai</b> — visual formatting.</p>
+      <p style="color:#333;"><strong>Yeh important hai</strong> — semantic + bold.</p>
+    </div>
+
+    <div class="highlight">
+      <p>💡 <strong>Best Practice:</strong> Hamesha <code>&lt;strong&gt;</code> use karein jab content important ho. <code>&lt;b&gt;</code> sirf styling ke liye.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. Italic — <i> aur <em> -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. Italic Text — &lt;i&gt; aur &lt;em&gt;</h2>
+
+    <!-- i sirf italic karta hai, em emphasis deta hai -->
+    <table>
+      <thead><tr><th>Tag</th><th>Purpose</th><th>Semantic?</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;i&gt;</code></td><td>Visually italic — terms, titles ke liye</td><td>❌</td></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Emphasized text — stress/emphasis ke liye</td><td>✅</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;p&gt;&lt;i&gt;Yeh italic text hai&lt;/i&gt; — jaise book ka naam.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Yeh emphasized hai&lt;/em&gt; — isko zor se padhein.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;"><i>Yeh italic text hai</i> — jaise book ka naam.</p>
+      <p style="color:#333;"><em>Yeh emphasized hai</em> — isko zor se padhein.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. Underline, Strikethrough, Mark -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. Underline, Strikethrough, aur Highlight</h2>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Underline --&gt;
+&lt;p&gt;&lt;u&gt;Yeh underlined text hai&lt;/u&gt;&lt;/p&gt;
+
+&lt;!-- Strikethrough — purani ya galat info ke liye --&gt;
+&lt;p&gt;Price: &lt;s&gt;Rs. 5000&lt;/s&gt; Rs. 3000&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Yeh delete hua hai&lt;/del&gt; &lt;ins&gt;Yeh naya hai&lt;/ins&gt;&lt;/p&gt;
+
+&lt;!-- Highlighted text --&gt;
+&lt;p&gt;Yeh &lt;mark&gt;highlighted&lt;/mark&gt; text hai.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;"><u>Yeh underlined text hai</u></p>
+      <p style="color:#333;">Price: <s>Rs. 5000</s> Rs. 3000</p>
+      <p style="color:#333;"><del>Yeh delete hua hai</del> <ins>Yeh naya hai</ins></p>
+      <p style="color:#333;">Yeh <mark>highlighted</mark> text hai.</p>
+    </div>
+
+    <h3>Tags Ka Comparison:</h3>
+    <table>
+      <thead><tr><th>Tag</th><th>Effect</th><th>Use Case</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;u&gt;</code></td><td>Underline</td><td>Misspelled words, annotations</td></tr>
+        <tr><td><code>&lt;s&gt;</code></td><td>Strikethrough</td><td>Purani prices, outdated info</td></tr>
+        <tr><td><code>&lt;del&gt;</code></td><td>Deleted text (semantic)</td><td>Document revisions</td></tr>
+        <tr><td><code>&lt;ins&gt;</code></td><td>Inserted text (underlined)</td><td>Newly added content</td></tr>
+        <tr><td><code>&lt;mark&gt;</code></td><td>Yellow highlight</td><td>Search results, important words</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. Small, Subscript, Superscript -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. Small Text, Subscript &amp; Superscript</h2>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Small text --&gt;
+&lt;p&gt;Normal text &lt;small&gt;aur yeh chhota text hai&lt;/small&gt;&lt;/p&gt;
+
+&lt;!-- Subscript — chemical formulas ke liye --&gt;
+&lt;p&gt;Pani ka formula: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;p&gt;Carbon Dioxide: CO&lt;sub&gt;2&lt;/sub&gt;&lt;/p&gt;
+
+&lt;!-- Superscript — math powers ke liye --&gt;
+&lt;p&gt;Area = r&lt;sup&gt;2&lt;/sup&gt; × π&lt;/p&gt;
+&lt;p&gt;Einstein: E = mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;">Normal text <small>aur yeh chhota text hai</small></p>
+      <p style="color:#333;">Pani ka formula: H<sub>2</sub>O</p>
+      <p style="color:#333;">Carbon Dioxide: CO<sub>2</sub></p>
+      <p style="color:#333;">Area = r<sup>2</sup> × π</p>
+      <p style="color:#333;">Einstein: E = mc<sup>2</sup></p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. Abbreviation aur Quotations -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>5. Abbreviation, Quotations &amp; Citations</h2>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Abbreviation — hover par full form dikhega --&gt;
+&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; seekhein.&lt;/p&gt;
+
+&lt;!-- Block Quote — bada quote, indent hota hai --&gt;
+&lt;blockquote&gt;
+  "Ilm haasil karo chahe China jaana pade."
+&lt;/blockquote&gt;
+
+&lt;!-- Inline Quote — chhota quote, quotation marks aate hain --&gt;
+&lt;p&gt;Iqbal ne kaha: &lt;q&gt;Khudi ko kar buland itna&lt;/q&gt;&lt;/p&gt;
+
+&lt;!-- Citation — book, movie, article ka naam --&gt;
+&lt;p&gt;Meri favourite kitaab &lt;cite&gt;Bang-e-Dra&lt;/cite&gt; hai.&lt;/p&gt;
+
+&lt;!-- Inline Code --&gt;
+&lt;p&gt;HTML mein heading ke liye &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; tag use karein.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;"><abbr title="HyperText Markup Language" style="border-bottom: 1px dotted #333; cursor: help;">HTML</abbr> seekhein. <small>(hover karein)</small></p>
+      <blockquote style="color:#555; border-left: 3px solid #999; padding-left: 15px; margin: 10px 0; font-style: italic;">
+        "Ilm haasil karo chahe China jaana pade."
+      </blockquote>
+      <p style="color:#333;">Iqbal ne kaha: <q>Khudi ko kar buland itna</q></p>
+      <p style="color:#333;">Meri favourite kitaab <cite style="font-style: italic;">Bang-e-Dra</cite> hai.</p>
+      <p style="color:#333;">HTML mein heading ke liye <code style="background: #f0f0f0; padding: 2px 5px; border-radius: 3px;">&lt;h1&gt;</code> tag use karein.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. Complete Reference Table -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. Text Formatting Tags — Complete Reference</h2>
+
+    <table>
+      <thead><tr><th>Tag</th><th>Effect</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;b&gt;</code></td><td>Bold (visual)</td><td><b>Bold</b></td></tr>
+        <tr><td><code>&lt;strong&gt;</code></td><td>Bold (semantic)</td><td><strong>Strong</strong></td></tr>
+        <tr><td><code>&lt;i&gt;</code></td><td>Italic (visual)</td><td><i>Italic</i></td></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Italic (semantic)</td><td><em>Emphasis</em></td></tr>
+        <tr><td><code>&lt;u&gt;</code></td><td>Underline</td><td><u>Underline</u></td></tr>
+        <tr><td><code>&lt;s&gt;</code></td><td>Strikethrough</td><td><s>Strike</s></td></tr>
+        <tr><td><code>&lt;del&gt;</code></td><td>Deleted text</td><td><del>Deleted</del></td></tr>
+        <tr><td><code>&lt;ins&gt;</code></td><td>Inserted text</td><td><ins>Inserted</ins></td></tr>
+        <tr><td><code>&lt;mark&gt;</code></td><td>Highlighted</td><td><mark>Marked</mark></td></tr>
+        <tr><td><code>&lt;small&gt;</code></td><td>Small text</td><td><small>Small</small></td></tr>
+        <tr><td><code>&lt;sub&gt;</code></td><td>Subscript</td><td>H<sub>2</sub>O</td></tr>
+        <tr><td><code>&lt;sup&gt;</code></td><td>Superscript</td><td>x<sup>2</sup></td></tr>
+        <tr><td><code>&lt;abbr&gt;</code></td><td>Abbreviation</td><td><abbr title="Cascading Style Sheets">CSS</abbr></td></tr>
+        <tr><td><code>&lt;blockquote&gt;</code></td><td>Block quotation</td><td>Indented quote block</td></tr>
+        <tr><td><code>&lt;q&gt;</code></td><td>Inline quote</td><td><q>Quoted</q></td></tr>
+        <tr><td><code>&lt;cite&gt;</code></td><td>Citation</td><td><cite>Book Name</cite></td></tr>
+        <tr><td><code>&lt;code&gt;</code></td><td>Inline code</td><td><code>let x = 5;</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>product card</strong> banayein jisme product ka naam <code>&lt;strong&gt;</code> mein ho, purani price <code>&lt;del&gt;</code> mein ho, aur nayi price <code>&lt;ins&gt;</code> mein ho. Description mein <code>&lt;mark&gt;</code> se key features highlight karein.</li>
+      <li><strong>Task 2:</strong> Ek <strong>science article</strong> likhein jisme chemical formulas (<code>&lt;sub&gt;</code>), math equations (<code>&lt;sup&gt;</code>), aur scientific terms (<code>&lt;abbr&gt;</code>) use hon.</li>
+      <li><strong>Task 3:</strong> Ek <strong>famous quotes page</strong> banayein — 5 quotes <code>&lt;blockquote&gt;</code> mein likhein, har quote ke neeche author ka naam <code>&lt;cite&gt;</code> mein ho.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 05 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

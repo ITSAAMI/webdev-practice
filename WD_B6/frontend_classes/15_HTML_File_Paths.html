@@ -1,0 +1,218 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML File Paths
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 15 - File Paths | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    .tree { background: #16213e; padding: 15px; border-radius: 8px; font-family: monospace; color: #00d2ff; margin: 10px 0; line-height: 1.6; }
+    .tree .folder { color: #e94560; }
+    .tree .file { color: #eee; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📁 Topic 15: HTML File Paths</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. File Paths Kya Hain -->
+  <div class="card">
+    <h2>1. File Paths Kya Hain?</h2>
+    <!-- File path se browser ko batate hain ke file kahan hai -->
+    <p>File path se browser ko batate hain ke koi file (image, CSS, JS, page) <strong>kahan rakhi hai</strong>. Yeh 4 jagah use hote hain:</p>
+    <pre>
+&lt;img src="FILE_PATH"&gt;           &lt;!-- Images --&gt;
+&lt;a href="FILE_PATH"&gt;            &lt;!-- Links --&gt;
+&lt;link href="FILE_PATH"&gt;         &lt;!-- CSS files --&gt;
+&lt;script src="FILE_PATH"&gt;        &lt;!-- JavaScript files --&gt;
+    </pre>
+  </div>
+
+  <!-- 2. Folder Structure Example -->
+  <div class="card">
+    <h2>2. Typical Folder Structure</h2>
+    <!-- Aisi folder structure rakhein apne projects mein -->
+    <div class="tree">
+      <span class="folder">📂 my-website/</span><br>
+      ├── <span class="file">index.html</span><br>
+      ├── <span class="file">about.html</span><br>
+      ├── <span class="file">contact.html</span><br>
+      ├── <span class="folder">📂 css/</span><br>
+      │&nbsp;&nbsp;&nbsp;└── <span class="file">style.css</span><br>
+      ├── <span class="folder">📂 js/</span><br>
+      │&nbsp;&nbsp;&nbsp;└── <span class="file">script.js</span><br>
+      ├── <span class="folder">📂 images/</span><br>
+      │&nbsp;&nbsp;&nbsp;├── <span class="file">logo.png</span><br>
+      │&nbsp;&nbsp;&nbsp;├── <span class="file">banner.jpg</span><br>
+      │&nbsp;&nbsp;&nbsp;└── <span class="folder">📂 gallery/</span><br>
+      │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="file">pic1.jpg</span><br>
+      │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="file">pic2.jpg</span><br>
+      └── <span class="folder">📂 pages/</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="file">services.html</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;└── <span class="file">portfolio.html</span>
+    </div>
+  </div>
+
+  <!-- 3. Absolute Path -->
+  <div class="card">
+    <h2>3. Absolute Path — Full URL</h2>
+    <!-- Absolute path mein poora URL likha jata hai -->
+    <p>Absolute path mein <strong>complete URL</strong> hota hai — external websites ke liye:</p>
+
+    <pre>
+&lt;!-- External website ki image --&gt;
+&lt;img src="https://www.example.com/images/logo.png" alt="Logo"&gt;
+
+&lt;!-- External website ka link --&gt;
+&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;
+
+&lt;!-- External CSS --&gt;
+&lt;link href="https://cdn.example.com/style.css" rel="stylesheet"&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>📌 Absolute path <strong>external resources</strong> (CDN, APIs, doosri websites) ke liye use karein.</p>
+    </div>
+  </div>
+
+  <!-- 4. Relative Paths -->
+  <div class="card">
+    <h2>4. Relative Paths — Folder Structure Se</h2>
+    <!-- Relative path apni website ke files ke liye use karte hain -->
+    <p>Relative path apni <strong>website ke files</strong> ke liye — current file ki position se dekhte hain:</p>
+
+    <table>
+      <thead><tr><th>Path</th><th>Matlab</th><th>Example (from index.html)</th></tr></thead>
+      <tbody>
+        <tr><td><code>file.jpg</code></td><td>Same folder mein</td><td><code>&lt;img src="logo.png"&gt;</code></td></tr>
+        <tr><td><code>folder/file.jpg</code></td><td>Sub-folder mein</td><td><code>&lt;img src="images/logo.png"&gt;</code></td></tr>
+        <tr><td><code>../file.jpg</code></td><td>Parent folder mein (ek upar)</td><td><code>&lt;img src="../logo.png"&gt;</code></td></tr>
+        <tr><td><code>../../file.jpg</code></td><td>2 folders upar</td><td><code>&lt;img src="../../logo.png"&gt;</code></td></tr>
+        <tr><td><code>./file.jpg</code></td><td>Current folder (same as file.jpg)</td><td><code>&lt;img src="./logo.png"&gt;</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Practical Examples (from index.html):</h3>
+    <pre>
+&lt;!-- Same folder ki file --&gt;
+&lt;a href="about.html"&gt;About Page&lt;/a&gt;
+
+&lt;!-- Sub-folder ki file --&gt;
+&lt;img src="images/logo.png" alt="Logo"&gt;
+&lt;link href="css/style.css" rel="stylesheet"&gt;
+&lt;script src="js/script.js"&gt;&lt;/script&gt;
+
+&lt;!-- Nested sub-folder --&gt;
+&lt;img src="images/gallery/pic1.jpg" alt="Gallery Pic"&gt;
+
+&lt;!-- Sub-folder ki HTML file --&gt;
+&lt;a href="pages/services.html"&gt;Services&lt;/a&gt;
+    </pre>
+  </div>
+
+  <!-- 5. Parent Folder Navigation -->
+  <div class="card">
+    <h2>5. ../ — Parent Folder Mein Jaana</h2>
+    <!-- ../ se ek folder upar jate hain -->
+    <p>Agar aap <code>pages/services.html</code> mein hain aur root ki file chahiye:</p>
+
+    <pre>
+&lt;!-- pages/services.html SE --&gt;
+
+&lt;!-- Root folder ki file (ek upar) --&gt;
+&lt;a href="../index.html"&gt;Home&lt;/a&gt;
+
+&lt;!-- Root ke images folder ki file --&gt;
+&lt;img src="../images/logo.png" alt="Logo"&gt;
+
+&lt;!-- Root ke css folder ki file --&gt;
+&lt;link href="../css/style.css" rel="stylesheet"&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <code>../</code> = ek folder upar jao. <code>../../</code> = do folders upar jao. Har <code>../</code> ek level upar le jata hai.</p>
+    </div>
+  </div>
+
+  <!-- 6. Common Errors -->
+  <div class="card">
+    <h2>6. Common File Path Errors ❌</h2>
+
+    <table>
+      <thead><tr><th>Error</th><th>Problem</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td><code>src="Images/logo.png"</code></td><td>Case sensitive! "Images" ≠ "images"</td><td><code>src="images/logo.png"</code></td></tr>
+        <tr><td><code>src="images\logo.png"</code></td><td>Backslash galat hai web par</td><td><code>src="images/logo.png"</code> (forward slash)</td></tr>
+        <tr><td><code>src="C:/Users/photo.jpg"</code></td><td>Local computer path — server par nahi milegi</td><td>Relative path use karein</td></tr>
+        <tr><td><code>src="logo .png"</code></td><td>File naam mein space</td><td>Spaces avoid karein ya <code>%20</code> use karein</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Golden Rules:</strong><br>
+      ✅ Forward slash <code>/</code> use karein (backslash nahi)<br>
+      ✅ Lowercase file names rakhein<br>
+      ✅ Spaces ki jagah dash <code>-</code> use karein<br>
+      ✅ Desktop paths kabhi na use karein</p>
+    </div>
+  </div>
+
+  <!-- 7. Best Practices -->
+  <div class="card">
+    <h2>7. Folder Structure Best Practices</h2>
+
+    <ul>
+      <li>📁 Images ko <code>images/</code> folder mein rakhein</li>
+      <li>📁 CSS ko <code>css/</code> folder mein rakhein</li>
+      <li>📁 JavaScript ko <code>js/</code> folder mein rakhein</li>
+      <li>📄 Main page ka naam <code>index.html</code> rakhein (server default)</li>
+      <li>🔤 Sab file/folder names <strong>lowercase</strong> mein rakhein</li>
+      <li>➖ Spaces ki jagah <strong>hyphens</strong> use karein: <code>my-page.html</code></li>
+      <li>📂 Related files ko folders mein organize karein</li>
+    </ul>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>multi-page website</strong> banayein (index.html, about.html, contact.html). Sab pages ek doosre se linked hon using <strong>relative paths</strong>. Images ko <code>images/</code> folder mein rakhein.</li>
+      <li><strong>Task 2:</strong> Sub-folder <code>pages/</code> mein ek page banayein jo <strong>parent folder</strong> (<code>../</code>) ki images aur CSS use kare.</li>
+      <li><strong>Task 3:</strong> Apne project ki <strong>folder structure</strong> ka diagram banayein (text se) aur har file ka path likhein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 15 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

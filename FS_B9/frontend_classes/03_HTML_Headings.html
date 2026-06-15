@@ -1,0 +1,315 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Headings
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 03 - HTML Headings | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px;
+    }
+    .header {
+      background: linear-gradient(135deg, #0f3460, #e94560);
+      padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;
+    }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+    .card {
+      background: #1a1a2e; border-radius: 10px; padding: 25px;
+      margin-bottom: 20px; border-left: 4px solid #e94560;
+    }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre {
+      background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px;
+      overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460;
+    }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box {
+      background: #fff; color: #333; padding: 15px; border-radius: 8px;
+      margin: 10px 0; border: 2px dashed #e94560;
+    }
+    .highlight {
+      background: #0f3460; padding: 12px 18px; border-radius: 8px;
+      margin: 10px 0; border-left: 3px solid #00d2ff;
+    }
+    .practice {
+      background: #1a1a2e; border-radius: 10px; padding: 25px;
+      margin-bottom: 20px; border-left: 4px solid #00d2ff;
+    }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice li { margin-bottom: 8px; }
+    .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; }
+    td { background: #16213e; }
+    .footer {
+      text-align: center; padding: 20px; color: #888;
+      border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📑 Topic 03: HTML Headings</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. Headings Kya Hain? -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. HTML Headings Kya Hain?</h2>
+
+    <!-- Headings se page ke titles aur sections define hote hain -->
+    <p>Headings se hum page ke <strong>titles aur sections</strong> define karte hain. HTML mein <strong>6 levels</strong> ki headings hain:</p>
+
+    <pre>
+&lt;h1&gt;Heading 1 — Sabse Bada&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6 — Sabse Chhota&lt;/h6&gt;
+    </pre>
+
+    <h3>🖥️ Browser Output:</h3>
+    <div class="output-box">
+      <h1 style="color:#333; margin:5px 0;">Heading 1 — Sabse Bada</h1>
+      <h2 style="color:#333; margin:5px 0;">Heading 2</h2>
+      <h3 style="color:#333; margin:5px 0;">Heading 3</h3>
+      <h4 style="color:#333; margin:5px 0;">Heading 4</h4>
+      <h5 style="color:#333; margin:5px 0;">Heading 5</h5>
+      <h6 style="color:#333; margin:5px 0;">Heading 6 — Sabse Chhota</h6>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. Har Heading Ka Size Aur Purpose -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. Har Heading Ka Size Aur Purpose</h2>
+
+    <!-- Headings ka size aur use case -->
+    <table>
+      <thead>
+        <tr>
+          <th>Tag</th>
+          <th>Default Size</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;h1&gt;</code></td>
+          <td>2em (32px)</td>
+          <td>Page ka main title — sirf EK baar use karein</td>
+        </tr>
+        <tr>
+          <td><code>&lt;h2&gt;</code></td>
+          <td>1.5em (24px)</td>
+          <td>Major sections ke titles</td>
+        </tr>
+        <tr>
+          <td><code>&lt;h3&gt;</code></td>
+          <td>1.17em (18.72px)</td>
+          <td>Sub-sections</td>
+        </tr>
+        <tr>
+          <td><code>&lt;h4&gt;</code></td>
+          <td>1em (16px)</td>
+          <td>Sub-sub-sections</td>
+        </tr>
+        <tr>
+          <td><code>&lt;h5&gt;</code></td>
+          <td>0.83em (13.28px)</td>
+          <td>Detailed sections</td>
+        </tr>
+        <tr>
+          <td><code>&lt;h6&gt;</code></td>
+          <td>0.67em (10.72px)</td>
+          <td>Sabse neeche level ki heading — kam use hota hai</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. SEO Mein Headings Ki Importance -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. SEO Mein Headings Ki Importance</h2>
+
+    <!-- Google aur search engines headings padh kar page ka topic samajhte hain -->
+    <p><strong>SEO (Search Engine Optimization)</strong> mein headings bohat important hain:</p>
+
+    <ul>
+      <li>🔍 Google page ki <code>&lt;h1&gt;</code> padhta hai taake samjhe page kis baare mein hai</li>
+      <li>📊 Search results mein headings ka text dikhta hai</li>
+      <li>📱 Screen readers headings use karke page navigate karte hain</li>
+      <li>🏗️ Headings se page ka <strong>outline/structure</strong> banta hai</li>
+    </ul>
+
+    <div class="highlight">
+      <p>💡 <strong>SEO Rule:</strong> Ek page mein sirf <strong>EK &lt;h1&gt;</strong> hona chahiye — yeh page ka main topic batata hai.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. Heading Hierarchy -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. Heading Hierarchy — Sahi Tartib</h2>
+
+    <!-- Headings ko sahi order mein use karna zaroori hai -->
+    <p>Headings ko hamesha <strong>sahi order</strong> mein use karein — h1 ke baad h2, h2 ke baad h3:</p>
+
+    <h3>✅ Sahi Hierarchy:</h3>
+    <pre>
+&lt;h1&gt;Pakistan Ka Geography&lt;/h1&gt;
+
+  &lt;h2&gt;Provinces&lt;/h2&gt;
+    &lt;h3&gt;KPK&lt;/h3&gt;
+    &lt;h3&gt;Punjab&lt;/h3&gt;
+    &lt;h3&gt;Sindh&lt;/h3&gt;
+
+  &lt;h2&gt;Major Cities&lt;/h2&gt;
+    &lt;h3&gt;Islamabad&lt;/h3&gt;
+    &lt;h3&gt;Karachi&lt;/h3&gt;
+    </pre>
+
+    <h3>❌ Galat Hierarchy (Skip karna):</h3>
+    <pre>
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h4&gt;Seedha h4 par aa gaye — h2, h3 skip ho gaye!&lt;/h4&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Galti na karein:</strong> Sirf size change karne ke liye heading level mat change karein. Size ke liye CSS use karein!</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. Headings Ke Saath Paragraphs -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>5. Headings Ke Saath Paragraphs</h2>
+
+    <!-- Real-world mein headings ke baad paragraph aata hai -->
+    <p>Real websites mein heading ke baad related <strong>paragraph</strong> aata hai:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;h1&gt;Code Academy Nowshera&lt;/h1&gt;
+&lt;p&gt;Hum aik modern coding academy hain jo web development sikhate hain.&lt;/p&gt;
+
+&lt;h2&gt;Hamare Courses&lt;/h2&gt;
+&lt;p&gt;HTML, CSS, JavaScript, React, Node.js aur bohat kuch.&lt;/p&gt;
+
+&lt;h2&gt;Kyun Chunein Humein?&lt;/h2&gt;
+&lt;p&gt;Experienced instructors, hands-on projects, aur career support.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Browser Output:</h3>
+    <div class="output-box">
+      <h1 style="color:#333; margin-bottom:5px;">Code Academy Nowshera</h1>
+      <p style="color:#555; margin-bottom:15px;">Hum aik modern coding academy hain jo web development sikhate hain.</p>
+      <h2 style="color:#333; margin-bottom:5px;">Hamare Courses</h2>
+      <p style="color:#555; margin-bottom:15px;">HTML, CSS, JavaScript, React, Node.js aur bohat kuch.</p>
+      <h2 style="color:#333; margin-bottom:5px;">Kyun Chunein Humein?</h2>
+      <p style="color:#555;">Experienced instructors, hands-on projects, aur career support.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. CSS Se Heading Customize Karna -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. CSS Se Heading Customize Karna</h2>
+
+    <!-- Heading ka default size change karne ke liye CSS use karein, tag nahi -->
+    <p>Heading ka size, color, font change karne ke liye <strong>CSS</strong> use karein:</p>
+
+    <pre>
+&lt;h2 style="color: #e94560; font-size: 28px; font-family: Arial;"&gt;
+  Styled Heading
+&lt;/h2&gt;
+
+&lt;h3 style="color: #00d2ff; text-align: center; text-transform: uppercase;"&gt;
+  Centered Uppercase Heading
+&lt;/h3&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <h2 style="color: #e94560; font-size: 28px; font-family: Arial; margin: 5px 0;">Styled Heading</h2>
+      <h3 style="color: #00d2ff; text-align: center; text-transform: uppercase; margin: 5px 0;">Centered Uppercase Heading</h3>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 7. Common Mistakes -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>7. Common Mistakes ❌</h2>
+
+    <table>
+      <thead>
+        <tr><th>Mistake</th><th>Kyun Galat Hai</th><th>Sahi Tareeqa</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Multiple <code>&lt;h1&gt;</code> tags</td>
+          <td>SEO mein confuse karta hai</td>
+          <td>Sirf EK <code>&lt;h1&gt;</code> per page</td>
+        </tr>
+        <tr>
+          <td>h1 ke baad seedha h4 use karna</td>
+          <td>Hierarchy toot jati hai</td>
+          <td>h1 → h2 → h3 → h4 order follow karein</td>
+        </tr>
+        <tr>
+          <td>Size ke liye heading level change karna</td>
+          <td>Semantic meaning khatam ho jati hai</td>
+          <td>CSS se size change karein</td>
+        </tr>
+        <tr>
+          <td>Paragraph text ko heading mein likhna</td>
+          <td>Heading bold/big hota hai but yeh galat use hai</td>
+          <td>Normal text ke liye <code>&lt;p&gt;</code> use karein</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek "My School" page banayein jisme h1 se h6 tak tamam headings use hon — har heading ke baad ek paragraph ho.</li>
+      <li><strong>Task 2:</strong> Apne favourite subject ki article likhein with proper heading hierarchy (h1 → h2 → h3). Kam az kam 3 sections hon.</li>
+      <li><strong>Task 3:</strong> Headings ko CSS se style karein — different colors, sizes, aur fonts use karein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 03 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

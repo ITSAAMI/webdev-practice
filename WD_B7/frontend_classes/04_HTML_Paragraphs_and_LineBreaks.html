@@ -1,0 +1,258 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Paragraphs and Line Breaks
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 04 - Paragraphs & Line Breaks | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice li { margin-bottom: 8px; }
+    .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📄 Topic 04: Paragraphs & Line Breaks</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. Paragraph Tag <p> -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. &lt;p&gt; Tag — Paragraphs</h2>
+
+    <!-- Paragraph tag se text ko block mein likhte hain -->
+    <p>Paragraph tag <code>&lt;p&gt;</code> se hum text ko alag alag blocks mein likhte hain. Har paragraph ke baad browser <strong>automatic space</strong> deta hai.</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;p&gt;Yeh pehla paragraph hai. Code Academy Nowshera mein HTML seekhein.&lt;/p&gt;
+&lt;p&gt;Yeh doosra paragraph hai. Dono ke beech mein gap aayega.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333; margin-bottom:10px;">Yeh pehla paragraph hai. Code Academy Nowshera mein HTML seekhein.</p>
+      <p style="color:#333;">Yeh doosra paragraph hai. Dono ke beech mein gap aayega.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. Browser Whitespace Handling -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. Browser Whitespace Kaise Handle Karta Hai</h2>
+
+    <!-- Browser multiple spaces aur newlines ko ignore karta hai -->
+    <p>HTML mein chahe aap <strong>kitne bhi spaces ya enter</strong> dein, browser sirf <strong>ek space</strong> dikhata hai:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;p&gt;Yeh     bohat      spaces     hain      lekin
+browser sirf      ek          space          dikhayega.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;">Yeh bohat spaces hain lekin browser sirf ek space dikhayega.</p>
+    </div>
+
+    <div class="highlight">
+      <p>💡 Browser <strong>multiple spaces</strong> ko ek space mein convert karta hai aur <strong>enter/newline</strong> ko bhi ignore karta hai.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. <br> Tag — Line Break -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. &lt;br&gt; Tag — Line Break</h2>
+
+    <!-- Line break ke liye br tag use karte hain -->
+    <p>Agar aapko text ko <strong>next line</strong> par le jaana hai bina naya paragraph banaye, toh <code>&lt;br&gt;</code> use karein:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;p&gt;
+  Mera naam Amir hai.&lt;br&gt;
+  Main Nowshera se hoon.&lt;br&gt;
+  Main ek instructor hoon.
+&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;">
+        Mera naam Amir hai.<br>
+        Main Nowshera se hoon.<br>
+        Main ek instructor hoon.
+      </p>
+    </div>
+
+    <div class="highlight">
+      <p>📌 <code>&lt;br&gt;</code> ek <strong>self-closing tag</strong> hai — isay close nahi karte. <code>&lt;br/&gt;</code> bhi chalega.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. <hr> Tag — Horizontal Rule -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. &lt;hr&gt; Tag — Horizontal Line</h2>
+
+    <!-- Sections ke beech mein line lagane ke liye hr use karte hain -->
+    <p><code>&lt;hr&gt;</code> se page par <strong>horizontal line</strong> aati hai — sections separate karne ke liye:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;h2&gt;Section 1&lt;/h2&gt;
+&lt;p&gt;Yeh pehla section hai.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;Yeh doosra section hai.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <h2 style="color:#333;">Section 1</h2>
+      <p style="color:#555;">Yeh pehla section hai.</p>
+      <hr style="margin: 10px 0; border-color: #ccc;">
+      <h2 style="color:#333;">Section 2</h2>
+      <p style="color:#555;">Yeh doosra section hai.</p>
+    </div>
+
+    <h3>HR Ko Style Karna:</h3>
+    <pre>
+&lt;hr style="border: 2px solid red; width: 50%;"&gt;
+&lt;hr style="border: none; border-top: 3px dashed blue;"&gt;
+    </pre>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. <pre> Tag — Preformatted Text -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>5. &lt;pre&gt; Tag — Preformatted Text</h2>
+
+    <!-- Pre tag spaces aur newlines ko preserve karta hai -->
+    <p><code>&lt;pre&gt;</code> tag text ko <strong>jaise likhein waise</strong> dikhata hai — spaces, tabs, aur newlines sab preserve hoti hain:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;pre&gt;
+  Naam:     Syed Amir
+  City:     Nowshera
+  Role:     Instructor
+  
+  Line 1
+  Line 2
+  Line 3
+&lt;/pre&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+<pre style="color:#333; font-family: monospace; margin: 0;">
+  Naam:     Syed Amir
+  City:     Nowshera
+  Role:     Instructor
+  
+  Line 1
+  Line 2
+  Line 3
+</pre>
+    </div>
+
+    <div class="highlight">
+      <p>💡 <code>&lt;pre&gt;</code> tag monospace font use karta hai aur spaces exactly waise dikhata hai jaise aap ne type kiye hain.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. &nbsp; — Non-Breaking Space -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. &amp;nbsp; — Non-Breaking Space</h2>
+
+    <!-- Multiple spaces dene ke liye &nbsp; entity use karte hain -->
+    <p>Agar aapko <strong>multiple spaces</strong> chahiyein, toh <code>&amp;nbsp;</code> entity use karein:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;p&gt;Normal:   spaces    ignored    hon    ge&lt;/p&gt;
+&lt;p&gt;Fixed:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5 extra spaces&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#333;">Normal: spaces ignored hon ge</p>
+      <p style="color:#333;">Fixed:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 extra spaces</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 7. Quick Comparison Table -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>7. Quick Comparison Table</h2>
+
+    <table>
+      <thead>
+        <tr><th>Tag / Entity</th><th>Kya Karta Hai</th><th>Self-Closing?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>&lt;p&gt;</code></td><td>Paragraph banata hai — gap ke saath</td><td>Nahi — close karna hai</td></tr>
+        <tr><td><code>&lt;br&gt;</code></td><td>Line break — next line par</td><td>Haan</td></tr>
+        <tr><td><code>&lt;hr&gt;</code></td><td>Horizontal line — sections separate</td><td>Haan</td></tr>
+        <tr><td><code>&lt;pre&gt;</code></td><td>Text jaise likha waise dikhata hai</td><td>Nahi — close karna hai</td></tr>
+        <tr><td><code>&amp;nbsp;</code></td><td>Extra space add karta hai</td><td>Entity hai, tag nahi</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>Shayari/Poetry page</strong> banayein jisme 4 shair (couplets) hon. Har misra (line) ke liye <code>&lt;br&gt;</code> use karein aur shairon ke beech <code>&lt;hr&gt;</code> lagayein.</li>
+      <li><strong>Task 2:</strong> <code>&lt;pre&gt;</code> tag use karke ASCII art banayein — jaise ek ghar ya tree ka drawing characters se.</li>
+      <li><strong>Task 3:</strong> Ek page banayein jisme 3 paragraphs hon apne baare mein (naam, city, hobbies). Har paragraph ke beech styled <code>&lt;hr&gt;</code> lagayein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 04 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

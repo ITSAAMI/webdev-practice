@@ -1,0 +1,237 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML5 Semantic Elements
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 19 - Semantic Elements | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header-banner { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header-banner h1 { font-size: 2rem; margin-bottom: 5px; } .header-banner p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 0; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; overflow: hidden; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer-info { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header-banner">
+    <h1>🏛️ Topic 19: HTML5 Semantic Elements <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Semantic HTML Kya Hai -->
+  <div class="card">
+    <h2>1. Semantic HTML Kya Hai?</h2>
+    <!-- Semantic tags ka naam hi bata deta hai ke content kya hai -->
+    <p><strong>Semantic</strong> ka matlab hai "meaningful" — semantic tags se browser, search engines, aur developers ko pata chalta hai ke content kya hai:</p>
+
+    <table>
+      <thead><tr><th>Non-Semantic (Purana)</th><th>Semantic (Modern)</th><th>Fark</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;div id="header"&gt;</code></td><td><code>&lt;header&gt;</code></td><td>Tag ka naam hi batata hai ke yeh header hai</td></tr>
+        <tr><td><code>&lt;div id="nav"&gt;</code></td><td><code>&lt;nav&gt;</code></td><td>Navigation links ka container</td></tr>
+        <tr><td><code>&lt;div class="article"&gt;</code></td><td><code>&lt;article&gt;</code></td><td>Independent content piece</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Semantic HTML Ke Faiday:</h3>
+    <ul>
+      <li>🔍 <strong>SEO:</strong> Google content behtar samajhta hai</li>
+      <li>♿ <strong>Accessibility:</strong> Screen readers page navigate kar sakte hain</li>
+      <li>👨‍💻 <strong>Readability:</strong> Code padhna aasan hota hai</li>
+      <li>🔧 <strong>Maintenance:</strong> Code maintain karna aasan</li>
+    </ul>
+  </div>
+
+  <!-- 2. All Semantic Tags -->
+  <div class="card">
+    <h2>2. Important Semantic Tags</h2>
+
+    <table>
+      <thead><tr><th>Tag</th><th>Purpose</th><th>Use Case</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;header&gt;</code></td><td>Page/section ka header</td><td>Logo, title, navigation</td></tr>
+        <tr><td><code>&lt;nav&gt;</code></td><td>Navigation links</td><td>Menu, sidebar links</td></tr>
+        <tr><td><code>&lt;main&gt;</code></td><td>Page ka main content</td><td>Primary content (sirf EK baar)</td></tr>
+        <tr><td><code>&lt;section&gt;</code></td><td>Thematic grouping</td><td>About section, Contact section</td></tr>
+        <tr><td><code>&lt;article&gt;</code></td><td>Independent content</td><td>Blog post, news article, comment</td></tr>
+        <tr><td><code>&lt;aside&gt;</code></td><td>Side content</td><td>Sidebar, related links, ads</td></tr>
+        <tr><td><code>&lt;footer&gt;</code></td><td>Page/section ka footer</td><td>Copyright, links, contact</td></tr>
+        <tr><td><code>&lt;figure&gt;</code></td><td>Image + caption group</td><td>Photos with descriptions</td></tr>
+        <tr><td><code>&lt;figcaption&gt;</code></td><td>Figure ka caption</td><td>Image description</td></tr>
+        <tr><td><code>&lt;details&gt;</code></td><td>Collapsible content</td><td>FAQ, expandable sections</td></tr>
+        <tr><td><code>&lt;summary&gt;</code></td><td>Details ka visible title</td><td>Click to expand</td></tr>
+        <tr><td><code>&lt;time&gt;</code></td><td>Date/time markup</td><td>Published dates</td></tr>
+        <tr><td><code>&lt;address&gt;</code></td><td>Contact information</td><td>Author/organization contact</td></tr>
+        <tr><td><code>&lt;mark&gt;</code></td><td>Highlighted text</td><td>Search results highlighting</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. Complete Semantic Page -->
+  <div class="card">
+    <h2>3. Complete Semantic Page Structure</h2>
+
+    <pre>
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Code Academy Nowshera&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="#"&gt;Home&lt;/a&gt; | &lt;a href="#"&gt;Courses&lt;/a&gt; | &lt;a href="#"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Our Courses&lt;/h2&gt;
+      &lt;article&gt;
+        &lt;h3&gt;HTML Course&lt;/h3&gt;
+        &lt;p&gt;Published: &lt;time datetime="2024-01-15"&gt;Jan 15, 2024&lt;/time&gt;&lt;/p&gt;
+        &lt;p&gt;Complete HTML course for beginners...&lt;/p&gt;
+      &lt;/article&gt;
+      &lt;article&gt;
+        &lt;h3&gt;CSS Course&lt;/h3&gt;
+        &lt;p&gt;Master CSS from scratch...&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+      &lt;h3&gt;Quick Links&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Admissions&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Timetable&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;address&gt;
+      Code Academy, GT Road, Nowshera, KPK&lt;br&gt;
+      Email: &lt;a href="mailto:info@codeacademy.com"&gt;info@codeacademy.com&lt;/a&gt;
+    &lt;/address&gt;
+    &lt;p&gt;&amp;copy; 2024 Code Academy Nowshera&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <div class="output-box">
+      <header style="background:#0f3460; color:white; padding:15px;">
+        <h2 style="color:white; margin:0;">Code Academy Nowshera</h2>
+        <nav style="margin-top:8px;">
+          <a href="#" style="color:#00d2ff; margin-right:15px;">Home</a>
+          <a href="#" style="color:#00d2ff; margin-right:15px;">Courses</a>
+          <a href="#" style="color:#00d2ff;">Contact</a>
+        </nav>
+      </header>
+      <div style="display:flex;">
+        <main style="flex:3; padding:15px;">
+          <section>
+            <h3 style="color:#0f3460; border-bottom:2px solid #e94560; padding-bottom:5px;">Our Courses</h3>
+            <article style="background:#f9f9f9; padding:12px; margin:10px 0; border-radius:5px; border-left:3px solid #e94560;">
+              <h4 style="color:#0f3460;">HTML Course</h4>
+              <p style="font-size:0.85rem; color:#888;"><time>Jan 15, 2024</time></p>
+              <p>Complete HTML course for beginners...</p>
+            </article>
+            <article style="background:#f9f9f9; padding:12px; margin:10px 0; border-radius:5px; border-left:3px solid #00d2ff;">
+              <h4 style="color:#0f3460;">CSS Course</h4>
+              <p>Master CSS from scratch...</p>
+            </article>
+          </section>
+        </main>
+        <aside style="flex:1; background:#f0f0f0; padding:15px;">
+          <h4 style="color:#0f3460;">Quick Links</h4>
+          <ul style="padding-left:15px; font-size:0.9rem;">
+            <li><a href="#" style="color:#e94560;">Admissions</a></li>
+            <li><a href="#" style="color:#e94560;">Timetable</a></li>
+          </ul>
+        </aside>
+      </div>
+      <footer style="background:#1a1a2e; color:white; padding:12px; text-align:center; font-size:0.85rem;">
+        <address style="font-style:normal;">Code Academy, GT Road, Nowshera, KPK</address>
+        <p>&copy; 2024 Code Academy Nowshera</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- 4. Details aur Summary -->
+  <div class="card">
+    <h2>4. &lt;details&gt; aur &lt;summary&gt; — Collapsible Content</h2>
+    <!-- Bina JavaScript ke collapsible section ban jata hai -->
+    <p>Bina JavaScript ke <strong>collapsible/expandable</strong> section banayein:</p>
+
+    <pre>
+&lt;details&gt;
+  &lt;summary&gt;HTML kya hai? (Click to expand)&lt;/summary&gt;
+  &lt;p&gt;HTML ek markup language hai jo web pages ka structure define karti hai.&lt;/p&gt;
+&lt;/details&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo (Click karein!):</h3>
+    <div class="output-box" style="padding: 15px;">
+      <details style="margin-bottom: 10px; color: #333;">
+        <summary style="cursor:pointer; font-weight:bold; color:#0f3460; padding:8px; background:#f0f0f0; border-radius:5px;">❓ HTML kya hai?</summary>
+        <p style="padding:10px;">HTML (HyperText Markup Language) ek markup language hai jo web pages ka structure define karti hai.</p>
+      </details>
+      <details style="margin-bottom: 10px; color: #333;">
+        <summary style="cursor:pointer; font-weight:bold; color:#0f3460; padding:8px; background:#f0f0f0; border-radius:5px;">❓ CSS kya hai?</summary>
+        <p style="padding:10px;">CSS (Cascading Style Sheets) se web pages ki design aur layout control ki jaati hai.</p>
+      </details>
+      <details style="color: #333;">
+        <summary style="cursor:pointer; font-weight:bold; color:#0f3460; padding:8px; background:#f0f0f0; border-radius:5px;">❓ JavaScript kya hai?</summary>
+        <p style="padding:10px;">JavaScript ek programming language hai jo web pages mein interactivity add karti hai.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- 5. Time Tag -->
+  <div class="card">
+    <h2>5. &lt;time&gt; Tag</h2>
+    <!-- Time tag se machine-readable date/time likhte hain -->
+    <pre>
+&lt;p&gt;Published: &lt;time datetime="2024-06-14"&gt;June 14, 2024&lt;/time&gt;&lt;/p&gt;
+&lt;p&gt;Event: &lt;time datetime="2024-07-01T09:00"&gt;July 1, 2024 at 9:00 AM&lt;/time&gt;&lt;/p&gt;
+    </pre>
+    <div class="highlight">
+      <p>💡 <code>datetime</code> attribute machine-readable format mein hota hai — search engines aur calendars isse samajhte hain.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Complete <strong>blog page</strong> banayein using ONLY semantic tags — header, nav, main, article (3 posts), aside (sidebar), footer. Koi div use na karein!</li>
+      <li><strong>Task 2:</strong> <strong>FAQ section</strong> banayein <code>&lt;details&gt;</code> aur <code>&lt;summary&gt;</code> se — 5 questions with expandable answers.</li>
+      <li><strong>Task 3:</strong> Apna <strong>purana div-based page</strong> (Topic 13 se) lein aur sab divs ko proper semantic tags mein convert karein.</li>
+    </ul>
+  </div>
+
+  <div class="footer-info">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 19 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Best Practices & Accessibility
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 25 - Best Practices | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🌟 Topic 25: HTML Best Practices & Accessibility <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Web Accessibility (A11y) -->
+  <div class="card">
+    <h2>1. Web Accessibility (a11y) Kya Hai?</h2>
+    <!-- Accessibility ka matlab website aisi banana jo disable log bhi use kar sakein -->
+    <p>Accessibility ka matlab hai apni website ko aisa banana ke <strong>har koi (shamil disabled log bhi)</strong> use kar sake — jaise woh log jo screen readers use karte hain (blind users).</p>
+
+    <h3>Accessibility Ke 3 Golden Rules:</h3>
+    <ul>
+      <li>🖼️ <strong>Images:</strong> Hamesha <code>alt</code> attribute dein. Screen readers image ki jagah <code>alt</code> text padhte hain.</li>
+      <li>🏷️ <strong>Forms:</strong> Har <code>&lt;input&gt;</code> ke saath <code>&lt;label for="..."&gt;</code> laazmi hona chahiye.</li>
+      <li>🏗️ <strong>Structure:</strong> Headings (<code>h1</code> se <code>h6</code>) ko sequence mein use karein, aur Semantic tags (<code>main</code>, <code>nav</code>, <code>footer</code>) use karein.</li>
+    </ul>
+
+    <pre>
+&lt;!-- ❌ Galat (Not Accessible) --&gt;
+&lt;img src="logo.png"&gt;
+&lt;input type="text" placeholder="Naam likhein"&gt;
+
+&lt;!-- ✅ Sahi (Accessible) --&gt;
+&lt;img src="logo.png" alt="Code Academy Nowshera Logo"&gt;
+
+&lt;label for="username"&gt;Naam:&lt;/label&gt;
+&lt;input type="text" id="username" placeholder="Naam likhein"&gt;
+    </pre>
+  </div>
+
+  <!-- 2. ARIA Roles -->
+  <div class="card">
+    <h2>2. ARIA Roles (WAI-ARIA)</h2>
+    <!-- Jab semantic tags kafi na hon toh ARIA attributes use karte hain -->
+    <p>Jab normal HTML tags kafi na hon (maslan koi complex custom widget ho), tab hum <strong>ARIA attributes</strong> (Accessible Rich Internet Applications) use karte hain taake screen readers ko samajh aye.</p>
+
+    <pre>
+&lt;!-- Agar div ko button ki tarah use kar rahe hain --&gt;
+&lt;div role="button" aria-pressed="false" tabindex="0" onclick="submit()"&gt;
+  Submit Form
+&lt;/div&gt;
+
+&lt;!-- Screen reader ko notify karne ke liye (Live updates) --&gt;
+&lt;div aria-live="polite"&gt;
+  Aapka message send ho gaya hai.
+&lt;/div&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>Rule of Thumb:</strong> Pheli koshish hamesha native HTML tags (jaise <code>&lt;button&gt;</code>) use karne ki karein. Agar woh mumkin na ho toh ARIA use karein.</p>
+    </div>
+  </div>
+
+  <!-- 3. Clean Code Practices -->
+  <div class="card">
+    <h2>3. Clean Code Best Practices</h2>
+    <!-- Code ko saaf aur readable rakhne ke tareeqe -->
+
+    <table>
+      <thead><tr><th>Practice</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Indentation</strong></td><td>Nested tags ko properly indent (spaces/tabs) karein taake code padhna aasan ho.</td></tr>
+        <tr><td><strong>Lowercase</strong></td><td>HTML tags aur attributes hamesha lowercase mein likhein. (e.g. <code>&lt;DIV&gt;</code> ki bajaye <code>&lt;div&gt;</code>).</td></tr>
+        <tr><td><strong>Quotes</strong></td><td>Attribute values ko hamesha double quotes <code>" "</code> mein rakhein.</td></tr>
+        <tr><td><strong>Comments</strong></td><td>Complex sections ya layouts ke oopar <code>&lt;!-- comments --&gt;</code> zaroor likhein.</td></tr>
+        <tr><td><strong>Separation</strong></td><td>HTML mein sirf structure rakhein. Styling CSS mein aur logic JavaScript mein. (Inline styles avoid karein).</td></tr>
+      </tbody>
+    </table>
+
+    <pre>
+&lt;!-- ❌ Messy Code --&gt;
+&lt;DIV CLASS=card&gt;&lt;H2&gt;Title&lt;/H2&gt;&lt;p style="color:red"&gt;text&lt;/p&gt;&lt;/DIV&gt;
+
+&lt;!-- ✅ Clean Code --&gt;
+&lt;!-- Main Card Section --&gt;
+&lt;div class="card"&gt;
+  &lt;h2&gt;Title&lt;/h2&gt;
+  &lt;p class="text-danger"&gt;text&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+  </div>
+
+  <!-- 4. HTML Validation -->
+  <div class="card">
+    <h2>4. Code Validation (W3C Validator)</h2>
+    <!-- W3C tool se code mein errors find karna -->
+    <p>Apna HTML code likhne ke baad usay hamesha W3C Validator par check karein ke koi error toh nahi.</p>
+
+    <ol>
+      <li>Website kholiye: <a href="https://validator.w3.org/" target="_blank" style="color:#00d2ff;">validator.w3.org</a></li>
+      <li>"Validate by Direct Input" tab select karein.</li>
+      <li>Apna HTML code paste karein aur "Check" dabayein.</li>
+      <li>Errors (jaise missing alt tags, unclosed tags) ko theek karein.</li>
+    </ol>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Apni pichli banayi hui "Registration Form" (Topic 10) open karein aur ensure karein ke har input ka <code>id</code> uske <code>label for</code> ke saath match kar raha ho.</li>
+      <li><strong>Task 2:</strong> Ek page banayein aur jaan boojh kar us mein kuch HTML errors karein (jaise tag close na karna, alt attribute na dena). Phir W3C validator use karke usay check aur fix karein.</li>
+      <li><strong>Task 3:</strong> Screen reader extension (e.g. ChromeVox) install karein aur aankhein band karke apni website ko keyboard (Tab key) se navigate karne ki koshish karein.</li>
+    </ul>
+  </div>
+
+  <!-- FINAL MESSAGE -->
+  <div class="highlight" style="text-align:center; padding: 30px;">
+    <h2>🎉 Congratulations! You have completed the HTML Curriculum! 🎉</h2>
+    <p style="margin-top:10px;">Aapne Code Academy Nowshera ka Complete HTML course (Beginner to Intermediate) mukammal kar liya hai. Best of luck for CSS and JavaScript!</p>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 25 of 25 — HTML Complete Curriculum (FINISH)</p>
+  </div>
+
+</body>
+</html>

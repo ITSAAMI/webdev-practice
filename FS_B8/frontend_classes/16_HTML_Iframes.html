@@ -1,0 +1,187 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Iframes
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 16 - HTML Iframes | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; margin-left: 8px; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    .iframe-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin: 10px 0; }
+    .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🖼️ Topic 16: HTML Iframes <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Iframe Kya Hai -->
+  <div class="card">
+    <h2>1. &lt;iframe&gt; Kya Hai?</h2>
+    <!-- Iframe se ek page ke andar doosra page embed kar sakte hain -->
+    <p><code>&lt;iframe&gt;</code> (Inline Frame) se aap ek web page ke andar <strong>doosra web page embed</strong> kar sakte hain — jaise YouTube video, Google Map, ya koi doosri website.</p>
+
+    <pre>
+&lt;iframe src="https://www.example.com" width="600" height="400"&gt;&lt;/iframe&gt;
+    </pre>
+
+    <table>
+      <thead><tr><th>Attribute</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>src</code></td><td>Embed karne wali page ka URL</td></tr>
+        <tr><td><code>width</code></td><td>Iframe ki width (pixels ya %)</td></tr>
+        <tr><td><code>height</code></td><td>Iframe ki height (pixels)</td></tr>
+        <tr><td><code>title</code></td><td>Accessibility ke liye description</td></tr>
+        <tr><td><code>loading="lazy"</code></td><td>Lazy loading — page fast load hoga</td></tr>
+        <tr><td><code>allowfullscreen</code></td><td>Fullscreen mode allow karta hai</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. YouTube Video Embed -->
+  <div class="card">
+    <h2>2. YouTube Video Embed Karna</h2>
+    <!-- YouTube se embed code milta hai Share > Embed se -->
+    <p>YouTube video embed karne ke steps:</p>
+    <ol>
+      <li>YouTube par video kholein</li>
+      <li><strong>Share</strong> button par click karein</li>
+      <li><strong>Embed</strong> option select karein</li>
+      <li>Code copy karein aur paste karein</li>
+    </ol>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;iframe 
+  width="560" height="315" 
+  src="https://www.youtube.com/embed/VIDEO_ID" 
+  title="YouTube Video" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" 
+  allowfullscreen
+  loading="lazy"&gt;
+&lt;/iframe&gt;
+    </pre>
+
+    <h3>🖥️ Responsive YouTube Video:</h3>
+    <pre>
+&lt;!-- Responsive wrapper --&gt;
+&lt;div style="position:relative; width:100%; padding-bottom:56.25%; height:0;"&gt;
+  &lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;"
+          allowfullscreen loading="lazy"&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <code>padding-bottom: 56.25%</code> se 16:9 aspect ratio maintain hota hai — video har screen par perfect dikhega!</p>
+    </div>
+  </div>
+
+  <!-- 3. Google Maps Embed -->
+  <div class="card">
+    <h2>3. Google Maps Embed Karna</h2>
+    <!-- Google Maps se embed link milta hai Share > Embed a map se -->
+    <p>Steps: Google Maps > Location search > Share > <strong>Embed a map</strong> > Copy HTML</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!..." 
+  width="600" height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade"
+  title="Nowshera Location"&gt;
+&lt;/iframe&gt;
+    </pre>
+  </div>
+
+  <!-- 4. Sandbox Attribute -->
+  <div class="card">
+    <h2>4. Sandbox Attribute — Security</h2>
+    <!-- Sandbox se iframe ki permissions restrict kar sakte hain -->
+    <p><code>sandbox</code> attribute se iframe ko <strong>restrict</strong> kar sakte hain:</p>
+
+    <pre>
+&lt;!-- Bilkul restricted — kuch nahi kar sakta --&gt;
+&lt;iframe src="page.html" sandbox&gt;&lt;/iframe&gt;
+
+&lt;!-- Specific permissions dein --&gt;
+&lt;iframe src="page.html" sandbox="allow-scripts allow-same-origin"&gt;&lt;/iframe&gt;
+    </pre>
+
+    <table>
+      <thead><tr><th>Sandbox Value</th><th>Kya Allow Karta Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>allow-scripts</code></td><td>JavaScript chalane deta hai</td></tr>
+        <tr><td><code>allow-same-origin</code></td><td>Same origin access</td></tr>
+        <tr><td><code>allow-forms</code></td><td>Forms submit karne deta hai</td></tr>
+        <tr><td><code>allow-popups</code></td><td>Popups/new windows kholne deta hai</td></tr>
+        <tr><td>(empty)</td><td>Sab kuch block</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. Iframe Limitations -->
+  <div class="card">
+    <h2>5. Iframe Ki Limitations aur Security</h2>
+
+    <ul>
+      <li>❌ <strong>X-Frame-Options:</strong> Bohat si websites (Google, Facebook) iframe mein load hone se <strong>rok</strong> deti hain</li>
+      <li>❌ <strong>Clickjacking:</strong> Hackers iframe use karke malicious content overlay kar sakte hain</li>
+      <li>❌ <strong>Performance:</strong> Har iframe ek alag page load karta hai — zyada iframes = slow page</li>
+      <li>❌ <strong>SEO:</strong> Iframe ke andar ka content search engines ke liye invisible hota hai</li>
+      <li>✅ <strong>Safe Use:</strong> Sirf trusted sources (YouTube, Google Maps) se embed karein</li>
+    </ul>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Rule:</strong> Hamesha <code>loading="lazy"</code> add karein performance ke liye, aur <code>title</code> attribute accessibility ke liye.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek page banayein jisme <strong>YouTube video</strong> embedded ho — responsive wrapper ke saath.</li>
+      <li><strong>Task 2:</strong> <strong>Google Map</strong> embed karein apne city (Nowshera) ka — proper width/height aur lazy loading ke saath.</li>
+      <li><strong>Task 3:</strong> Ek "Contact Us" page banayein jisme Google Map aur contact form dono hon — side by side layout mein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 16 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

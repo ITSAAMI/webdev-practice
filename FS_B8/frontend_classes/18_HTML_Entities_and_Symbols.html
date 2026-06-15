@@ -1,0 +1,210 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Entities and Symbols
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 18 - Entities & Symbols | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    td.symbol { font-size: 1.5rem; text-align: center; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🔣 Topic 18: HTML Entities & Symbols <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Entities Kya Hain -->
+  <div class="card">
+    <h2>1. HTML Entities Kya Hain?</h2>
+    <!-- HTML mein kuch characters reserved hain — unko entities se likhte hain -->
+    <p>HTML mein kuch characters <strong>reserved</strong> hain (jaise &lt; &gt; &amp;). Agar inhein directly likhein toh browser confuse ho jayega. In ke liye <strong>entities</strong> use karte hain.</p>
+
+    <h3>Entity Format:</h3>
+    <pre>
+&amp;entity_name;     &lt;!-- Named entity --&gt;
+&amp;#entity_number;  &lt;!-- Numeric entity --&gt;
+&amp;#xHEX;           &lt;!-- Hexadecimal entity --&gt;
+    </pre>
+  </div>
+
+  <!-- 2. Reserved Characters -->
+  <div class="card">
+    <h2>2. Reserved Characters — Zaroori Entities</h2>
+
+    <table>
+      <thead><tr><th>Character</th><th>Entity Name</th><th>Entity Number</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Less than</td><td><code>&amp;lt;</code></td><td><code>&amp;#60;</code></td><td class="symbol">&lt;</td></tr>
+        <tr><td>Greater than</td><td><code>&amp;gt;</code></td><td><code>&amp;#62;</code></td><td class="symbol">&gt;</td></tr>
+        <tr><td>Ampersand</td><td><code>&amp;amp;</code></td><td><code>&amp;#38;</code></td><td class="symbol">&amp;</td></tr>
+        <tr><td>Double quote</td><td><code>&amp;quot;</code></td><td><code>&amp;#34;</code></td><td class="symbol">&quot;</td></tr>
+        <tr><td>Single quote</td><td><code>&amp;apos;</code></td><td><code>&amp;#39;</code></td><td class="symbol">&apos;</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Example — HTML Code Dikhana:</h3>
+    <pre>
+&lt;p&gt;HTML mein heading ke liye &amp;lt;h1&amp;gt; tag use karein.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p>HTML mein heading ke liye &lt;h1&gt; tag use karein.</p>
+    </div>
+  </div>
+
+  <!-- 3. Spacing Entities -->
+  <div class="card">
+    <h2>3. Spacing Entities</h2>
+    <table>
+      <thead><tr><th>Entity</th><th>Name</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td><code>&amp;nbsp;</code></td><td>Non-breaking space</td><td>Normal space (break nahi hota)</td></tr>
+        <tr><td><code>&amp;ensp;</code></td><td>En space</td><td>2 spaces jitna</td></tr>
+        <tr><td><code>&amp;emsp;</code></td><td>Em space</td><td>4 spaces jitna</td></tr>
+        <tr><td><code>&amp;thinsp;</code></td><td>Thin space</td><td>Patla space</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Common Symbols -->
+  <div class="card">
+    <h2>4. Common Symbols</h2>
+
+    <h3>Copyright, Trademark:</h3>
+    <table>
+      <thead><tr><th>Symbol</th><th>Entity</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Copyright</td><td><code>&amp;copy;</code></td><td class="symbol">&copy;</td></tr>
+        <tr><td>Registered</td><td><code>&amp;reg;</code></td><td class="symbol">&reg;</td></tr>
+        <tr><td>Trademark</td><td><code>&amp;trade;</code></td><td class="symbol">&trade;</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Currency Symbols:</h3>
+    <table>
+      <thead><tr><th>Currency</th><th>Entity</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Dollar</td><td><code>&amp;dollar;</code></td><td class="symbol">$</td></tr>
+        <tr><td>Euro</td><td><code>&amp;euro;</code></td><td class="symbol">&euro;</td></tr>
+        <tr><td>Pound</td><td><code>&amp;pound;</code></td><td class="symbol">&pound;</td></tr>
+        <tr><td>Yen</td><td><code>&amp;yen;</code></td><td class="symbol">&yen;</td></tr>
+        <tr><td>Rupee</td><td><code>&amp;#8377;</code></td><td class="symbol">&#8377;</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Arrows:</h3>
+    <table>
+      <thead><tr><th>Arrow</th><th>Entity</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Left</td><td><code>&amp;larr;</code></td><td class="symbol">&larr;</td></tr>
+        <tr><td>Right</td><td><code>&amp;rarr;</code></td><td class="symbol">&rarr;</td></tr>
+        <tr><td>Up</td><td><code>&amp;uarr;</code></td><td class="symbol">&uarr;</td></tr>
+        <tr><td>Down</td><td><code>&amp;darr;</code></td><td class="symbol">&darr;</td></tr>
+        <tr><td>Double right</td><td><code>&amp;rArr;</code></td><td class="symbol">&rArr;</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Math Symbols:</h3>
+    <table>
+      <thead><tr><th>Symbol</th><th>Entity</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Plus</td><td><code>&amp;plus;</code></td><td class="symbol">+</td></tr>
+        <tr><td>Minus</td><td><code>&amp;minus;</code></td><td class="symbol">&minus;</td></tr>
+        <tr><td>Multiply</td><td><code>&amp;times;</code></td><td class="symbol">&times;</td></tr>
+        <tr><td>Divide</td><td><code>&amp;divide;</code></td><td class="symbol">&divide;</td></tr>
+        <tr><td>Not Equal</td><td><code>&amp;ne;</code></td><td class="symbol">&ne;</td></tr>
+        <tr><td>Infinity</td><td><code>&amp;infin;</code></td><td class="symbol">&infin;</td></tr>
+        <tr><td>Degree</td><td><code>&amp;deg;</code></td><td class="symbol">&deg;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. Emoji Entities -->
+  <div class="card">
+    <h2>5. Emoji — HTML Mein</h2>
+    <!-- Emojis bhi numeric entities se add kar sakte hain -->
+    <table>
+      <thead><tr><th>Emoji</th><th>Entity</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Grinning Face</td><td><code>&amp;#128512;</code></td><td class="symbol">&#128512;</td></tr>
+        <tr><td>Heart</td><td><code>&amp;#10084;</code></td><td class="symbol">&#10084;</td></tr>
+        <tr><td>Thumbs Up</td><td><code>&amp;#128077;</code></td><td class="symbol">&#128077;</td></tr>
+        <tr><td>Fire</td><td><code>&amp;#128293;</code></td><td class="symbol">&#128293;</td></tr>
+        <tr><td>Star</td><td><code>&amp;#11088;</code></td><td class="symbol">&#11088;</td></tr>
+        <tr><td>Rocket</td><td><code>&amp;#128640;</code></td><td class="symbol">&#128640;</td></tr>
+        <tr><td>Check Mark</td><td><code>&amp;#9989;</code></td><td class="symbol">&#9989;</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p>💡 <strong>Modern way:</strong> UTF-8 encoding mein aap seedha emoji paste bhi kar sakte hain: <code>&lt;p&gt;🚀 Hello!&lt;/p&gt;</code></p>
+    </div>
+  </div>
+
+  <!-- 6. Practical Example -->
+  <div class="card">
+    <h2>6. Practical Example — Entities In Action</h2>
+    <pre>
+&lt;p&gt;&amp;copy; 2024 Code Academy Nowshera. All rights reserved.&lt;/p&gt;
+&lt;p&gt;Temperature: 35&amp;deg;C&lt;/p&gt;
+&lt;p&gt;Price: &amp;#8377; 5000 &amp;rarr; Discounted: &amp;#8377; 3500&lt;/p&gt;
+&lt;p&gt;5 &amp;times; 10 = 50&lt;/p&gt;
+&lt;p&gt;Rating: &amp;#11088;&amp;#11088;&amp;#11088;&amp;#11088;&amp;#11088;&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p>&copy; 2024 Code Academy Nowshera. All rights reserved.</p>
+      <p>Temperature: 35&deg;C</p>
+      <p>Price: &#8377; 5000 &rarr; Discounted: &#8377; 3500</p>
+      <p>5 &times; 10 = 50</p>
+      <p>Rating: &#11088;&#11088;&#11088;&#11088;&#11088;</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Footer mein <strong>copyright notice</strong> likhein: "&copy; 2024 [Apna Naam]. All rights reserved. &trade;"</li>
+      <li><strong>Task 2:</strong> Ek <strong>price list page</strong> banayein jisme currency symbols (&dollar;, &euro;, &#8377;), arrows (&rarr;), aur math symbols (&times;) use hon.</li>
+      <li><strong>Task 3:</strong> Ek <strong>decorative page</strong> banayein jisme maximum entities use hon — emojis, arrows, symbols, math signs sab.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 18 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

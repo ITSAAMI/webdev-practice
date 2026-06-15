@@ -1,0 +1,194 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Block vs Inline Elements
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 12 - Block vs Inline | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📦 Topic 12: Block vs Inline Elements</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Block Elements -->
+  <div class="card">
+    <h2>1. Block-Level Elements</h2>
+    <!-- Block elements poori width lete hain aur nayi line se shuru hote hain -->
+    <p>Block elements ki <strong>3 khaasiyaat</strong> hain:</p>
+    <ul>
+      <li>🔲 <strong>Full width</strong> lete hain (parent ki poori width)</li>
+      <li>⬇️ Hamesha <strong>nayi line</strong> se shuru hote hain</li>
+      <li>📏 <strong>Width/Height</strong> set kar sakte hain</li>
+    </ul>
+
+    <h3>Block Elements Ki List:</h3>
+    <p>
+      <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;-&lt;h6&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>,
+      <code>&lt;table&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code>,
+      <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;hr&gt;</code>
+    </p>
+
+    <h3>🖥️ Visual Demo:</h3>
+    <div class="output-box">
+      <div style="background:#e94560; color:white; padding:10px; margin:5px 0; border-radius:4px;">
+        &lt;div&gt; — Full width leta hai
+      </div>
+      <p style="background:#0f3460; color:white; padding:10px; margin:5px 0; border-radius:4px;">
+        &lt;p&gt; — Yeh bhi full width hai
+      </p>
+      <h3 style="background:#00d2ff; color:#333; padding:10px; margin:5px 0; border-radius:4px;">
+        &lt;h3&gt; — Heading bhi block hai
+      </h3>
+    </div>
+  </div>
+
+  <!-- 2. Inline Elements -->
+  <div class="card">
+    <h2>2. Inline Elements</h2>
+    <!-- Inline elements sirf apne content jitna space lete hain -->
+    <p>Inline elements ki <strong>3 khaasiyaat</strong> hain:</p>
+    <ul>
+      <li>📐 Sirf <strong>apne content jitna</strong> space lete hain</li>
+      <li>➡️ <strong>Same line</strong> par rehte hain (nayi line nahi lete)</li>
+      <li>❌ Width/Height <strong>set nahi</strong> kar sakte</li>
+    </ul>
+
+    <h3>Inline Elements Ki List:</h3>
+    <p>
+      <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,
+      <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;input&gt;</code>,
+      <code>&lt;label&gt;</code>, <code>&lt;abbr&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>
+    </p>
+
+    <h3>🖥️ Visual Demo:</h3>
+    <div class="output-box">
+      <p style="color:#333;">
+        Yeh ek
+        <span style="background:#e94560; color:white; padding:2px 8px; border-radius:3px;">&lt;span&gt;</span>
+        hai, aur yeh ek
+        <a href="#" style="background:#0f3460; color:white; padding:2px 8px; border-radius:3px; text-decoration:none;">&lt;a&gt;</a>
+        hai, aur yeh ek
+        <strong style="background:#00d2ff; color:#333; padding:2px 8px; border-radius:3px;">&lt;strong&gt;</strong>
+        hai — sab <strong>same line</strong> par hain!
+      </p>
+    </div>
+  </div>
+
+  <!-- 3. Comparison -->
+  <div class="card">
+    <h2>3. Block vs Inline — Comparison Table</h2>
+
+    <table>
+      <thead><tr><th>Feature</th><th>Block Elements</th><th>Inline Elements</th></tr></thead>
+      <tbody>
+        <tr><td>Width</td><td>Full width (100%)</td><td>Content jitna</td></tr>
+        <tr><td>New Line</td><td>Haan — nayi line se start</td><td>Nahi — same line par</td></tr>
+        <tr><td>Width/Height set</td><td>✅ Kar sakte hain</td><td>❌ Nahi kar sakte</td></tr>
+        <tr><td>Margin/Padding</td><td>Charon taraf kaam karta hai</td><td>Sirf left/right kaam karta hai</td></tr>
+        <tr><td>Examples</td><td>div, p, h1, section</td><td>span, a, strong, em</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Inline-Block -->
+  <div class="card">
+    <h2>4. display: inline-block — Best of Both!</h2>
+    <!-- Inline-block mein inline ki tarah ek line par lekin width/height set kar sakte hain -->
+    <p><code>inline-block</code> se element <strong>same line</strong> par rehta hai lekin <strong>width/height</strong> bhi set kar sakte hain:</p>
+
+    <pre>
+&lt;span style="display: inline-block; width: 100px; height: 100px; 
+             background: red; color: white; text-align: center; 
+             line-height: 100px; margin: 5px;"&gt;Box 1&lt;/span&gt;
+
+&lt;span style="display: inline-block; width: 100px; height: 100px; 
+             background: blue; color: white; text-align: center; 
+             line-height: 100px; margin: 5px;"&gt;Box 2&lt;/span&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <span style="display:inline-block; width:100px; height:100px; background:#e94560; color:white; text-align:center; line-height:100px; margin:5px; border-radius:8px;">Box 1</span>
+      <span style="display:inline-block; width:100px; height:100px; background:#0f3460; color:white; text-align:center; line-height:100px; margin:5px; border-radius:8px;">Box 2</span>
+      <span style="display:inline-block; width:100px; height:100px; background:#00d2ff; color:#333; text-align:center; line-height:100px; margin:5px; border-radius:8px;">Box 3</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Display</th><th>Same Line?</th><th>Width/Height?</th><th>Use Case</th></tr></thead>
+      <tbody>
+        <tr><td><code>block</code></td><td>❌ Nahi</td><td>✅ Haan</td><td>Sections, containers</td></tr>
+        <tr><td><code>inline</code></td><td>✅ Haan</td><td>❌ Nahi</td><td>Text ke andar styling</td></tr>
+        <tr><td><code>inline-block</code></td><td>✅ Haan</td><td>✅ Haan</td><td>Buttons, cards, nav items</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. Nesting Rules -->
+  <div class="card">
+    <h2>5. Nesting Rules</h2>
+    <!-- Block ke andar inline rakh sakte hain, lekin inline ke andar block nahi -->
+    <h3>✅ Sahi — Block ke andar Inline:</h3>
+    <pre>
+&lt;div&gt;
+  &lt;p&gt;Yeh &lt;strong&gt;sahi&lt;/strong&gt; hai — block ke andar inline.&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+
+    <h3>❌ Galat — Inline ke andar Block:</h3>
+    <pre>
+&lt;span&gt;
+  &lt;div&gt;Yeh GALAT hai — inline ke andar block!&lt;/div&gt;
+&lt;/span&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Exception:</strong> <code>&lt;a&gt;</code> tag ke andar block elements rakh sakte hain (HTML5 mein allowed).</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> 5 block elements aur 5 inline elements ko <strong>colored borders</strong> se show karein — dekhein kaun full width leta hai aur kaun nahi.</li>
+      <li><strong>Task 2:</strong> <code>inline-block</code> use karke <strong>3 cards</strong> banayein jo same line par hon — har card mein title aur description ho.</li>
+      <li><strong>Task 3:</strong> CSS <code>display</code> property se ek block element ko inline aur ek inline element ko block mein convert karein — changes observe karein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 12 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

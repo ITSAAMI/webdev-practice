@@ -1,0 +1,297 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Links
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 06 - HTML Links | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; }
+    .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; }
+    .practice li { margin-bottom: 8px; }
+    .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    .demo-nav { background: #16213e; padding: 15px; border-radius: 8px; margin: 10px 0; display: flex; gap: 15px; flex-wrap: wrap; }
+    .demo-nav a { color: #00d2ff; text-decoration: none; padding: 8px 16px; border: 1px solid #00d2ff; border-radius: 5px; transition: 0.3s; }
+    .demo-nav a:hover { background: #00d2ff; color: #0f0f1a; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🔗 Topic 06: HTML Links</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 1. Anchor Tag Basics -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>1. &lt;a&gt; Tag — Anchor Tag (Link)</h2>
+
+    <!-- Links banane ke liye a tag use karte hain -->
+    <p>HTML mein links banane ke liye <code>&lt;a&gt;</code> (anchor) tag use karte hain. <code>href</code> attribute mein URL likhte hain.</p>
+
+    <h3>📝 Basic Syntax:</h3>
+    <pre>&lt;a href="URL"&gt;Link Text&lt;/a&gt;</pre>
+
+    <h3>📝 Example:</h3>
+    <pre>&lt;a href="https://www.google.com"&gt;Google Par Jayein&lt;/a&gt;</pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <a href="https://www.google.com" style="color: blue;">Google Par Jayein</a>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 2. Absolute vs Relative URLs -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>2. Absolute vs Relative URLs</h2>
+
+    <!-- Dono tarah ke URLs ka fark samjho -->
+    <table>
+      <thead><tr><th>Type</th><th>Example</th><th>Kab Use Karein</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Absolute URL</strong></td>
+          <td><code>https://www.google.com/images</code></td>
+          <td>External websites ke links ke liye</td>
+        </tr>
+        <tr>
+          <td><strong>Relative URL</strong></td>
+          <td><code>about.html</code> ya <code>pages/contact.html</code></td>
+          <td>Apni hi website ke pages ke links ke liye</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Absolute URL — doosri website --&gt;
+&lt;a href="https://www.youtube.com"&gt;YouTube&lt;/a&gt;
+
+&lt;!-- Relative URL — apni website ka page --&gt;
+&lt;a href="contact.html"&gt;Contact Page&lt;/a&gt;
+&lt;a href="pages/about.html"&gt;About Page (sub-folder mein)&lt;/a&gt;
+&lt;a href="../index.html"&gt;Home (parent folder mein)&lt;/a&gt;
+    </pre>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 3. Target Attribute -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>3. Target Attribute — Link Kahan Khule</h2>
+
+    <!-- Target se control karte hain ke link same tab mein khule ya new tab mein -->
+    <table>
+      <thead><tr><th>Value</th><th>Behavior</th></tr></thead>
+      <tbody>
+        <tr><td><code>_self</code></td><td>Same tab mein khulega (default)</td></tr>
+        <tr><td><code>_blank</code></td><td>New tab mein khulega</td></tr>
+        <tr><td><code>_parent</code></td><td>Parent frame mein</td></tr>
+        <tr><td><code>_top</code></td><td>Full window mein</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Same tab mein (default) --&gt;
+&lt;a href="https://google.com"&gt;Same Tab&lt;/a&gt;
+
+&lt;!-- New tab mein --&gt;
+&lt;a href="https://google.com" target="_blank"&gt;New Tab Mein&lt;/a&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <strong>Security Tip:</strong> <code>target="_blank"</code> ke saath <code>rel="noopener noreferrer"</code> bhi likhein — security ke liye.</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 4. Email aur Phone Links -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>4. Email aur Phone Links</h2>
+
+    <!-- mailto: se email app khulta hai, tel: se phone dialer -->
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Email link — click par email app khulega --&gt;
+&lt;a href="mailto:amir@codeacademy.com"&gt;Email Karein&lt;/a&gt;
+
+&lt;!-- Email with subject --&gt;
+&lt;a href="mailto:amir@codeacademy.com?subject=Admission Inquiry"&gt;
+  Admission Ke Liye Email
+&lt;/a&gt;
+
+&lt;!-- Phone link — mobile par click se call lagegi --&gt;
+&lt;a href="tel:+923001234567"&gt;Call Karein: 0300-1234567&lt;/a&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p><a href="mailto:amir@codeacademy.com" style="color: blue;">📧 Email Karein</a></p>
+      <p><a href="tel:+923001234567" style="color: blue;">📞 Call Karein: 0300-1234567</a></p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 5. Bookmark Links — Same Page Navigation -->
+  <!-- ========================================= -->
+  <div class="card" id="bookmark-section">
+    <h2>5. Bookmark Links — Same Page Navigation</h2>
+
+    <!-- Page ke andar kisi section par jaane ke liye # aur id use karte hain -->
+    <p>Ek hi page ke andar kisi specific section par jaane ke liye <code>#id</code> use karte hain:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;!-- Navigation links --&gt;
+&lt;a href="#section1"&gt;Section 1 Par Jayein&lt;/a&gt;
+&lt;a href="#section2"&gt;Section 2 Par Jayein&lt;/a&gt;
+
+&lt;!-- Target sections --&gt;
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+&lt;p&gt;Yeh pehla section hai...&lt;/p&gt;
+
+&lt;h2 id="section2"&gt;Section 2&lt;/h2&gt;
+&lt;p&gt;Yeh doosra section hai...&lt;/p&gt;
+
+&lt;!-- Top par wapas jaane ka link --&gt;
+&lt;a href="#"&gt;⬆ Top Par Jayein&lt;/a&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>📌 <strong>Kaise kaam karta hai:</strong> Link mein <code>#sectionId</code> likhein, aur target element par <code>id="sectionId"</code> dein — click par page scroll kar jayega!</p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 6. Image Ko Link Banana -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>6. Image Ko Link Banana</h2>
+
+    <!-- img tag ko a tag ke andar rakh kar image clickable ban jati hai -->
+    <p><code>&lt;img&gt;</code> ko <code>&lt;a&gt;</code> ke andar rakhein — image clickable ban jayegi:</p>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;a href="https://google.com" target="_blank"&gt;
+  &lt;img src="https://via.placeholder.com/200x100" alt="Click Me"&gt;
+&lt;/a&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://via.placeholder.com/200x100/0f3460/00d2ff?text=Click+Me" alt="Click Me" style="border-radius: 5px;">
+      </a>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 7. Link Title Attribute -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>7. Link Title — Hover Par Text</h2>
+
+    <!-- title attribute se hover par tooltip dikhta hai -->
+    <pre>
+&lt;a href="https://google.com" title="Google ki website par jayein"&gt;
+  Google
+&lt;/a&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p><a href="https://google.com" title="Google ki website par jayein" style="color: blue;">Google</a> <small>(hover karein tooltip ke liye)</small></p>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- 8. Styled Navigation Demo -->
+  <!-- ========================================= -->
+  <div class="card">
+    <h2>8. Styled Navigation Menu Demo</h2>
+
+    <!-- CSS se links ko beautiful nav menu bana sakte hain -->
+    <p>Links ko CSS styling se <strong>navigation menu</strong> bana sakte hain:</p>
+
+    <h3>🖥️ Live Demo:</h3>
+    <div class="demo-nav">
+      <a href="#bookmark-section">🏠 Home</a>
+      <a href="#bookmark-section">📖 Courses</a>
+      <a href="#bookmark-section">👨‍🏫 Instructor</a>
+      <a href="#bookmark-section">📞 Contact</a>
+    </div>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;style&gt;
+  .nav a {
+    color: #00d2ff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #00d2ff;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .nav a:hover {
+    background: #00d2ff;
+    color: #0f0f1a;
+  }
+&lt;/style&gt;
+
+&lt;div class="nav"&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="courses.html"&gt;Courses&lt;/a&gt;
+  &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;/div&gt;
+    </pre>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- PRACTICE TASKS -->
+  <!-- ========================================= -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Ek <strong>navigation menu</strong> banayein jisme 5 links hon (Home, About, Services, Gallery, Contact). Har link hover par color change kare.</li>
+      <li><strong>Task 2:</strong> Ek <strong>long page</strong> banayein jisme 5 sections hon. Top par bookmark links hon jo click par us section tak scroll karein. Bottom par "Back to Top" link ho.</li>
+      <li><strong>Task 3:</strong> Email link aur phone link add karein apne contact section mein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 06 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML5 APIs - Geolocation & Drag/Drop
+  Level: Intermediate
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 24 - Geolocation & Drag/Drop | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .badge { display: inline-block; background: #e94560; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    
+    /* Drag & Drop demo styles */
+    .drop-zone { width: 100%; max-width: 300px; height: 150px; border: 2px dashed #e94560; border-radius: 10px; display: flex; justify-content: center; align-items: center; background: #ffe0e6; color: #e94560; font-weight: bold; margin: 10px 0; transition: background 0.3s; }
+    .drop-zone.over { background: #ffb3c1; border-style: solid; }
+    .draggable-item { width: 80px; height: 80px; background: #0f3460; color: white; display: flex; justify-content: center; align-items: center; border-radius: 8px; cursor: grab; margin: 10px 0; }
+    .btn { background: #00d2ff; color: #0f3460; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📍 Topic 24: HTML5 APIs <span class="badge">Intermediate</span></h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Geolocation API -->
+  <div class="card">
+    <h2>1. Geolocation API — User Ki Location</h2>
+    <!-- User se permission le kar unki location (latitude, longitude) pata lagana -->
+    <p>Geolocation API se aap user ki <strong>current location</strong> (Latitude aur Longitude) pata kar sakte hain. Browser pehle user se permission mangta hai.</p>
+
+    <pre>
+&lt;script&gt;
+function getLocation() {
+  if (navigator.geolocation) {
+    // Permission mago aur location get karo
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    alert("Aapka browser Geolocation support nahi karta.");
+  }
+}
+
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  document.getElementById("locResult").innerText = "Latitude: " + lat + ", Longitude: " + lon;
+}
+
+function showError(error) {
+  // Error handling (User ne allow nahi kiya, ya location off hai)
+}
+&lt;/script&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <div class="output-box" style="text-align: center;">
+      <button class="btn" onclick="getLocationDemo()">Meri Location Batao</button>
+      <p id="locResult" style="font-weight: bold; color: #333; margin-top: 10px;">(Location yahan dikhegi)</p>
+    </div>
+
+    <script>
+      function getLocationDemo() {
+        let res = document.getElementById("locResult");
+        res.innerText = "Location find kar rahe hain... (Permission dein)";
+        
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (pos) => res.innerText = "📍 Latitude: " + pos.coords.latitude + " | Longitude: " + pos.coords.longitude,
+            (err) => res.innerText = "❌ Error: " + err.message
+          );
+        } else {
+          res.innerText = "Browser support nahi karta.";
+        }
+      }
+    </script>
+    
+    <div class="highlight">
+      <p>⚠️ <strong>Privacy Rule:</strong> Geolocation sirf HTTPS (secure) sites par kaam karti hai, aur user ki marzi (permission) ke bina data nahi milta.</p>
+    </div>
+  </div>
+
+  <!-- 2. Drag and Drop API -->
+  <div class="card">
+    <h2>2. Drag and Drop API</h2>
+    <!-- Ek element ko pakad kar doosri jagah drop karna -->
+    <p>HTML5 mein aap kisi bhi element ko "draggable" bana sakte hain aur JavaScript ke zariye events (dragstart, dragover, drop) handle kar sakte hain.</p>
+
+    <h3>Basic Steps:</h3>
+    <ol>
+      <li>Element ko <code>draggable="true"</code> dein.</li>
+      <li><code>ondragstart</code> event par data set karein.</li>
+      <li>Drop zone par <code>ondragover</code> ko allow karein (preventDefault).</li>
+      <li>Drop zone par <code>ondrop</code> event handle karein.</li>
+    </ol>
+
+    <pre>
+&lt;!-- Draggable Element --&gt;
+&lt;div id="dragItem" draggable="true" ondragstart="drag(event)"&gt;Pakdo Mujhe!&lt;/div&gt;
+
+&lt;!-- Drop Zone --&gt;
+&lt;div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  function allowDrop(ev) {
+    ev.preventDefault();  // Drop ko allow karta hai
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id); // ID save karo
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");    // ID retrieve karo
+    ev.target.appendChild(document.getElementById(data)); // Append kardo
+  }
+&lt;/script&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo: Box ko Red Area mein Drag karein</h3>
+    <div class="output-box">
+      <div id="dragDiv" class="draggable-item" draggable="true" ondragstart="dragDemo(event)">📦 Drag Me</div>
+      
+      <div id="dropDiv" class="drop-zone" ondrop="dropDemo(event)" ondragover="allowDropDemo(event)" ondragenter="this.classList.add('over')" ondragleave="this.classList.remove('over')">
+        Drop Here!
+      </div>
+    </div>
+
+    <script>
+      function allowDropDemo(ev) {
+        ev.preventDefault();
+      }
+      function dragDemo(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+      function dropDemo(ev) {
+        ev.preventDefault();
+        ev.target.classList.remove('over');
+        var data = ev.dataTransfer.getData("text");
+        // Sirf drop zone ke andar hi add hone dein
+        if(ev.target.id === "dropDiv") {
+          ev.target.appendChild(document.getElementById(data));
+        }
+      }
+    </script>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Geolocation API use karke user ka Latitude aur Longitude nikaalein, aur un numbers ko Google Maps ki URL mein daal kar ek button banayein "Open my location in Maps".</li>
+      <li><strong>Task 2:</strong> <strong>To-Do List Drag & Drop</strong> banayein — 2 columns banayein (Pending Tasks, Completed Tasks). Tasks ko ek se doosre column mein drag drop karein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 24 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

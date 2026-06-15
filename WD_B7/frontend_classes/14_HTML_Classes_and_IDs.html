@@ -1,0 +1,207 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Classes and IDs
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 14 - Classes & IDs | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🏷️ Topic 14: HTML Classes & IDs</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Class Attribute -->
+  <div class="card">
+    <h2>1. Class Attribute — Reusable Styling</h2>
+    <!-- Class se ek style multiple elements par laga sakte hain -->
+    <p><code>class</code> se ek <strong>same style</strong> multiple elements par lagta hai:</p>
+
+    <pre>
+&lt;style&gt;
+  .highlight-text { color: #e94560; font-weight: bold; background: #ffe0e6; padding: 5px 10px; border-radius: 4px; }
+&lt;/style&gt;
+
+&lt;p class="highlight-text"&gt;Yeh pehla highlighted paragraph hai.&lt;/p&gt;
+&lt;p class="highlight-text"&gt;Yeh doosra bhi same class se styled hai.&lt;/p&gt;
+&lt;p&gt;Yeh normal paragraph hai — koi class nahi.&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <p style="color:#e94560; font-weight:bold; background:#ffe0e6; padding:5px 10px; border-radius:4px; margin-bottom:8px;">Yeh pehla highlighted paragraph hai.</p>
+      <p style="color:#e94560; font-weight:bold; background:#ffe0e6; padding:5px 10px; border-radius:4px; margin-bottom:8px;">Yeh doosra bhi same class se styled hai.</p>
+      <p style="color:#333;">Yeh normal paragraph hai — koi class nahi.</p>
+    </div>
+
+    <div class="highlight">
+      <p>💡 CSS mein class select karne ke liye <strong>dot (.)</strong> use karein: <code>.highlight-text { }</code></p>
+    </div>
+  </div>
+
+  <!-- 2. ID Attribute -->
+  <div class="card">
+    <h2>2. ID Attribute — Unique Identifier</h2>
+    <!-- ID unique hota hai — ek page mein ek id sirf ek baar -->
+    <p><code>id</code> attribute <strong>unique</strong> hota hai — ek page mein ek id sirf <strong>ek baar</strong> use ho sakti hai:</p>
+
+    <pre>
+&lt;style&gt;
+  #main-title { color: #0f3460; font-size: 2rem; text-align: center; border-bottom: 3px solid #e94560; padding-bottom: 10px; }
+&lt;/style&gt;
+
+&lt;h1 id="main-title"&gt;Code Academy Nowshera&lt;/h1&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <h1 style="color:#0f3460; font-size:2rem; text-align:center; border-bottom:3px solid #e94560; padding-bottom:10px; margin:0;">Code Academy Nowshera</h1>
+    </div>
+
+    <div class="highlight">
+      <p>💡 CSS mein id select karne ke liye <strong>hash (#)</strong> use karein: <code>#main-title { }</code></p>
+    </div>
+  </div>
+
+  <!-- 3. Class vs ID -->
+  <div class="card">
+    <h2>3. Class vs ID — Key Differences</h2>
+
+    <table>
+      <thead><tr><th>Feature</th><th>Class</th><th>ID</th></tr></thead>
+      <tbody>
+        <tr><td>Uniqueness</td><td>Multiple elements par use ho sakta hai</td><td>Sirf EK element par (unique)</td></tr>
+        <tr><td>CSS Selector</td><td><code>.className</code> (dot)</td><td><code>#idName</code> (hash)</td></tr>
+        <tr><td>Specificity</td><td>Kam priority</td><td>Zyada priority (ID overrides class)</td></tr>
+        <tr><td>Use Case</td><td>Reusable styles — buttons, cards</td><td>Unique elements — header, nav</td></tr>
+        <tr><td>JS Access</td><td><code>getElementsByClassName()</code></td><td><code>getElementById()</code></td></tr>
+        <tr><td>Multiple?</td><td>Ek element par multiple classes ✅</td><td>Ek element par sirf ek id ✅</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Multiple Classes -->
+  <div class="card">
+    <h2>4. Multiple Classes Ek Element Par</h2>
+    <!-- Ek element par multiple classes space se separate karke dete hain -->
+    <p>Ek element ko <strong>multiple classes</strong> de sakte hain — space se separate karein:</p>
+
+    <pre>
+&lt;style&gt;
+  .card-box { background: white; padding: 20px; border-radius: 8px; margin: 10px 0; }
+  .shadow { box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+  .border-red { border-left: 4px solid #e94560; }
+  .border-blue { border-left: 4px solid #0f3460; }
+&lt;/style&gt;
+
+&lt;!-- Dono cards ko card-box + shadow milega, lekin border color alag --&gt;
+&lt;div class="card-box shadow border-red"&gt;Red Border Card&lt;/div&gt;
+&lt;div class="card-box shadow border-blue"&gt;Blue Border Card&lt;/div&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box" style="background:#f5f5f5;">
+      <div style="background:white; padding:15px; border-radius:8px; margin:8px 0; box-shadow:0 4px 15px rgba(0,0,0,0.2); border-left:4px solid #e94560; color:#333;">Red Border Card</div>
+      <div style="background:white; padding:15px; border-radius:8px; margin:8px 0; box-shadow:0 4px 15px rgba(0,0,0,0.2); border-left:4px solid #0f3460; color:#333;">Blue Border Card</div>
+    </div>
+  </div>
+
+  <!-- 5. Naming Conventions -->
+  <div class="card">
+    <h2>5. Naming Conventions — Best Practices</h2>
+
+    <table>
+      <thead><tr><th>Convention</th><th>Example</th><th>Popular In</th></tr></thead>
+      <tbody>
+        <tr><td>kebab-case</td><td><code>main-header</code>, <code>nav-link</code></td><td>CSS (most recommended)</td></tr>
+        <tr><td>camelCase</td><td><code>mainHeader</code>, <code>navLink</code></td><td>JavaScript</td></tr>
+        <tr><td>snake_case</td><td><code>main_header</code>, <code>nav_link</code></td><td>Python, databases</td></tr>
+        <tr><td>BEM</td><td><code>block__element--modifier</code></td><td>Large projects</td></tr>
+      </tbody>
+    </table>
+
+    <h3>❌ Galat Naming:</h3>
+    <pre>
+class="1header"       &lt;!-- Number se start nahi ho sakta --&gt;
+class="my header"     &lt;!-- Space NAHI aa sakta --&gt;
+class="header!@#"     &lt;!-- Special characters avoid karein --&gt;
+    </pre>
+
+    <h3>✅ Sahi Naming:</h3>
+    <pre>
+class="main-header"   &lt;!-- kebab-case ✅ --&gt;
+class="card-title"    &lt;!-- descriptive ✅ --&gt;
+id="contact-form"     &lt;!-- meaningful ✅ --&gt;
+    </pre>
+  </div>
+
+  <!-- 6. JavaScript Mein Classes/IDs -->
+  <div class="card">
+    <h2>6. JavaScript Mein ID aur Class Ka Use</h2>
+    <!-- JS mein id aur class se elements select karte hain -->
+    <pre>
+&lt;!-- ID se ek element select karna --&gt;
+&lt;script&gt;
+  let title = document.getElementById("main-title");
+  title.style.color = "red";
+&lt;/script&gt;
+
+&lt;!-- Class se multiple elements select karna --&gt;
+&lt;script&gt;
+  let cards = document.getElementsByClassName("card-box");
+  // cards[0], cards[1], etc.
+&lt;/script&gt;
+
+&lt;!-- Modern way: querySelector --&gt;
+&lt;script&gt;
+  document.querySelector("#main-title");      // ID
+  document.querySelectorAll(".card-box");     // All classes
+&lt;/script&gt;
+    </pre>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> <strong>4 product cards</strong> banayein — sab ko ek common <code>class="product-card"</code> dein jo styling share kare. Har card ko unique <code>id</code> dein (product-1, product-2, etc.).</li>
+      <li><strong>Task 2:</strong> Multiple classes use karein: base class <code>btn</code> banayein, phir <code>btn-primary</code>, <code>btn-danger</code>, <code>btn-success</code> modifiers banayein — different colored buttons ke liye.</li>
+      <li><strong>Task 3:</strong> JavaScript se ek <code>id</code> wale element ka text change karein aur ek <code>class</code> wale sab elements ka background color change karein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 14 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>
