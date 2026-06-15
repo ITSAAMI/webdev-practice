@@ -1,0 +1,206 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Div and Span
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 13 - Div and Span | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📦 Topic 13: HTML Div and Span</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Div Tag -->
+  <div class="card">
+    <h2>1. &lt;div&gt; — Block Container</h2>
+    <!-- Div ek generic block-level container hai — sections group karne ke liye -->
+    <p><code>&lt;div&gt;</code> ek <strong>generic block container</strong> hai. Iska apna koi visual effect nahi — sirf elements ko <strong>group</strong> karta hai:</p>
+
+    <pre>
+&lt;div style="background: #f0f0f0; padding: 20px; border-radius: 8px;"&gt;
+  &lt;h2&gt;About Section&lt;/h2&gt;
+  &lt;p&gt;Yeh about section hai.&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <div style="background:#f0f0f0; padding:20px; border-radius:8px; margin-bottom:10px;">
+        <h2 style="color:#333; margin-bottom:5px;">About Section</h2>
+        <p>Yeh about section hai. Div se wrap karke style kiya.</p>
+      </div>
+      <div style="background:#e8f4fd; padding:20px; border-radius:8px;">
+        <h2 style="color:#333; margin-bottom:5px;">Contact Section</h2>
+        <p>Yeh contact section hai. Alag div mein hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Span Tag -->
+  <div class="card">
+    <h2>2. &lt;span&gt; — Inline Container</h2>
+    <!-- Span ek inline container hai — text ke chhote hisse ko style karne ke liye -->
+    <p><code>&lt;span&gt;</code> ek <strong>inline container</strong> hai — text ke <strong>chhote hisse</strong> ko alag style dene ke liye:</p>
+
+    <pre>
+&lt;p&gt;
+  Mera naam &lt;span style="color: red; font-weight: bold;"&gt;Syed Amir&lt;/span&gt; hai
+  aur main &lt;span style="color: blue;"&gt;Nowshera&lt;/span&gt; se hoon.
+&lt;/p&gt;
+    </pre>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <p style="color:#333;">
+        Mera naam <span style="color:red; font-weight:bold;">Syed Amir</span> hai
+        aur main <span style="color:blue;">Nowshera</span> se hoon.
+      </p>
+    </div>
+  </div>
+
+  <!-- 3. Div vs Span Comparison -->
+  <div class="card">
+    <h2>3. &lt;div&gt; vs &lt;span&gt; — Comparison</h2>
+
+    <table>
+      <thead><tr><th>Feature</th><th>&lt;div&gt;</th><th>&lt;span&gt;</th></tr></thead>
+      <tbody>
+        <tr><td>Display Type</td><td>Block</td><td>Inline</td></tr>
+        <tr><td>Width</td><td>Full width (100%)</td><td>Content jitna</td></tr>
+        <tr><td>New Line</td><td>Haan</td><td>Nahi</td></tr>
+        <tr><td>Use Case</td><td>Sections, layouts, containers</td><td>Text ke hisson ko style karna</td></tr>
+        <tr><td>Semantic Meaning</td><td>Koi nahi — generic</td><td>Koi nahi — generic</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Div Se Layout Banana -->
+  <div class="card">
+    <h2>4. Div Se Page Layout</h2>
+    <!-- Div tags se page ka basic layout bana sakte hain -->
+
+    <h3>📝 Basic Page Layout:</h3>
+    <pre>
+&lt;div id="wrapper" style="max-width: 900px; margin: 0 auto;"&gt;
+
+  &lt;div id="header" style="background: #0f3460; color: white; padding: 20px;"&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+  &lt;/div&gt;
+
+  &lt;div id="nav" style="background: #16213e; padding: 10px;"&gt;
+    Home | About | Contact
+  &lt;/div&gt;
+
+  &lt;div id="content" style="display: flex;"&gt;
+    &lt;div id="main" style="flex: 3; padding: 20px;"&gt;
+      &lt;h2&gt;Main Content&lt;/h2&gt;
+      &lt;p&gt;Article content yahan...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="sidebar" style="flex: 1; background: #f0f0f0; padding: 20px;"&gt;
+      &lt;h3&gt;Sidebar&lt;/h3&gt;
+      &lt;p&gt;Links, ads...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div id="footer" style="background: #0f3460; color: white; padding: 10px; text-align: center;"&gt;
+    &amp;copy; 2024 Code Academy
+  &lt;/div&gt;
+
+&lt;/div&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <div class="output-box" style="padding:0; overflow:hidden;">
+      <div style="max-width:100%;">
+        <div style="background:#0f3460; color:white; padding:15px;">
+          <h2 style="color:white; margin:0;">🌐 My Website</h2>
+        </div>
+        <div style="background:#16213e; padding:10px; color:white; font-size:0.9rem;">
+          Home | About | Courses | Contact
+        </div>
+        <div style="display:flex;">
+          <div style="flex:3; padding:15px; background:#fff;">
+            <h3 style="color:#333;">Main Content</h3>
+            <p style="color:#555;">Yeh main content area hai. Articles, blog posts yahan aayenge.</p>
+          </div>
+          <div style="flex:1; padding:15px; background:#f0f0f0;">
+            <h4 style="color:#333;">Sidebar</h4>
+            <p style="color:#555; font-size:0.85rem;">Links<br>Ads<br>Categories</p>
+          </div>
+        </div>
+        <div style="background:#0f3460; color:white; padding:10px; text-align:center; font-size:0.85rem;">
+          &copy; 2024 Code Academy Nowshera
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Div vs Semantic Tags -->
+  <div class="card">
+    <h2>5. Div vs Semantic Elements</h2>
+    <!-- Semantic tags div se behtar hain kyunke unka meaning hota hai -->
+    <p>HTML5 mein semantic tags aaye hain jo div se <strong>better</strong> hain:</p>
+
+    <table>
+      <thead><tr><th>Div Approach</th><th>Semantic Approach</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;div id="header"&gt;</code></td><td><code>&lt;header&gt;</code></td></tr>
+        <tr><td><code>&lt;div id="nav"&gt;</code></td><td><code>&lt;nav&gt;</code></td></tr>
+        <tr><td><code>&lt;div id="main"&gt;</code></td><td><code>&lt;main&gt;</code></td></tr>
+        <tr><td><code>&lt;div id="sidebar"&gt;</code></td><td><code>&lt;aside&gt;</code></td></tr>
+        <tr><td><code>&lt;div id="footer"&gt;</code></td><td><code>&lt;footer&gt;</code></td></tr>
+        <tr><td><code>&lt;div class="article"&gt;</code></td><td><code>&lt;article&gt;</code></td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p>💡 <strong>Best Practice:</strong> Jab bhi possible ho, semantic tags use karein. <code>&lt;div&gt;</code> sirf tab use karein jab koi semantic tag fit na ho.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Sirf <code>&lt;div&gt;</code> tags use karke ek <strong>complete page layout</strong> banayein — Header, Navigation, Main Content, Sidebar, Footer. CSS se styled karein.</li>
+      <li><strong>Task 2:</strong> Ek paragraph mein <code>&lt;span&gt;</code> use karke <strong>3 alag words</strong> ko alag colors mein style karein.</li>
+      <li><strong>Task 3:</strong> Nested divs se <strong>3 cards</strong> banayein — har card mein title, image placeholder, aur description ho.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 13 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

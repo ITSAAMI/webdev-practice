@@ -1,0 +1,292 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Forms - Basic Input Types
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 10 - HTML Forms Basics | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 20px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    th { background: #0f3460; color: #00d2ff; } td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    /* Form styling for demos */
+    .demo-form label { display: block; font-weight: bold; margin: 8px 0 4px; color: #333; }
+    .demo-form input { padding: 8px 12px; border: 1px solid #ccc; border-radius: 5px; width: 100%; max-width: 350px; font-size: 0.95rem; margin-bottom: 5px; }
+    .demo-form input:focus { outline: none; border-color: #0f3460; box-shadow: 0 0 5px rgba(15,52,96,0.3); }
+    .demo-form .btn { background: #e94560; color: white; border: none; padding: 10px 25px; cursor: pointer; border-radius: 5px; font-size: 1rem; margin-top: 10px; }
+    .demo-form .btn:hover { background: #c13050; }
+    .demo-form .btn-reset { background: #666; margin-left: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📝 Topic 10: HTML Forms — Basic Inputs</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Form Tag -->
+  <div class="card">
+    <h2>1. &lt;form&gt; Tag — Form Container</h2>
+    <!-- Form tag ke andar sab input fields aate hain -->
+    <p>Form tag sab input fields ko wrap karta hai. <code>action</code> mein data kahan jayega aur <code>method</code> mein kaise jayega woh batate hain.</p>
+
+    <pre>
+&lt;form action="/submit" method="POST"&gt;
+  &lt;!-- Input fields yahan aayenge --&gt;
+&lt;/form&gt;
+    </pre>
+
+    <table>
+      <thead><tr><th>Attribute</th><th>Purpose</th><th>Values</th></tr></thead>
+      <tbody>
+        <tr><td><code>action</code></td><td>Data kahan bheja jayega</td><td>URL ya file path</td></tr>
+        <tr><td><code>method</code></td><td>Data kaise bheja jayega</td><td><code>GET</code> (URL mein) / <code>POST</code> (hidden)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p>💡 <strong>GET vs POST:</strong> GET se data URL mein dikhta hai (search ke liye). POST se data hidden rehta hai (login/signup ke liye).</p>
+    </div>
+  </div>
+
+  <!-- 2. Text, Password, Email -->
+  <div class="card">
+    <h2>2. Basic Input Types</h2>
+    <!-- Sabse common input types -->
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;form&gt;
+  &lt;label for="name"&gt;Naam:&lt;/label&gt;
+  &lt;input type="text" id="name" placeholder="Apna naam likhein" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" placeholder="example@gmail.com" required&gt;
+
+  &lt;label for="pass"&gt;Password:&lt;/label&gt;
+  &lt;input type="password" id="pass" placeholder="Password likhein" required&gt;
+
+  &lt;label for="phone"&gt;Phone:&lt;/label&gt;
+  &lt;input type="tel" id="phone" placeholder="03001234567"&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <label for="d-name">Naam:</label>
+        <input type="text" id="d-name" placeholder="Apna naam likhein" required>
+
+        <label for="d-email">Email:</label>
+        <input type="email" id="d-email" placeholder="example@gmail.com" required>
+
+        <label for="d-pass">Password:</label>
+        <input type="password" id="d-pass" placeholder="Password likhein" required>
+
+        <label for="d-phone">Phone:</label>
+        <input type="tel" id="d-phone" placeholder="03001234567">
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Number, Date, Color, Range -->
+  <div class="card">
+    <h2>3. Special Input Types</h2>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;label for="age"&gt;Age:&lt;/label&gt;
+&lt;input type="number" id="age" min="15" max="60" value="20"&gt;
+
+&lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+&lt;input type="date" id="dob"&gt;
+
+&lt;label for="color"&gt;Favourite Color:&lt;/label&gt;
+&lt;input type="color" id="color" value="#e94560"&gt;
+
+&lt;label for="skill"&gt;Skill Level (1-100):&lt;/label&gt;
+&lt;input type="range" id="skill" min="0" max="100" value="50"&gt;
+
+&lt;label for="file"&gt;Upload CV:&lt;/label&gt;
+&lt;input type="file" id="file"&gt;
+    </pre>
+
+    <h3>🖥️ Live Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <label for="d-age">Age:</label>
+        <input type="number" id="d-age" min="15" max="60" value="20" style="max-width:150px;">
+
+        <label for="d-dob">Date of Birth:</label>
+        <input type="date" id="d-dob">
+
+        <label for="d-color">Favourite Color:</label>
+        <input type="color" id="d-color" value="#e94560" style="width:60px; height:35px; padding:2px;">
+
+        <label for="d-skill">Skill Level (1-100):</label>
+        <input type="range" id="d-skill" min="0" max="100" value="50">
+
+        <label for="d-file">Upload CV:</label>
+        <input type="file" id="d-file">
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Label Tag -->
+  <div class="card">
+    <h2>4. &lt;label&gt; Tag — Input Ka Label</h2>
+    <!-- Label se input accessible banta hai aur click par focus hota hai -->
+    <p>Label tag input ke saath connect hota hai <code>for</code> attribute se. Label click karne par input focus hota hai.</p>
+
+    <pre>
+&lt;!-- Method 1: for aur id match karein --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username"&gt;
+
+&lt;!-- Method 2: input ko label ke andar rakhein --&gt;
+&lt;label&gt;
+  Username:
+  &lt;input type="text"&gt;
+&lt;/label&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>⚠️ <strong>Important:</strong> Hamesha <code>&lt;label&gt;</code> use karein — accessibility ke liye zaroori hai. Screen readers label padhte hain.</p>
+    </div>
+  </div>
+
+  <!-- 5. Input Attributes -->
+  <div class="card">
+    <h2>5. Important Input Attributes</h2>
+
+    <table>
+      <thead><tr><th>Attribute</th><th>Kya Karta Hai</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>placeholder</code></td><td>Input mein halka sa hint text</td><td><code>placeholder="Enter name"</code></td></tr>
+        <tr><td><code>required</code></td><td>Form submit nahi hoga bina fill kiye</td><td><code>required</code></td></tr>
+        <tr><td><code>readonly</code></td><td>Padh sakte hain lekin edit nahi</td><td><code>readonly</code></td></tr>
+        <tr><td><code>disabled</code></td><td>Input grey/inactive ho jata hai</td><td><code>disabled</code></td></tr>
+        <tr><td><code>value</code></td><td>Default value set karta hai</td><td><code>value="Amir"</code></td></tr>
+        <tr><td><code>maxlength</code></td><td>Maximum characters limit</td><td><code>maxlength="20"</code></td></tr>
+        <tr><td><code>min / max</code></td><td>Number ka range</td><td><code>min="1" max="100"</code></td></tr>
+        <tr><td><code>autofocus</code></td><td>Page load par auto focus</td><td><code>autofocus</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>🖥️ Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="return false;">
+        <label>Readonly:</label>
+        <input type="text" value="Yeh change nahi hoga" readonly style="background:#f0f0f0;">
+
+        <label>Disabled:</label>
+        <input type="text" value="Yeh disabled hai" disabled style="background:#e0e0e0; color:#999;">
+
+        <label>With maxlength (10):</label>
+        <input type="text" maxlength="10" placeholder="Max 10 characters">
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Submit aur Reset Buttons -->
+  <div class="card">
+    <h2>6. Submit aur Reset Buttons</h2>
+
+    <pre>
+&lt;!-- Submit button — form data bhejta hai --&gt;
+&lt;input type="submit" value="Submit Karein"&gt;
+
+&lt;!-- Reset button — sab fields clear karta hai --&gt;
+&lt;input type="reset" value="Reset"&gt;
+
+&lt;!-- Button tag bhi use kar sakte hain --&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+    </pre>
+
+    <h3>🖥️ Complete Form Demo:</h3>
+    <div class="output-box">
+      <form class="demo-form" onsubmit="alert('Form submitted! (Demo)'); return false;">
+        <label for="reg-name">Full Name:</label>
+        <input type="text" id="reg-name" placeholder="Apna poora naam" required>
+
+        <label for="reg-email">Email:</label>
+        <input type="email" id="reg-email" placeholder="email@example.com" required>
+
+        <label for="reg-pass">Password:</label>
+        <input type="password" id="reg-pass" placeholder="Kam az kam 8 characters" required minlength="8">
+
+        <label for="reg-dob">Date of Birth:</label>
+        <input type="date" id="reg-dob" required>
+
+        <div style="margin-top: 15px;">
+          <button type="submit" class="btn">Submit Karein</button>
+          <button type="reset" class="btn btn-reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. Input Types Quick Reference -->
+  <div class="card">
+    <h2>7. All Input Types — Quick Reference</h2>
+    <table>
+      <thead><tr><th>Type</th><th>Kya Dikhata Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>text</code></td><td>Normal text field</td></tr>
+        <tr><td><code>password</code></td><td>Dots/stars mein hidden text</td></tr>
+        <tr><td><code>email</code></td><td>Email validation wala field</td></tr>
+        <tr><td><code>number</code></td><td>Sirf numbers, arrows ke saath</td></tr>
+        <tr><td><code>tel</code></td><td>Phone number (mobile par number pad)</td></tr>
+        <tr><td><code>date</code></td><td>Date picker calendar</td></tr>
+        <tr><td><code>time</code></td><td>Time picker</td></tr>
+        <tr><td><code>color</code></td><td>Color picker</td></tr>
+        <tr><td><code>range</code></td><td>Slider</td></tr>
+        <tr><td><code>file</code></td><td>File upload button</td></tr>
+        <tr><td><code>url</code></td><td>URL validation wala field</td></tr>
+        <tr><td><code>search</code></td><td>Search field (clear button ke saath)</td></tr>
+        <tr><td><code>hidden</code></td><td>User ko nahi dikhta — data secretly bhejta hai</td></tr>
+        <tr><td><code>submit</code></td><td>Form submit button</td></tr>
+        <tr><td><code>reset</code></td><td>Form reset button</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> <strong>Registration Form</strong> banayein — Name, Email, Password, Phone, Date of Birth, aur Submit button. Sab fields <code>required</code> hon aur proper <code>labels</code> hon.</li>
+      <li><strong>Task 2:</strong> <strong>Contact Form</strong> banayein — Name, Email, Phone, Subject, aur ek Message area. <code>placeholder</code> sab mein ho.</li>
+      <li><strong>Task 3:</strong> Form ke inputs ko CSS se <strong>style</strong> karein — border, focus effect, aur submit button ko colorful banayein.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 10 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>

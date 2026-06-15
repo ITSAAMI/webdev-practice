@@ -1,0 +1,254 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat
+  Topic: HTML Tables
+  Level: Beginner
+  Batch: FS_B10
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic 09 - HTML Tables | Code Academy Nowshera</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f1a; color: #eee; line-height: 1.8; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f3460, #e94560); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px; }
+    .header h1 { font-size: 2rem; margin-bottom: 5px; } .header p { font-size: 1rem; opacity: 0.9; }
+    .card { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #e94560; }
+    .card h2 { color: #e94560; margin-bottom: 10px; font-size: 1.4rem; }
+    .card h3 { color: #00d2ff; margin: 15px 0 8px; font-size: 1.1rem; }
+    pre { background: #16213e; color: #00d2ff; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; font-size: 0.95rem; border: 1px solid #0f3460; }
+    code { background: #16213e; color: #00d2ff; padding: 2px 6px; border-radius: 4px; }
+    .output-box { background: #fff; color: #333; padding: 15px; border-radius: 8px; margin: 10px 0; border: 2px dashed #e94560; overflow-x: auto; }
+    .highlight { background: #0f3460; padding: 12px 18px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #00d2ff; }
+    .practice { background: #1a1a2e; border-radius: 10px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #00d2ff; }
+    .practice h2 { color: #00d2ff; margin-bottom: 10px; } .practice li { margin-bottom: 8px; } .practice ul { padding-left: 20px; }
+    table.ref { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    table.ref th, table.ref td { border: 1px solid #333; padding: 10px 15px; text-align: left; }
+    table.ref th { background: #0f3460; color: #00d2ff; } table.ref td { background: #16213e; }
+    .footer { text-align: center; padding: 20px; color: #888; border-top: 1px solid #333; margin-top: 30px; font-size: 0.9rem; }
+    /* Demo table styles */
+    .demo-table { width: 100%; border-collapse: collapse; }
+    .demo-table th { background: #0f3460; color: white; padding: 12px; text-align: left; }
+    .demo-table td { padding: 10px 12px; border: 1px solid #ddd; }
+    .demo-table tr:nth-child(even) { background: #f2f2f2; }
+    .demo-table tr:nth-child(odd) { background: #fff; }
+    .demo-table tr:hover { background: #ddd; }
+    .demo-table caption { caption-side: top; font-weight: bold; font-size: 1.1rem; margin-bottom: 8px; color: #333; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>📊 Topic 09: HTML Tables</h1>
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+  </div>
+
+  <!-- 1. Basic Table -->
+  <div class="card">
+    <h2>1. Basic Table Structure</h2>
+    <!-- Table banane ke liye table, tr, td, th tags use karte hain -->
+    <p>Table ke <strong>4 basic tags</strong> hain:</p>
+    <table class="ref">
+      <thead><tr><th>Tag</th><th>Kya Karta Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;table&gt;</code></td><td>Table container</td></tr>
+        <tr><td><code>&lt;tr&gt;</code></td><td>Table Row — ek horizontal line</td></tr>
+        <tr><td><code>&lt;th&gt;</code></td><td>Table Header — bold + centered</td></tr>
+        <tr><td><code>&lt;td&gt;</code></td><td>Table Data — normal cell</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Code:</h3>
+    <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Naam&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ahmad&lt;/td&gt;
+    &lt;td&gt;Nowshera&lt;/td&gt;
+    &lt;td&gt;20&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Sara&lt;/td&gt;
+    &lt;td&gt;Peshawar&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <table class="demo-table">
+        <tr><th>Naam</th><th>City</th><th>Age</th></tr>
+        <tr><td>Ahmad</td><td>Nowshera</td><td>20</td></tr>
+        <tr><td>Sara</td><td>Peshawar</td><td>22</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 2. Table Sections -->
+  <div class="card">
+    <h2>2. Table Sections — thead, tbody, tfoot</h2>
+    <!-- Table ko sections mein divide karna best practice hai -->
+    <pre>
+&lt;table&gt;
+  &lt;caption&gt;Student Results — Batch FS_B10&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;HTML&lt;/th&gt;&lt;th&gt;CSS&lt;/th&gt;&lt;th&gt;Total&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Ali&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;175&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Fatima&lt;/td&gt;&lt;td&gt;92&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;td&gt;180&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Average&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;88.5&lt;/td&gt;&lt;td&gt;89&lt;/td&gt;&lt;td&gt;177.5&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <table class="demo-table">
+        <caption>Student Results — Batch FS_B10</caption>
+        <thead><tr><th>Naam</th><th>HTML</th><th>CSS</th><th>Total</th></tr></thead>
+        <tbody>
+          <tr><td>Ali</td><td>85</td><td>90</td><td>175</td></tr>
+          <tr><td>Fatima</td><td>92</td><td>88</td><td>180</td></tr>
+        </tbody>
+        <tfoot><tr style="background:#e8e8e8 !important;"><td><strong>Average</strong></td><td>88.5</td><td>89</td><td>177.5</td></tr></tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. Colspan aur Rowspan -->
+  <div class="card">
+    <h2>3. Colspan aur Rowspan — Cells Merge Karna</h2>
+    <!-- colspan se columns merge karte hain, rowspan se rows -->
+    <table class="ref">
+      <thead><tr><th>Attribute</th><th>Kya Karta Hai</th></tr></thead>
+      <tbody>
+        <tr><td><code>colspan="2"</code></td><td>2 columns ko merge (horizontally)</td></tr>
+        <tr><td><code>rowspan="3"</code></td><td>3 rows ko merge (vertically)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>📝 Colspan Example:</h3>
+    <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th colspan="3"&gt;Student Information&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;Class&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Usman&lt;/td&gt;&lt;td&gt;10th&lt;/td&gt;&lt;td&gt;450&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <table class="demo-table">
+        <tr><th colspan="3" style="text-align:center; background:#e94560;">Student Information</th></tr>
+        <tr><th>Naam</th><th>Class</th><th>Marks</th></tr>
+        <tr><td>Usman</td><td>10th</td><td>450</td></tr>
+      </table>
+    </div>
+
+    <h3>📝 Rowspan Example:</h3>
+    <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Department&lt;/th&gt;&lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Science&lt;/td&gt;
+    &lt;td&gt;Ali&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ayesha&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Arts&lt;/td&gt;
+    &lt;td&gt;Hassan&lt;/td&gt;&lt;td&gt;78&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Zainab&lt;/td&gt;&lt;td&gt;82&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+
+    <h3>🖥️ Output:</h3>
+    <div class="output-box">
+      <table class="demo-table">
+        <tr><th>Department</th><th>Naam</th><th>Marks</th></tr>
+        <tr><td rowspan="2" style="font-weight:bold; background:#e8f4fd !important;">Science</td><td>Ali</td><td>90</td></tr>
+        <tr><td>Ayesha</td><td>85</td></tr>
+        <tr><td rowspan="2" style="font-weight:bold; background:#fde8e8 !important;">Arts</td><td>Hassan</td><td>78</td></tr>
+        <tr><td>Zainab</td><td>82</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4. Zebra Striping aur Hover -->
+  <div class="card">
+    <h2>4. CSS Se Table Styling — Zebra Stripes</h2>
+    <!-- Alternate rows ko different color dena readability ke liye acha hai -->
+    <pre>
+&lt;style&gt;
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #0f3460; color: white; padding: 12px; }
+  td { padding: 10px; border: 1px solid #ddd; }
+  tr:nth-child(even) { background: #f2f2f2; }
+  tr:hover { background: #ddd; }
+&lt;/style&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>💡 <code>border-collapse: collapse;</code> borders ko merge karta hai — bina iske double borders dikhte hain.</p>
+    </div>
+  </div>
+
+  <!-- 5. Responsive Table -->
+  <div class="card">
+    <h2>5. Responsive Table</h2>
+    <!-- Mobile par table ko scrollable banana -->
+    <p>Mobile par table ko <strong>horizontally scrollable</strong> banayein:</p>
+    <pre>
+&lt;div style="overflow-x: auto;"&gt;
+  &lt;table&gt;
+    &lt;!-- Table content --&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+    </pre>
+
+    <div class="highlight">
+      <p>📌 Table ko <code>&lt;div&gt;</code> mein wrap karein aur <code>overflow-x: auto</code> dein — chhoti screen par scroll ho jayega.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICE TASKS -->
+  <div class="practice">
+    <h2>📝 Practice Tasks</h2>
+    <ul>
+      <li><strong>Task 1:</strong> Apni class ke <strong>5 students ka result table</strong> banayein — columns: Name, HTML Marks, CSS Marks, JS Marks, Total, Grade. <code>thead</code>, <code>tbody</code>, <code>tfoot</code> use karein.</li>
+      <li><strong>Task 2:</strong> <strong>Timetable</strong> banayein (Monday-Friday, 8am-2pm) — <code>colspan</code> aur <code>rowspan</code> dono use karein.</li>
+      <li><strong>Task 3:</strong> Table ko CSS se <strong>beautiful</strong> banayein — zebra stripes, hover effects, aur responsive wrapper.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <p>Code Academy Nowshera | Instructor: Syed Amir Hayat | Batch: FS_B10</p>
+    <p>Topic 09 of 25 — HTML Complete Curriculum</p>
+  </div>
+
+</body>
+</html>
