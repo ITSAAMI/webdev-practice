@@ -50,12 +50,12 @@ CodeAcademy-Teaching-Resources/
 
 ## 📊 Batches Overview
 
-| Batch     | Course                     | Total Students | Status              |
-| --------- | -------------------------- | -------------- | ------------------- |
-| B01 — B07 | Full Stack Web Development | 46             | ✅ Completed        |
-| FS_B8     | Full Stack Web Development | 3              | ⚠️ Backend Complete |
-| FS_B9     | Full Stack Web Development | 2              | 🔥 JS Ongoing       |
-| FS_B10    | Full Stack Web Development | 7              | 🔥 HTML Ongoing     |
+| Batch     | Course                     | Total Students | Status               |
+| --------- | -------------------------- | -------------- | -------------------- |
+| B01 — B07 | Full Stack Web Development | 46             | ✅ Completed         |
+| FS_B8     | Full Stack Web Development | 3              | ✅ Partialy Complete |
+| FS_B9     | Full Stack Web Development | 2              | 🔥 JS Ongoing        |
+| FS_B10    | Full Stack Web Development | 7              | 🔥 HTML Ongoing      |
 
 > **Total Students Trained: 100+** across 10 batches
 
@@ -127,6 +127,16 @@ CodeAcademy-Teaching-Resources/
 | CERT041 | Ihtisham           | 22/76      | 30%        | ❌ Readmitted in B09      |
 | CERT044 | Shakir Dad         | 8/76       | 10%        | ❌ Low Attendance         |
 | CERT046 | Fawad Khan         | 8/76       | 10%        | ❌ Low Attendance         |
+
+---
+
+### ⚠️ Batch 07 — Full Stack Web Development (Backend Complete)
+
+| #   | Name          | Course Completed Upto | Attendance | Status              |
+| --- | ------------- | --------------------- | ---------- | ------------------- |
+| 1   | Waleeja Wahab | Frontend + Backend    | —          | ⚠️ Backend Complete |
+| 2   | Faizan Khan   | Frontend + Backend    | —          | ⚠️ Backend Complete |
+| 3   | Rehman Ullah  | Frontend + Backend    | —          | ⚠️ Mostly Absent    |
 
 ---
 
