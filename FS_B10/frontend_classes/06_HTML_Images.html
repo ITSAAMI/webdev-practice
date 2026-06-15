@@ -1,0 +1,166 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat Kakakhel
+  Topic: HTML Images
+  Level: Beginner
+  Batch: FS_B10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 - HTML Images | Code Academy Nowshera</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #ffffff; color: #333333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* Header Styling */
+        .header { background: linear-gradient(135deg, #27ae60, #2ecc71); color: #ffffff; padding: 40px 20px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2); margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.95; }
+        .header .badge { display: inline-block; background: #ffffff; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-top: 15px; }
+        
+        /* Content Cards */
+        .card { background: #ffffff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 6px solid #27ae60; }
+        .card h2 { color: #27ae60; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid #f4fbf7; padding-bottom: 10px; }
+        
+        /* Explanation Box */
+        .explanation { background-color: #e8f8f5; border-left: 4px solid #2ecc71; padding: 18px; border-radius: 0 8px 8px 0; margin-bottom: 20px; color: #2c3e50; font-size: 1.05rem; }
+        
+        /* Code Block */
+        pre { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; font-family: 'Consolas', monospace; font-size: 0.95rem; border: 1px solid #34495e; }
+        pre .tag { color: #e74c3c; }
+        pre .attr { color: #f1c40f; }
+        pre .val { color: #2ecc71; }
+        pre .content { color: #ecf0f1; }
+        pre .comment { color: #95a5a6; font-style: italic; }
+        
+        /* Live Demo Box */
+        .demo-box { border: 2px dashed #2ecc71; border-radius: 10px; padding: 20px; background: #fdfefe; margin-bottom: 10px; text-align: center; }
+        .demo-title { color: #95a5a6; margin-bottom: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+        .demo-box img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* Practice Section */
+        .practice-section { background-color: #fdfefe; border: 2px solid #2ecc71; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1); }
+        .practice-section h3 { color: #27ae60; margin-bottom: 20px; font-size: 1.4rem; }
+        .practice-section ul { list-style-type: none; }
+        .practice-section li { margin-bottom: 15px; padding-left: 30px; position: relative; font-size: 1.05rem; }
+        .practice-section li::before { content: '👉'; position: absolute; left: 0; top: 0; }
+        .time-est { display: inline-block; background: #e8f8f5; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-top: 10px; border: 1px solid #2ecc71; }
+        
+        /* Footer */
+        .footer { text-align: center; padding: 25px; color: #7f8c8d; border-top: 2px solid #f0f0f0; margin-top: 40px; font-size: 0.95rem; }
+        .footer .brand { color: #27ae60; font-weight: 800; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Topic 06: HTML Images</h1>
+        <p>Code Academy Nowshera | Instructor: Syed Amir Hayat Kakakhel</p>
+        <div class="badge">Level: Beginner | Batch: FS_B10</div>
+    </div>
+
+    <!-- Concept 1: Img tag and Src -->
+    <div class="card">
+        <h2>1. Images lagana (&lt;img&gt; Tag)</h2>
+        
+        <div class="explanation">
+            <strong>Moizza</strong> aur <strong>Sanabil</strong>, website par tasweer lagane ke liye hum <code>&lt;img&gt;</code> tag ka use karte hain. Yeh tag <strong>empty</strong> hota hai yani iska koi closing tag (<code>&lt;/img&gt;</code>) nahi hota. <br><br>
+            Isme <code>src</code> (source) attribute sab se zaroori hai, jo batata hai ke image ki file kahan par pari hai.
+        </div>
+
+        <pre>
+<span class="comment">&lt;!-- Example 1: Same folder se image uthana --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"profile-pic.jpg"</span>&gt;
+
+<span class="comment">&lt;!-- Example 2: Internet se image uthana (Absolute URL) --&gt;</span>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"https://via.placeholder.com/300x150/2ecc71/ffffff?text=HTML+Images"</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <img src="https://via.placeholder.com/300x150/2ecc71/ffffff?text=HTML+Images" alt="Placeholder Image">
+        </div>
+    </div>
+
+    <!-- Concept 2: Alt Attribute -->
+    <div class="card">
+        <h2>2. Alt Attribute (Bohot Zaroori!)</h2>
+        
+        <div class="explanation">
+            <strong>Sameer Amir</strong>, hamesha apne <code>&lt;img&gt;</code> tag ke andar <code>alt</code> (Alternate text) attribute zarur lagayen. <br>
+            Iske 2 faide hain:<br>
+            1. Agar internet slow ho aur image load na ho sake, tou yeh text nazar aayega.<br>
+            2. Blind log (jo screen readers use karte hain), unko image ke bare mein pata chalega.
+        </div>
+
+        <pre>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"wrong-image-path.jpg"</span> <span class="attr">alt</span>=<span class="val">"Sameer Amir ki Profile Picture"</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output (When image is broken)</div>
+            <div style="padding: 20px; border: 1px solid #ccc; display: inline-block; color: #7f8c8d;">
+                🖼️ <em>Sameer Amir ki Profile Picture</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concept 3: Width and Height -->
+    <div class="card">
+        <h2>3. Image ka Size (Width aur Height)</h2>
+        
+        <div class="explanation">
+            Aap <code>width</code> aur <code>height</code> attributes de kar image ka size pixels mein control kar sakte hain. Lekin modern design mein hum size control karne ke liye CSS ko tarjeeh (preference) dete hain.
+        </div>
+
+        <pre>
+&lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"logo.png"</span> <span class="attr">alt</span>=<span class="val">"Academy Logo"</span> <span class="attr">width</span>=<span class="val">"200"</span> <span class="attr">height</span>=<span class="val">"100"</span>&gt;</pre>
+    </div>
+
+    <!-- Concept 4: Image as a Link -->
+    <div class="card">
+        <h2>4. Image ko Link bananan</h2>
+        
+        <div class="explanation">
+            <strong>Junaid Ahmad</strong>, agar aap chahte hain ke user kisi image par click kare tou woh dosre page par chala jaye, tou aapko sirf <code>&lt;img&gt;</code> tag ko <code>&lt;a&gt;</code> (link) tag ke andar rakhna hoga.
+        </div>
+
+        <pre>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"https://github.com/ITSAAMI"</span> <span class="attr">target</span>=<span class="val">"_blank"</span>&gt;
+    &lt;<span class="tag">img</span> <span class="attr">src</span>=<span class="val">"https://via.placeholder.com/150/2c3e50/ffffff?text=Click+Me!"</span> <span class="attr">alt</span>=<span class="val">"Clickable Image"</span>&gt;
+&lt;/<span class="tag">a</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <a href="https://github.com/ITSAAMI" target="_blank">
+                <img src="https://via.placeholder.com/150/2c3e50/ffffff?text=Click+Me!" alt="Clickable Image" style="cursor: pointer; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </a>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #7f8c8d;">Upar wali image par click kar ke check karein</p>
+        </div>
+    </div>
+
+    <!-- Practice Section -->
+    <div class="practice-section">
+        <h3>📝 Practice Tasks</h3>
+        <p style="margin-bottom: 15px; color: #7f8c8d;">VS Code mein neeche diye gaye tasks khud perform karein:</p>
+        
+        <ul>
+            <li><strong>Task 1:</strong> Internet se apni pasandeeda car ya bike ki image ka link (address) copy karein aur usay apne web page par show karein.</li>
+            <li><strong>Task 2:</strong> Us image par <code>alt</code> tag zaroor lagayen. Phir image ka link jaan boojh kar ghalat kar dein (taake image load na ho) aur check karein ke alt text nazar aa raha hai ya nahi.</li>
+            <li><strong>Task 3:</strong> Ek choti si image lagayen, aur usay ek link ke andar (anchor tag) rakh dein. Click karne par woh Google images ko open kare.</li>
+        </ul>
+        
+        <div class="time-est">⏱️ Estimated Time: 12 Minutes</div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 <span class="brand">Code Academy Nowshera</span> | Instructor: Syed Amir Hayat Kakakhel<br>
+        Powered by <strong>LogicGigs Pvt Ltd</strong>
+    </div>
+</div>
+
+</body>
+</html>

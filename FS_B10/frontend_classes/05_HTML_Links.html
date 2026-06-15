@@ -1,0 +1,165 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat Kakakhel
+  Topic: HTML Links
+  Level: Beginner
+  Batch: FS_B10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - HTML Links | Code Academy Nowshera</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #ffffff; color: #333333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* Header Styling */
+        .header { background: linear-gradient(135deg, #27ae60, #2ecc71); color: #ffffff; padding: 40px 20px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2); margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.95; }
+        .header .badge { display: inline-block; background: #ffffff; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-top: 15px; }
+        
+        /* Content Cards */
+        .card { background: #ffffff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 6px solid #27ae60; }
+        .card h2 { color: #27ae60; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid #f4fbf7; padding-bottom: 10px; }
+        
+        /* Explanation Box */
+        .explanation { background-color: #e8f8f5; border-left: 4px solid #2ecc71; padding: 18px; border-radius: 0 8px 8px 0; margin-bottom: 20px; color: #2c3e50; font-size: 1.05rem; }
+        
+        /* Code Block */
+        pre { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; font-family: 'Consolas', monospace; font-size: 0.95rem; border: 1px solid #34495e; }
+        pre .tag { color: #e74c3c; }
+        pre .attr { color: #f1c40f; }
+        pre .val { color: #2ecc71; }
+        pre .content { color: #ecf0f1; }
+        pre .comment { color: #95a5a6; font-style: italic; }
+        
+        /* Live Demo Box */
+        .demo-box { border: 2px dashed #2ecc71; border-radius: 10px; padding: 20px; background: #fdfefe; margin-bottom: 10px; }
+        .demo-title { color: #95a5a6; margin-bottom: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; text-align: center; }
+        .demo-box a { color: #2980b9; text-decoration: none; font-weight: bold; }
+        .demo-box a:hover { text-decoration: underline; color: #27ae60; }
+        
+        /* Practice Section */
+        .practice-section { background-color: #fdfefe; border: 2px solid #2ecc71; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1); }
+        .practice-section h3 { color: #27ae60; margin-bottom: 20px; font-size: 1.4rem; }
+        .practice-section ul { list-style-type: none; }
+        .practice-section li { margin-bottom: 15px; padding-left: 30px; position: relative; font-size: 1.05rem; }
+        .practice-section li::before { content: '👉'; position: absolute; left: 0; top: 0; }
+        .time-est { display: inline-block; background: #e8f8f5; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-top: 10px; border: 1px solid #2ecc71; }
+        
+        /* Footer */
+        .footer { text-align: center; padding: 25px; color: #7f8c8d; border-top: 2px solid #f0f0f0; margin-top: 40px; font-size: 0.95rem; }
+        .footer .brand { color: #27ae60; font-weight: 800; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Topic 05: HTML Links</h1>
+        <p>Code Academy Nowshera | Instructor: Syed Amir Hayat Kakakhel</p>
+        <div class="badge">Level: Beginner | Batch: FS_B10</div>
+    </div>
+
+    <!-- Concept 1: The Anchor Tag -->
+    <div class="card">
+        <h2>1. HTML Links (&lt;a&gt; Tag)</h2>
+        
+        <div class="explanation">
+            <strong>Abdul Muheman Shah</strong>, web pages ko ek doosre ke sath jorne (connect karne) ke liye hum Links ka istemal karte hain. HTML mein link banane ke liye <code>&lt;a&gt;</code> (Anchor) tag use hota hai. <br><br>
+            Iska sab se ahem hissa <code>href</code> (Hypertext Reference) attribute hai, jisme hum batate hain ke click karne par kahan jana hai.
+        </div>
+
+        <pre>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"https://github.com/ITSAAMI"</span>&gt;<span class="content">Code Academy GitHub</span>&lt;/<span class="tag">a</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <a href="https://github.com/ITSAAMI" target="_blank">Code Academy GitHub</a>
+        </div>
+    </div>
+
+    <!-- Concept 2: Absolute vs Relative URLs -->
+    <div class="card">
+        <h2>2. Absolute vs Relative URLs</h2>
+        
+        <div class="explanation">
+            <strong>Sudais Ahmad</strong> dhyan de: Links do tarah ke hote hain:<br>
+            <strong>1. Absolute URL:</strong> Poora address likhna parhta hai (e.g., https://www.google.com). Yeh doosri websites par jane ke liye hota hai.<br>
+            <strong>2. Relative URL:</strong> Isme "https" ya website ka naam nahi likhte. Sirf apne he folder ki doosri file ka naam likhte hain (e.g., <code>about.html</code>). Yeh apni he website ke pages ko link karne ke liye hota hai.
+        </div>
+
+        <pre>
+<span class="comment">&lt;!-- Absolute URL (Doosri website) --&gt;</span>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"https://www.google.com"</span>&gt;<span class="content">Google par jayen</span>&lt;/<span class="tag">a</span>&gt;
+
+<span class="comment">&lt;!-- Relative URL (Apni website ka dosra page) --&gt;</span>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"04_HTML_Text_Formatting.html"</span>&gt;<span class="content">Pichla Lesson dekhein</span>&lt;/<span class="tag">a</span>&gt;</pre>
+    </div>
+
+    <!-- Concept 3: target Attribute -->
+    <div class="card">
+        <h2>3. Link ko New Tab mein open karna</h2>
+        
+        <div class="explanation">
+            <strong>Mobina Farooq Qureshi</strong>, by default link click karne se wohi page open ho jata hai aur purana page gayab. Agar aap chahti hain ke link click hone par ek naya tab (new window) open ho, tou <code>target="_blank"</code> attribute ka istemal karein.
+        </div>
+
+        <pre>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"https://logicgigs.com"</span> <span class="attr">target</span>=<span class="val">"_blank"</span>&gt;<span class="content">LogicGigs (Open in new tab)</span>&lt;/<span class="tag">a</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <a href="https://github.com" target="_blank">LogicGigs (Open in new tab)</a> 
+            <span style="color:#7f8c8d; font-size:0.9rem; margin-left: 10px;">(Click kar ke dekhein, naya tab khulega)</span>
+        </div>
+    </div>
+
+    <!-- Concept 4: Email and Phone Links -->
+    <div class="card">
+        <h2>4. Email aur Phone Links</h2>
+        
+        <div class="explanation">
+            <strong>Aqsa</strong>, website par aise links bhi banaye ja sakte hain jin par click karne se seedha user ki Email app ya Phone dialer khul jaye. Iske liye hum <code>mailto:</code> aur <code>tel:</code> ka istemal karte hain.
+        </div>
+
+        <pre>
+<span class="comment">&lt;!-- Email Link --&gt;</span>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"mailto:amir@codeacademy.com"</span>&gt;<span class="content">Mujhe Email karein</span>&lt;/<span class="tag">a</span>&gt;
+
+<span class="comment">&lt;!-- Phone Number Link --&gt;</span>
+&lt;<span class="tag">a</span> <span class="attr">href</span>=<span class="val">"tel:+923001234567"</span>&gt;<span class="content">Mujhe Call karein</span>&lt;/<span class="tag">a</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <a href="mailto:amir@codeacademy.com" style="margin-right: 20px;">✉️ Mujhe Email karein</a>
+            <a href="tel:+923001234567">📞 Mujhe Call karein</a>
+        </div>
+    </div>
+
+    <!-- Practice Section -->
+    <div class="practice-section">
+        <h3>📝 Practice Tasks</h3>
+        <p style="margin-bottom: 15px; color: #7f8c8d;">Neeche diye gaye tasks khud perform karein:</p>
+        
+        <ul>
+            <li><strong>Task 1:</strong> Apni pasandeeda 3 websites (jaise YouTube, Facebook, Twitter) ke <strong>Absolute links</strong> banayein jo naye tab mein (<code>_blank</code>) open hon.</li>
+            <li><strong>Task 2:</strong> Ek link banayein jiske text par "Contact Me" likha ho, aur us pe click karne se aapki apni email id par mail bhejne ka option open ho (<code>mailto:</code>).</li>
+            <li><strong>Task 3:</strong> Do (2) HTML files banayein: <code>page1.html</code> aur <code>page2.html</code>. Dono ke darmiyan <strong>Relative links</strong> lagayen taake page 1 se page 2 par, aur page 2 se wapas page 1 par jaya ja sake.</li>
+        </ul>
+        
+        <div class="time-est">⏱️ Estimated Time: 15 Minutes</div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 <span class="brand">Code Academy Nowshera</span> | Instructor: Syed Amir Hayat Kakakhel<br>
+        Powered by <strong>LogicGigs Pvt Ltd</strong>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat Kakakhel
+  Topic: HTML Topics Overview
+  Level: Beginner / Intermediate
+  Batch: FS_B10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Topics Overview | Code Academy Nowshera</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #ffffff; color: #333333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        /* Header Styling */
+        .header { 
+            background: linear-gradient(135deg, #27ae60, #2ecc71); 
+            color: #ffffff; 
+            padding: 40px 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2); 
+            margin-bottom: 40px; 
+        }
+        .header h1 { font-size: 2.8rem; margin-bottom: 10px; letter-spacing: 1px; }
+        .header p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 5px; }
+        .header .meta { 
+            margin-top: 20px; 
+            font-size: 0.95rem; 
+            background: rgba(255, 255, 255, 0.2); 
+            display: inline-block; 
+            padding: 10px 20px; 
+            border-radius: 30px; 
+        }
+        .header a { color: #ffffff; text-decoration: none; font-weight: bold; }
+        .header a:hover { text-decoration: underline; }
+        
+        /* Table Styling */
+        .table-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow-x: auto;
+            border: 1px solid #e8f8f5;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 18px 20px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+        th { 
+            background-color: #f4fbf7; 
+            color: #27ae60; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            letter-spacing: 0.5px;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: #f9fdfa; }
+        
+        .topic-num { color: #bdc3c7; font-weight: bold; font-size: 1.1rem; }
+        .topic-name { font-weight: 600; color: #2c3e50; font-size: 1.05rem; }
+        .level { color: #2980b9; font-size: 0.85rem; font-weight: 600; background: #ebf5fb; padding: 4px 10px; border-radius: 12px; }
+        
+        /* Status Badges */
+        .status { padding: 6px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; text-align: center; min-width: 100px; }
+        .status.completed { background-color: #e8f8f5; color: #27ae60; border: 1px solid #2ecc71; }
+        .status.ongoing { background-color: #fef9e7; color: #f39c12; border: 1px solid #f1c40f; }
+        .status.pending { background-color: #fdfefe; color: #95a5a6; border: 1px solid #bdc3c7; }
+        
+        /* Footer Styling */
+        .footer { 
+            text-align: center; 
+            padding: 30px 20px; 
+            color: #7f8c8d; 
+            margin-top: 40px; 
+            font-size: 1rem; 
+            border-top: 2px dashed #e8f8f5;
+        }
+        .footer .brand { color: #27ae60; font-weight: 800; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Code Academy Nowshera</h1>
+        <p>Complete HTML Curriculum — Beginner to Intermediate</p>
+        <p>Instructor: <strong>Syed Amir Hayat Kakakhel</strong> | Batch: FS_B10</p>
+        <div class="meta">
+            Powered by LogicGigs Pvt Ltd | GitHub: <a href="https://github.com/ITSAAMI" target="_blank">github.com/ITSAAMI</a>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Topic Name</th>
+                    <th>Description</th>
+                    <th>Level</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="topic-num">01</td>
+                    <td class="topic-name">HTML Introduction</td>
+                    <td>Basics of HTML, structure, and first web page.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status ongoing">Ongoing</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">02</td>
+                    <td class="topic-name">Tags and Elements</td>
+                    <td>Understanding tags, opening/closing, and nested elements.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">03</td>
+                    <td class="topic-name">Headings & Paragraphs</td>
+                    <td>h1 to h6 tags, p tag, and text structure.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">04</td>
+                    <td class="topic-name">Text Formatting</td>
+                    <td>Bold, italic, underline, mark, sub, and sup tags.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">05</td>
+                    <td class="topic-name">HTML Links</td>
+                    <td>Anchor tag, relative/absolute URLs, and target attribute.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">06</td>
+                    <td class="topic-name">HTML Images</td>
+                    <td>Image tag, src, alt attribute, and resizing.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">07</td>
+                    <td class="topic-name">HTML Lists</td>
+                    <td>Ordered (ol), Unordered (ul), and Definition lists.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">08</td>
+                    <td class="topic-name">HTML Tables</td>
+                    <td>Rows, columns, headers, colspan, and rowspan.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">09</td>
+                    <td class="topic-name">HTML Forms</td>
+                    <td>Inputs, labels, buttons, and form submission basics.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">10</td>
+                    <td class="topic-name">Div & Span</td>
+                    <td>Block vs Inline elements, container grouping.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">11</td>
+                    <td class="topic-name">Semantic Elements</td>
+                    <td>header, footer, main, section, article, nav tags.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">12</td>
+                    <td class="topic-name">HTML Attributes</td>
+                    <td>Global attributes, classes, IDs, and custom props.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">13</td>
+                    <td class="topic-name">Meta Tags</td>
+                    <td>SEO basics, viewport, charset, and page description.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">14</td>
+                    <td class="topic-name">HTML Colors</td>
+                    <td>Hex, RGB, RGBA, HSL, and color names.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">15</td>
+                    <td class="topic-name">Audio & Video</td>
+                    <td>Embedding multimedia, controls, autoplay, formats.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">16</td>
+                    <td class="topic-name">HTML5 New Elements</td>
+                    <td>Details, summary, mark, time, figure, figcaption.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">17</td>
+                    <td class="topic-name">Form Validation</td>
+                    <td>Required, min, max, pattern, types (email, url).</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">18</td>
+                    <td class="topic-name">HTML Iframe</td>
+                    <td>Embedding external pages, YouTube videos, maps.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">19</td>
+                    <td class="topic-name">HTML Entities</td>
+                    <td>Special characters, symbols, emojis, and spaces.</td>
+                    <td><span class="level">Beginner</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">20</td>
+                    <td class="topic-name">Data Attributes</td>
+                    <td>Using data-* to store custom information in elements.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">21</td>
+                    <td class="topic-name">HTML Accessibility</td>
+                    <td>ARIA roles, alt texts, making web for everyone.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">22</td>
+                    <td class="topic-name">Page Layout</td>
+                    <td>Structuring a real-world complete webpage layout.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td class="topic-num">23</td>
+                    <td class="topic-name">Project Portfolio</td>
+                    <td>Final practical project combining all learned concepts.</td>
+                    <td><span class="level">Intermediate</span></td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 <span class="brand">Code Academy Nowshera</span> | Instructor: Syed Amir Hayat Kakakhel<br>
+        Powered by <strong>LogicGigs Pvt Ltd</strong>
+    </div>
+</div>
+
+</body>
+</html>

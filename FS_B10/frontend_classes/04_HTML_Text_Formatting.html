@@ -1,0 +1,165 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat Kakakhel
+  Topic: HTML Text Formatting
+  Level: Beginner
+  Batch: FS_B10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - HTML Text Formatting | Code Academy Nowshera</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #ffffff; color: #333333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* Header Styling */
+        .header { background: linear-gradient(135deg, #27ae60, #2ecc71); color: #ffffff; padding: 40px 20px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2); margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.95; }
+        .header .badge { display: inline-block; background: #ffffff; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-top: 15px; }
+        
+        /* Content Cards */
+        .card { background: #ffffff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 6px solid #27ae60; }
+        .card h2 { color: #27ae60; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid #f4fbf7; padding-bottom: 10px; }
+        
+        /* Explanation Box */
+        .explanation { background-color: #e8f8f5; border-left: 4px solid #2ecc71; padding: 18px; border-radius: 0 8px 8px 0; margin-bottom: 20px; color: #2c3e50; font-size: 1.05rem; }
+        
+        /* Code Block */
+        pre { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; font-family: 'Consolas', monospace; font-size: 0.95rem; border: 1px solid #34495e; }
+        pre .tag { color: #e74c3c; }
+        pre .content { color: #ecf0f1; }
+        pre .comment { color: #95a5a6; font-style: italic; }
+        
+        /* Live Demo Box */
+        .demo-box { border: 2px dashed #2ecc71; border-radius: 10px; padding: 20px; background: #fdfefe; margin-bottom: 10px; }
+        .demo-title { color: #95a5a6; margin-bottom: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; text-align: center; }
+        
+        /* Practice Section */
+        .practice-section { background-color: #fdfefe; border: 2px solid #2ecc71; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1); }
+        .practice-section h3 { color: #27ae60; margin-bottom: 20px; font-size: 1.4rem; }
+        .practice-section ul { list-style-type: none; }
+        .practice-section li { margin-bottom: 15px; padding-left: 30px; position: relative; font-size: 1.05rem; }
+        .practice-section li::before { content: '👉'; position: absolute; left: 0; top: 0; }
+        .time-est { display: inline-block; background: #e8f8f5; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-top: 10px; border: 1px solid #2ecc71; }
+        
+        /* Footer */
+        .footer { text-align: center; padding: 25px; color: #7f8c8d; border-top: 2px solid #f0f0f0; margin-top: 40px; font-size: 0.95rem; }
+        .footer .brand { color: #27ae60; font-weight: 800; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Topic 04: HTML Text Formatting</h1>
+        <p>Code Academy Nowshera | Instructor: Syed Amir Hayat Kakakhel</p>
+        <div class="badge">Level: Beginner | Batch: FS_B10</div>
+    </div>
+
+    <!-- Concept 1: Bold and Strong -->
+    <div class="card">
+        <h2>1. Bold & Strong Text (&lt;b&gt; and &lt;strong&gt;)</h2>
+        
+        <div class="explanation">
+            <strong>Sabeel Mehmood</strong>, kisi text ko mota (bold) karne ke liye hum <code>&lt;b&gt;</code> ya <code>&lt;strong&gt;</code> tag ka istemal karte hain. Dikhne mein dono ek jaise lagte hain, lekin <code>&lt;strong&gt;</code> screen readers ko batata hai ke yeh text bohat aham (important) hai.
+        </div>
+
+        <pre>
+&lt;<span class="tag">p</span>&gt;Yeh ek &lt;<span class="tag">b</span>&gt;bold&lt;/<span class="tag">b</span>&gt; text hai.&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;Sabeel ki file mein yeh &lt;<span class="tag">strong</span>&gt;important&lt;/<span class="tag">strong</span>&gt; baat hai.&lt;/<span class="tag">p</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <p>Yeh ek <b>bold</b> text hai.</p>
+            <p>Sabeel ki file mein yeh <strong>important</strong> baat hai.</p>
+        </div>
+    </div>
+
+    <!-- Concept 2: Italic and Emphasized -->
+    <div class="card">
+        <h2>2. Italic & Emphasized Text (&lt;i&gt; and &lt;em&gt;)</h2>
+        
+        <div class="explanation">
+            Text ko thora tircha (italic) karne ke liye <code>&lt;i&gt;</code> tag use hota hai. Lekin agar kisi lafz par khaas zor (emphasis) dena ho (jaise bolne mein zor diya jata hai), tou <code>&lt;em&gt;</code> tag behtar rehta hai.
+        </div>
+
+        <pre>
+&lt;<span class="tag">p</span>&gt;Yeh text &lt;<span class="tag">i</span>&gt;italic&lt;/<span class="tag">i</span>&gt; style mein hai.&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;Shahzaib Sajjad ne kaha tha: &lt;<span class="tag">em</span>&gt;zaroor aana!&lt;/<span class="tag">em</span>&gt;&lt;/<span class="tag">p</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <p>Yeh text <i>italic</i> style mein hai.</p>
+            <p>Shahzaib Sajjad ne kaha tha: <em>zaroor aana!</em></p>
+        </div>
+    </div>
+
+    <!-- Concept 3: Underline and Highlight -->
+    <div class="card">
+        <h2>3. Underline, Inserted aur Highlighted Text</h2>
+        
+        <div class="explanation">
+            <strong>Abdur Rehman</strong> dhayan se dekhna: Kisi lafz ke neechay line lagani ho tou <code>&lt;u&gt;</code> ya <code>&lt;ins&gt;</code> tag use hota hai. Kisi lafz ko highlighter jaisa dikhana ho (background color yellow) tou <code>&lt;mark&gt;</code> tag use karte hain.
+        </div>
+
+        <pre>
+&lt;<span class="tag">p</span>&gt;Is hisse ko &lt;<span class="tag">u</span>&gt;underline&lt;/<span class="tag">u</span>&gt; karo.&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;Naya added text: &lt;<span class="tag">ins</span>&gt;Free Course&lt;/<span class="tag">ins</span>&gt;&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;Mujhe &lt;<span class="tag">mark</span>&gt;HTML seekhni hai&lt;/<span class="tag">mark</span>&gt;.&lt;/<span class="tag">p</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <p>Is hisse ko <u>underline</u> karo.</p>
+            <p>Naya added text: <ins>Free Course</ins></p>
+            <p>Mujhe <mark>HTML seekhni hai</mark>.</p>
+        </div>
+    </div>
+
+    <!-- Concept 4: Subscript, Superscript and Deleted -->
+    <div class="card">
+        <h2>4. Math/Science aur Deleted Text</h2>
+        
+        <div class="explanation">
+            <strong>Junaid Ahmad</strong>, agar aapne Math ka formula (jaise a<sup>2</sup>) ya science (H<sub>2</sub>O) likhna ho tou <code>&lt;sup&gt;</code> (superscript, upar) aur <code>&lt;sub&gt;</code> (subscript, neechay) tags kaam aate hain. Kisi text ko kata hua dikhana ho tou <code>&lt;del&gt;</code> use hota hai.
+        </div>
+
+        <pre>
+&lt;<span class="tag">p</span>&gt;Pani ka formula H&lt;<span class="tag">sub</span>&gt;2&lt;/<span class="tag">sub</span>&gt;O hai.&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;Algebra formula: x&lt;<span class="tag">sup</span>&gt;2&lt;/<span class="tag">sup</span>&gt; + y&lt;<span class="tag">sup</span>&gt;2&lt;/<span class="tag">sup</span>&gt; = z&lt;<span class="tag">sup</span>&gt;2&lt;/<span class="tag">sup</span>&gt;&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;Course fee: &lt;<span class="tag">del</span>&gt;Rs. 10000&lt;/<span class="tag">del</span>&gt; &lt;<span class="tag">ins</span>&gt;Free!&lt;/<span class="tag">ins</span>&gt;&lt;/<span class="tag">p</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <p>Pani ka formula H<sub>2</sub>O hai.</p>
+            <p>Algebra formula: x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup></p>
+            <p>Course fee: <del>Rs. 10000</del> <ins>Free!</ins></p>
+        </div>
+    </div>
+
+    <!-- Practice Section -->
+    <div class="practice-section">
+        <h3>📝 Practice Tasks</h3>
+        <p style="margin-bottom: 15px; color: #7f8c8d;">Apne code editor mein neeche diye gaye tasks khud perform karein:</p>
+        
+        <ul>
+            <li><strong>Task 1:</strong> Ek paragraph likhein aur us mein apne naam ko <code>&lt;strong&gt;</code> aur apne shehar ke naam ko <code>&lt;em&gt;</code> karein.</li>
+            <li><strong>Task 2:</strong> Ek sale promotion message likhein jahan purani price ko <code>&lt;del&gt;</code> tag se kata jaye, aur nayi price ko <code>&lt;mark&gt;</code> se highlight kiya jaye.</li>
+            <li><strong>Task 3:</strong> <code>&lt;sup&gt;</code> aur <code>&lt;sub&gt;</code> tags ka istemal kar ke "(A+B)<sup>2</sup>" aur "CO<sub>2</sub>" likh kar check karein.</li>
+        </ul>
+        
+        <div class="time-est">⏱️ Estimated Time: 15 Minutes</div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 <span class="brand">Code Academy Nowshera</span> | Instructor: Syed Amir Hayat Kakakhel<br>
+        Powered by <strong>LogicGigs Pvt Ltd</strong>
+    </div>
+</div>
+
+</body>
+</html>

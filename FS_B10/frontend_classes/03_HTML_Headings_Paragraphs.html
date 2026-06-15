@@ -1,0 +1,159 @@
+<!--
+  Code Academy Nowshera
+  Instructor: Syed Amir Hayat Kakakhel
+  Topic: HTML Headings and Paragraphs
+  Level: Beginner
+  Batch: FS_B10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - HTML Headings & Paragraphs | Code Academy Nowshera</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #ffffff; color: #333333; line-height: 1.6; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* Header Styling */
+        .header { background: linear-gradient(135deg, #27ae60, #2ecc71); color: #ffffff; padding: 40px 20px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2); margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.95; }
+        .header .badge { display: inline-block; background: #ffffff; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-top: 15px; }
+        
+        /* Content Cards */
+        .card { background: #ffffff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-left: 6px solid #27ae60; }
+        .card h2 { color: #27ae60; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid #f4fbf7; padding-bottom: 10px; }
+        
+        /* Explanation Box */
+        .explanation { background-color: #e8f8f5; border-left: 4px solid #2ecc71; padding: 18px; border-radius: 0 8px 8px 0; margin-bottom: 20px; color: #2c3e50; font-size: 1.05rem; }
+        
+        /* Code Block */
+        pre { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; font-family: 'Consolas', monospace; font-size: 0.95rem; border: 1px solid #34495e; }
+        pre .tag { color: #e74c3c; }
+        pre .content { color: #ecf0f1; }
+        pre .comment { color: #95a5a6; font-style: italic; }
+        
+        /* Live Demo Box */
+        .demo-box { border: 2px dashed #2ecc71; border-radius: 10px; padding: 20px; background: #fdfefe; margin-bottom: 10px; }
+        .demo-title { color: #95a5a6; margin-bottom: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; text-align: center; }
+        
+        /* Practice Section */
+        .practice-section { background-color: #fdfefe; border: 2px solid #2ecc71; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1); }
+        .practice-section h3 { color: #27ae60; margin-bottom: 20px; font-size: 1.4rem; }
+        .practice-section ul { list-style-type: none; }
+        .practice-section li { margin-bottom: 15px; padding-left: 30px; position: relative; font-size: 1.05rem; }
+        .practice-section li::before { content: '👉'; position: absolute; left: 0; top: 0; }
+        .time-est { display: inline-block; background: #e8f8f5; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-top: 10px; border: 1px solid #2ecc71; }
+        
+        /* Footer */
+        .footer { text-align: center; padding: 25px; color: #7f8c8d; border-top: 2px solid #f0f0f0; margin-top: 40px; font-size: 0.95rem; }
+        .footer .brand { color: #27ae60; font-weight: 800; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Topic 03: HTML Headings & Paragraphs</h1>
+        <p>Code Academy Nowshera | Instructor: Syed Amir Hayat Kakakhel</p>
+        <div class="badge">Level: Beginner | Batch: FS_B10</div>
+    </div>
+
+    <!-- Concept 1: Headings -->
+    <div class="card">
+        <h2>1. HTML Headings (h1 se h6)</h2>
+        
+        <div class="explanation">
+            <strong>Ihsanullah Jan</strong> aur <strong>Sadia Bibi</strong>, HTML mein 6 levels ki headings hoti hain. <code>&lt;h1&gt;</code> sab se bari (most important) aur <code>&lt;h6&gt;</code> sab se choti (least important) heading hoti hai. Headings ka use website ki SEO (Google Search) ke liye bohat zaroori hai!
+        </div>
+
+        <pre>
+&lt;<span class="tag">h1</span>&gt;<span class="content">Heading 1 (Sab se bari)</span>&lt;/<span class="tag">h1</span>&gt;
+&lt;<span class="tag">h2</span>&gt;<span class="content">Heading 2</span>&lt;/<span class="tag">h2</span>&gt;
+&lt;<span class="tag">h3</span>&gt;<span class="content">Heading 3</span>&lt;/<span class="tag">h3</span>&gt;
+&lt;<span class="tag">h4</span>&gt;<span class="content">Heading 4</span>&lt;/<span class="tag">h4</span>&gt;
+&lt;<span class="tag">h5</span>&gt;<span class="content">Heading 5</span>&lt;/<span class="tag">h5</span>&gt;
+&lt;<span class="tag">h6</span>&gt;<span class="content">Heading 6 (Sab se choti)</span>&lt;/<span class="tag">h6</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <h1 style="margin-bottom:5px;">Heading 1 (Sab se bari)</h1>
+            <h2 style="margin-bottom:5px;">Heading 2</h2>
+            <h3 style="margin-bottom:5px;">Heading 3</h3>
+            <h4 style="margin-bottom:5px;">Heading 4</h4>
+            <h5 style="margin-bottom:5px;">Heading 5</h5>
+            <h6 style="margin-bottom:5px;">Heading 6 (Sab se choti)</h6>
+        </div>
+
+        <p style="color: #c0392b; margin-top: 15px; font-weight: 500;">⚠️ <strong>Rule:</strong> Ek page par sirf ek he <code>&lt;h1&gt;</code> honi chahiye jo page ka main title ho. Aur headings ko sequence se use karein (jaise h1 ke baad direct h4 mat use karein).</p>
+    </div>
+
+    <!-- Concept 2: Paragraphs -->
+    <div class="card">
+        <h2>2. HTML Paragraphs</h2>
+        
+        <div class="explanation">
+            Jab bhi aapne koi lamba text ya content likhna ho tou aap <code>&lt;p&gt;</code> (Paragraph) tag ka istemal karte hain. <strong>M.Hamza</strong>, yaad rakhna browser automatically har naye paragraph ke aage aur peechay thori si khali jagah (margin) add kar deta hai.
+        </div>
+
+        <pre>
+&lt;<span class="tag">p</span>&gt;<span class="content">M.Zuhaib ek bohat qabil student hai.</span>&lt;/<span class="tag">p</span>&gt;
+&lt;<span class="tag">p</span>&gt;<span class="content">Woh Code Academy Nowshera mein web development seekh raha hai.</span>&lt;/<span class="tag">p</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <p style="margin-bottom: 1em;">M.Zuhaib ek bohat qabil student hai.</p>
+            <p>Woh Code Academy Nowshera mein web development seekh raha hai.</p>
+        </div>
+    </div>
+
+    <!-- Concept 3: Preformatted Text -->
+    <div class="card">
+        <h2>3. Preformatted Text (&lt;pre&gt; tag)</h2>
+        
+        <div class="explanation">
+            Agar aap <code>&lt;p&gt;</code> tag ke andar buhat sari spaces ya line breaks (enter) lagayen, tou browser un sab ko ignore kar ke sirf 1 space show karega. Agar aap chahte hain ke jaisa aapne likha hai waisa he (spaces aur enter ke sath) nazar aaye, tou <code>&lt;pre&gt;</code> tag use karein. Yeh poetry ya computer code likhne ke liye best hai.
+        </div>
+
+        <pre>
+&lt;<span class="tag">pre</span>&gt;<span class="content">
+   Twinkle, twinkle, little star,
+   How I wonder what you are!
+   Up above the world so high,
+   Like a diamond in the sky.
+</span>&lt;/<span class="tag">pre</span>&gt;</pre>
+
+        <div class="demo-box">
+            <div class="demo-title">Live Browser Output</div>
+            <pre style="background: transparent; color: #333; padding: 0; border: none; font-family: monospace; font-size: 1rem;">
+   Twinkle, twinkle, little star,
+   How I wonder what you are!
+   Up above the world so high,
+   Like a diamond in the sky.</pre>
+        </div>
+    </div>
+
+    <!-- Practice Section -->
+    <div class="practice-section">
+        <h3>📝 Practice Tasks</h3>
+        <p style="margin-bottom: 15px; color: #7f8c8d;">Neeche diye gaye tasks VS Code mein khud perform karein:</p>
+        
+        <ul>
+            <li><strong>Task 1:</strong> Ek proper heading hierarchy banayein. Main page title (h1) mein apne shehar ka naam likhein. Phir h2 mein "Mashoor Jagahein" aur h3 mein kuch jagahon ke naam likhein.</li>
+            <li><strong>Task 2:</strong> Ek paragraph (p) banayein jisme "Code Academy Nowshera" ke bare mein apna experience likhein.</li>
+            <li><strong>Task 3:</strong> <code>&lt;pre&gt;</code> tag ka use karte huwe Allama Iqbal ka koi ek sher (poetry) bilkul uski original formatting aur spaces ke sath likhein.</li>
+        </ul>
+        
+        <div class="time-est">⏱️ Estimated Time: 12 Minutes</div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 <span class="brand">Code Academy Nowshera</span> | Instructor: Syed Amir Hayat Kakakhel<br>
+        Powered by <strong>LogicGigs Pvt Ltd</strong>
+    </div>
+</div>
+
+</body>
+</html>
