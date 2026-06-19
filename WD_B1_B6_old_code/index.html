@@ -1,62 +1,1431 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ShopNow - E-commerce</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of /WD_B1_B6_old_code/</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --light-blue: #eff6ff;
+            --border-blue: #bfdbfe;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        .header { background-color: var(--bg-card); border-bottom: 1px solid var(--border-color); padding: 2rem 0; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+        
+        h1 { font-size: 1.5rem; font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 0.5rem; word-break: break-all; }
+        h1 span { color: var(--text-muted); font-weight: 400; font-size: 1.2rem; }
+        
+        .main-content { flex-grow: 1; padding: 2rem 0; }
+        
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); overflow: hidden; margin-bottom: 2rem; }
+        
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background-color: var(--bg-main); color: var(--text-muted); font-weight: 600; font-size: 0.85rem; padding: 1rem 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border-color); }
+        td { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); color: var(--text-dark); font-size: 0.95rem; }
+        
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background-color: var(--light-blue); }
+        
+        .name-cell { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; }
+        .icon { font-size: 1.2rem; }
+        
+        a { color: var(--text-dark); text-decoration: none; transition: color 0.2s; }
+        tr:hover a { color: var(--primary-blue); }
+        
+        .size-cell, .date-cell { color: var(--text-muted); font-size: 0.9rem; }
+        
+        .parent-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-blue); font-weight: 500; text-decoration: none; margin-bottom: 1.5rem; padding: 0.6rem 1.2rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .parent-link:hover { background: var(--light-blue); border-color: var(--primary-blue); transform: translateY(-2px); }
+        
+        .empty-state { padding: 3rem; text-align: center; color: var(--text-muted); font-style: italic; }
+        
+        .footer { text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); background: var(--bg-card); mt-auto }
+        
+        @media (max-width: 600px) {
+            th:nth-child(3), td:nth-child(3) { display: none; }
+            .parent-link { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
-
 <body>
-
-    <header>
-        <div class="logo">Baba Somasa Shop</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Cart</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <h1><span>Index of</span> /WD_B1_B6_old_code/</h1>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Welcome to ShopNow</h1>
-        <p>Your one-stop shop for everything!</p>
-        <a href="#" class="btn">Shop Now</a>
-    </section>
-
-    <section class="products">
-        <h2>Featured Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="images/samosa.png" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>Rs. 1,500</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/samosa.png" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>Rs. 2,000</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/samosa.png" alt="Product 3">
-                <h3>Product 3</h3>
-                <p>Rs. 1,200</p>
-                <button>Add to Cart</button>
-            </div>
+    <main class="main-content container">
+        <a href="../" class="parent-link"><span>↖️</span> Go up to Parent Directory</a>
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Date Modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📁</span>
+            <a href="backend_classes/">backend_classes</a>
         </div>
-    </section>
+    </td>
+    <td class="size-cell">-</td>
+    <td class="date-cell">Jun 15, 2026 01:26 PM</td>
+</tr>
 
-    <footer>
-        <p>&copy; 2025 ShopNow. All rights reserved.</p>
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📁</span>
+            <a href="database_classes/">database_classes</a>
+        </div>
+    </td>
+    <td class="size-cell">-</td>
+    <td class="date-cell">Jun 14, 2026 09:45 PM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📁</span>
+            <a href="frontend_classes/">frontend_classes</a>
+        </div>
+    </td>
+    <td class="size-cell">-</td>
+    <td class="date-cell">Jun 15, 2026 10:40 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📁</span>
+            <a href="git_github_classes/">git_github_classes</a>
+        </div>
+    </td>
+    <td class="size-cell">-</td>
+    <td class="date-cell">Jun 14, 2026 09:45 PM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📁</span>
+            <a href="UIUX_frameworks_classes/">UIUX_frameworks_classes</a>
+        </div>
+    </td>
+    <td class="size-cell">-</td>
+    <td class="date-cell">Jun 14, 2026 09:45 PM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📄</span>
+            <a href="1_ikhSU3f8HIp8PMgje2tS1g.webp">1_ikhSU3f8HIp8PMgje2tS1g.webp</a>
+        </div>
+    </td>
+    <td class="size-cell">55.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="age calculater.html">age calculater.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Amir.html">Amir.html</a>
+        </div>
+    </td>
+    <td class="size-cell">0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Anabiya_imran.html">Anabiya_imran.html</a>
+        </div>
+    </td>
+    <td class="size-cell">532.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="animation.html">animation.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.4 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Aqsa.html">Aqsa.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1020.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="arsalan_ba_mani.html">arsalan_ba_mani.html</a>
+        </div>
+    </td>
+    <td class="size-cell">236.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="AS css.html">AS css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">541.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="attributes.html">attributes.html</a>
+        </div>
+    </td>
+    <td class="size-cell">737.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="bg-props-css.html">bg-props-css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">3.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="block-inline.html">block-inline.html</a>
+        </div>
+    </td>
+    <td class="size-cell">664.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="block_vs_inline.html">block_vs_inline.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="bootstrap.html">bootstrap.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.9 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🎨</span>
+            <a href="bs.css">bs.css</a>
+        </div>
+    </td>
+    <td class="size-cell">203.0 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="bs4-datatoggale.html">bs4-datatoggale.html</a>
+        </div>
+    </td>
+    <td class="size-cell">5.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="bs4-images.html">bs4-images.html</a>
+        </div>
+    </td>
+    <td class="size-cell">9.4 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="center.html">center.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.6 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="center_new.html">center_new.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.0 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="class1.html">class1.html</a>
+        </div>
+    </td>
+    <td class="size-cell">434.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">⚡</span>
+            <a href="class1.js">class1.js</a>
+        </div>
+    </td>
+    <td class="size-cell">0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="class_id.html">class_id.html</a>
+        </div>
+    </td>
+    <td class="size-cell">624.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Combinator.html">Combinator.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.5 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="CSS Flexbox.html">CSS Flexbox.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.8 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="CSS Variables.html">CSS Variables.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="css-class.html">css-class.html</a>
+        </div>
+    </td>
+    <td class="size-cell">748.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="CSS_Attribute_Selectors.html">CSS_Attribute_Selectors.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="CSS_Counters.html">CSS_Counters.html</a>
+        </div>
+    </td>
+    <td class="size-cell">3.6 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="CSS_Forms.html">CSS_Forms.html</a>
+        </div>
+    </td>
+    <td class="size-cell">3.5 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="display-css-WA.html">display-css-WA.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.9 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="display-grid.html">display-grid.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.7 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="DOM-JS.html">DOM-JS.html</a>
+        </div>
+    </td>
+    <td class="size-cell">253.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="DOM.html">DOM.html</a>
+        </div>
+    </td>
+    <td class="size-cell">631.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="DOM_Attributes.html">DOM_Attributes.html</a>
+        </div>
+    </td>
+    <td class="size-cell">3.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="dropdown-simple.html">dropdown-simple.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="dropdown.html">dropdown.html</a>
+        </div>
+    </td>
+    <td class="size-cell">724.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="fa-icons.link.html">fa-icons.link.html</a>
+        </div>
+    </td>
+    <td class="size-cell">561.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="file_path.html">file_path.html</a>
+        </div>
+    </td>
+    <td class="size-cell">254.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="flex-in-bs4.html">flex-in-bs4.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.4 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="font-face.html">font-face.html</a>
+        </div>
+    </td>
+    <td class="size-cell">497.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="fonts-in-css.html">fonts-in-css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">924.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">⚡</span>
+            <a href="footer.js">footer.js</a>
+        </div>
+    </td>
+    <td class="size-cell">313.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="form-elements.html">form-elements.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="form.html">form.html</a>
+        </div>
+    </td>
+    <td class="size-cell">497.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="form_last.html">form_last.html</a>
+        </div>
+    </td>
+    <td class="size-cell">789.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Formating_in_HTML.html">Formating_in_HTML.html</a>
+        </div>
+    </td>
+    <td class="size-cell">871.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="grid-area.html">grid-area.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="grid-food-blog.html">grid-food-blog.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="grid-system.html">grid-system.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📄</span>
+            <a href="hader">hader</a>
+        </div>
+    </td>
+    <td class="size-cell">0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🎨</span>
+            <a href="how-to-CSS.css">how-to-CSS.css</a>
+        </div>
+    </td>
+    <td class="size-cell">37.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="how-to-CSS.html">how-to-CSS.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="iframe.html">iframe.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.0 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Image Sprites - Simple Example.html">Image Sprites - Simple Example.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.0 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="image-gallery.html">image-gallery.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="image-tag.html">image-tag.html</a>
+        </div>
+    </td>
+    <td class="size-cell">400.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="input.html">input.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.5 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="JS_lec01.html">JS_lec01.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.5 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="kon-talha.html">kon-talha.html</a>
+        </div>
+    </td>
+    <td class="size-cell">4.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="link-tags.html">link-tags.html</a>
+        </div>
+    </td>
+    <td class="size-cell">760.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="link_css2.html">link_css2.html</a>
+        </div>
+    </td>
+    <td class="size-cell">857.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="list-css.html">list-css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="lists.html">lists.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="media_querry.html">media_querry.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="media_querry_class.html">media_querry_class.html</a>
+        </div>
+    </td>
+    <td class="size-cell">257.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="mini-profile.html">mini-profile.html</a>
+        </div>
+    </td>
+    <td class="size-cell">337.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">⚡</span>
+            <a href="myJS.js">myJS.js</a>
+        </div>
+    </td>
+    <td class="size-cell">506.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🎨</span>
+            <a href="mystyle.css">mystyle.css</a>
+        </div>
+    </td>
+    <td class="size-cell">75.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="nav-bs4.html">nav-bs4.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.8 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="navbar-classes.html">navbar-classes.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.5 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="navbar-css-basic.html">navbar-css-basic.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.7 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="navbar.html">navbar.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.4 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="new-data.html">new-data.html</a>
+        </div>
+    </td>
+    <td class="size-cell">592.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🎨</span>
+            <a href="new.css">new.css</a>
+        </div>
+    </td>
+    <td class="size-cell">217.9 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="newJS.html">newJS.html</a>
+        </div>
+    </td>
+    <td class="size-cell">0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="newpage.html">newpage.html</a>
+        </div>
+    </td>
+    <td class="size-cell">560.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="offline-BS4.html">offline-BS4.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.2 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="page2.html">page2.html</a>
+        </div>
+    </td>
+    <td class="size-cell">591.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="popover.html">popover.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="portfolio.html">portfolio.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="qandS.html">qandS.html</a>
+        </div>
+    </td>
+    <td class="size-cell">770.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="rayyan.html">rayyan.html</a>
+        </div>
+    </td>
+    <td class="size-cell">478.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="registation_form.html">registation_form.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1022.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="registration-from-model.html">registration-from-model.html</a>
+        </div>
+    </td>
+    <td class="size-cell">979.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Remove_add_attributes.html">Remove_add_attributes.html</a>
+        </div>
+    </td>
+    <td class="size-cell">3.7 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="responsive_Design.html">responsive_Design.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.8 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="sania-saleem.html">sania-saleem.html</a>
+        </div>
+    </td>
+    <td class="size-cell">552.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="sania.html">sania.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Sania_Saleem1.html">Sania_Saleem1.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.8 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="script.html">script.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.6 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="shadow-box-text.html">shadow-box-text.html</a>
+        </div>
+    </td>
+    <td class="size-cell">933.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="shadow-hijab-girl-waleed-fav.html">shadow-hijab-girl-waleed-fav.html</a>
+        </div>
+    </td>
+    <td class="size-cell">931.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="shadow-waleed-arsalan.html">shadow-waleed-arsalan.html</a>
+        </div>
+    </td>
+    <td class="size-cell">808.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="slider.html">slider.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.8 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Spacificity.html">Spacificity.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.1 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🎨</span>
+            <a href="style.css">style.css</a>
+        </div>
+    </td>
+    <td class="size-cell">1.9 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="Style.html">Style.html</a>
+        </div>
+    </td>
+    <td class="size-cell">291.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="symentic-tags.html">symentic-tags.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.5 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="table-bs4.html">table-bs4.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.7 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="table.html">table.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="table1.html">table1.html</a>
+        </div>
+    </td>
+    <td class="size-cell">972.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="table2.html">table2.html</a>
+        </div>
+    </td>
+    <td class="size-cell">955.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="tailwind_css.html">tailwind_css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">703.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">📄</span>
+            <a href="Tanjiro_kamado.webp">Tanjiro_kamado.webp</a>
+        </div>
+    </td>
+    <td class="size-cell">18.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="testing-box-border.html">testing-box-border.html</a>
+        </div>
+    </td>
+    <td class="size-cell">717.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="testing.html">testing.html</a>
+        </div>
+    </td>
+    <td class="size-cell">215.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="text-ka-css.html">text-ka-css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.0 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="texting.html">texting.html</a>
+        </div>
+    </td>
+    <td class="size-cell">526.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="to_do_list_using_DOM.html">to_do_list_using_DOM.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.3 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="todo_list.html">todo_list.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.6 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="tooltip.html">tooltip.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.6 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="toster.html">toster.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.6 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="transofmation-css.html">transofmation-css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">2.9 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="video-audio-tags.html">video-audio-tags.html</a>
+        </div>
+    </td>
+    <td class="size-cell">308.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="webs-position-AS.html">webs-position-AS.html</a>
+        </div>
+    </td>
+    <td class="size-cell">5.7 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="wp-class.html">wp-class.html</a>
+        </div>
+    </td>
+    <td class="size-cell">6.4 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="z-index.html">z-index.html</a>
+        </div>
+    </td>
+    <td class="size-cell">1.8 KB</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+<tr>
+    <td>
+        <div class="name-cell">
+            <span class="icon">🌐</span>
+            <a href="zindex-css.html">zindex-css.html</a>
+        </div>
+    </td>
+    <td class="size-cell">215.0 B</td>
+    <td class="date-cell">Jun 14, 2026 03:39 AM</td>
+</tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">Code Academy Directory Explorer</div>
     </footer>
-
 </body>
-
 </html>
