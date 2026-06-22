@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple To-Do</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f2f5;
+      padding: 1rem;
+    }
+
+    /* card */
+    .todo-card {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: 0.2s;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #1e293b;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h1 i {
+      color: #3b82f6;
+      font-size: 1.6rem;
+    }
+
+    /* input row */
+    .input-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .input-row input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 2rem;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+      background: #fafbfc;
+    }
+
+    .input-row input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      background: white;
+    }
+
+    .input-row button {
+      background: #3b82f6;
+      border: none;
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 2rem;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .input-row button:hover {
+      background: #2563eb;
+      transform: scale(0.97);
+    }
+
+    .input-row button:active {
+      transform: scale(0.94);
+    }
+
+    /* stats bar */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+    .stats .count i {
+      margin-right: 0.3rem;
+      color: #3b82f6;
+    }
+
+    #clear-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+      transition: 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    #clear-btn:hover {
+      color: #ef4444;
+      background: #fef2f2;
+    }
+
+    /* task list */
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 340px;
+      overflow-y: auto;
+    }
+
+    .task-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .task-list::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+
+    /* task item */
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: #f8fafc;
+      padding: 0.6rem 1rem 0.6rem 1.2rem;
+      border-radius: 2rem;
+      border: 1px solid #e9edf2;
+      transition: 0.15s;
+    }
+
+    .task-item:hover {
+      background: #f1f5f9;
+    }
+
+    .task-item .task-text {
+      flex: 1;
+      color: #0f172a;
+      font-size: 0.98rem;
+      word-break: break-word;
+    }
+
+    .task-item .task-text.completed {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
+
+    /* custom checkbox */
+    .task-item .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid #cbd5e1;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: 0.15s;
+      font-size: 0.7rem;
+      color: transparent;
+    }
+
+    .task-item .check.done {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      color: white;
+    }
+
+    .task-item .delete-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+      border-radius: 1rem;
+      transition: 0.15s;
+    }
+
+    .task-item .delete-btn:hover {
+      color: #ef4444;
+      background: #fee2e2;
+    }
+
+    /* empty state */
+    .empty-state {
+      text-align: center;
+      padding: 2.2rem 0.5rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    .empty-state i {
+      font-size: 2.2rem;
+      opacity: 0.3;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* responsive */
+    @media (max-width: 450px) {
+      .todo-card {
+        padding: 1.2rem 1rem;
+      }
+      .input-row {
+        flex-wrap: wrap;
+      }
+      .input-row input {
+        width: 100%;
+      }
+      .input-row button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="todo-card">
+  <h1><i class="fas fa-list-check"></i> To-Do</h1>
+
+  <div class="input-row">
+    <input type="text" id="taskInput" placeholder="Add a task..." autofocus />
+    <button id="addBtn"><i class="fas fa-plus"></i> Add</button>
+  </div>
+
+  <div class="stats">
+    <span class="count"><i class="fas fa-circle-check"></i> <span id="taskCounter">0</span> tasks</span>
+    <button id="clear-btn"><i class="fas fa-trash-can"></i> Clear</button>
+  </div>
+
+  <ul class="task-list" id="taskList"></ul>
+</div>
+
+<script>
+  (function() {
+    // ----- DOM -----
+    const input = document.getElementById('taskInput');
+    const addBtn = document.getElementById('addBtn');
+    const list = document.getElementById('taskList');
+    const counter = document.getElementById('taskCounter');
+    const clearBtn = document.getElementById('clear-btn');
+
+    // ----- state -----
+    let tasks = [];
+
+    // ----- load from localStorage -----
+    function load() {
+      const stored = localStorage.getItem('simpleTasks');
+      if (stored) {
+        try { tasks = JSON.parse(stored); } catch { tasks = []; }
+      } else {
+        // some demo tasks
+        tasks = [
+          { id: Date.now() + 1, text: 'Write a to-do app', done: false },
+          { id: Date.now() + 2, text: 'Keep it simple', done: true },
+        ];
+      }
+      render();
+    }
+
+    function save() {
+      localStorage.setItem('simpleTasks', JSON.stringify(tasks));
+    }
+
+    // ----- render -----
+    function render() {
+      list.innerHTML = '';
+      const total = tasks.length;
+      counter.textContent = total;
+
+      if (total === 0) {
+        list.innerHTML = `<div class="empty-state"><i class="fas fa-pen"></i> No tasks yet</div>`;
+        return;
+      }
+
+      // show uncompleted first
+      const sorted = [...tasks].sort((a, b) => {
+        if (a.done === b.done) return a.id - b.id;
+        return a.done ? 1 : -1;
+      });
+
+      for (const t of sorted) {
+        const li = document.createElement('li');
+        li.className = 'task-item';
+
+        // checkbox
+        const check = document.createElement('div');
+        check.className = `check ${t.done ? 'done' : ''}`;
+        check.innerHTML = t.done ? '<i class="fas fa-check"></i>' : '';
+        check.addEventListener('click', () => toggle(t.id));
+
+        // text
+        const text = document.createElement('span');
+        text.className = `task-text ${t.done ? 'completed' : ''}`;
+        text.textContent = t.text;
+
+        // delete
+        const del = document.createElement('button');
+        del.className = 'delete-btn';
+        del.innerHTML = '<i class="fas fa-trash-can"></i>';
+        del.addEventListener('click', () => remove(t.id));
+
+        li.appendChild(check);
+        li.appendChild(text);
+        li.appendChild(del);
+        list.appendChild(li);
+      }
+    }
+
+    // ----- actions -----
+    function add() {
+      const val = input.value.trim();
+      if (!val) {
+        input.style.borderColor = '#ef4444';
+        setTimeout(() => input.style.borderColor = '', 400);
+        input.focus();
+        return;
+      }
+      tasks.push({ id: Date.now() + Math.random(), text: val, done: false });
+      save();
+      render();
+      input.value = '';
+      input.focus();
+    }
+
+    function toggle(id) {
+      const t = tasks.find(t => t.id === id);
+      if (t) { t.done = !t.done; save(); render(); }
+    }
+
+    function remove(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      save();
+      render();
+    }
+
+    function clearAll() {
+      if (tasks.length === 0) return;
+      if (confirm('Delete all tasks?')) {
+        tasks = [];
+        save();
+        render();
+        input.focus();
+      }
+    }
+
+    // ----- events -----
+    addBtn.addEventListener('click', add);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); add(); } });
+    clearBtn.addEventListener('click', clearAll);
+
+    // ----- start -----
+    load();
+  })();
+</script>
+</body>
+</html>

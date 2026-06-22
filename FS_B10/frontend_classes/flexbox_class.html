@@ -17,13 +17,22 @@
         .container{
             display: flex;
             height: 100vh;
+            /* flex-direction: column; */
             background-color: #a1f1e4;
             /* flex-direction: column-reverse; */
             /* flex-wrap: wrap; */
             /* row-gap: 12px; */
             /* column-gap: 30px; */
 
-            flex-flow: column wrap;
+            flex-flow: row wrap;
+
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+            /* align-items: stretch; */
+            /* align-content: stretch; */
+            justify-content: center;
+            align-items: center;
 
         }
         .items{
@@ -31,20 +40,25 @@
             color: #000;
             height: 100px;
             width: 100px;
-            /* margin: 12px; */
+            margin: 12px;
             border: solid;
             font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="items">1</div>
-        <div class="items">2</div>
-        <div class="items">3</div>
-        <div class="items">4</div>
-        <div class="items">5</div>
+        <div class="items">box</div>
+        <!-- <div class="items">box</div>
+        <div class="items">box</div>
+        <div class="items">box</div>
+        <div class="items">box</div>
+        <div class="items">box</div>
+        <div class="items">box</div> -->
     </div>
 
 </body>
