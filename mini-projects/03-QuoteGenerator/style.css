@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.quote-app {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f7 100%);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.quote-section {
+    padding: 50px 30px;
+}
+
+.quote-content {
+    text-align: center;
+}
+
+.quote-icon {
+    width: 40px;
+    height: 40px;
+    color: #0066ff;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+.quote-text {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 60px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.quote-author {
+    font-size: 18px;
+    color: #0066ff;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-in 0.2s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 30px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: #0066ff;
+    color: white;
+    border-color: #0066ff;
+    grid-column: span 3;
+}
+
+.btn-primary:hover {
+    background: #0052cc;
+    border-color: #0052cc;
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+}
+
+.btn-secondary {
+    background: white;
+    color: #0066ff;
+    border-color: #d6e4ff;
+}
+
+.btn-secondary:hover {
+    background: #f0f4ff;
+    border-color: #0066ff;
+}
+
+.copy-feedback {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0066ff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .quote-section {
+        padding: 30px 20px;
+    }
+    
+    .quote-text {
+        font-size: 20px;
+    }
+    
+    .quote-author {
+        font-size: 16px;
+    }
+    
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-primary {
+        grid-column: span 1;
+    }
+}
