@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tracker-app">
+            <div class="header">
+                <h1>Expense Tracker</h1>
+                <p class="subtitle">Track your income and expenses</p>
+            </div>
+            
+            <div class="balance-section">
+                <div class="balance-card balance-total">
+                    <p class="balance-label">Total Balance</p>
+                    <p id="totalBalance" class="balance-value">$0.00</p>
+                </div>
+                <div class="balance-card income">
+                    <p class="balance-label">Income</p>
+                    <p id="totalIncome" class="balance-value income-color">$0.00</p>
+                </div>
+                <div class="balance-card expense">
+                    <p class="balance-label">Expenses</p>
+                    <p id="totalExpense" class="balance-value expense-color">$0.00</p>
+                </div>
+            </div>
+            
+            <div class="input-section">
+                <input type="text" id="description" placeholder="Description" class="input-field">
+                <input type="number" id="amount" placeholder="Amount" class="input-field" step="0.01">
+                <select id="type" class="input-field">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button id="addBtn" class="add-btn">Add Transaction</button>
+            </div>
+            
+            <div class="transactions-section">
+                <h3>Recent Transactions</h3>
+                <ul id="transactionList" class="transaction-list">
+                    <!-- Transactions will be added here -->
+                </ul>
+            </div>
+            
+            <div class="button-section">
+                <button id="clearBtn" class="clear-btn">Clear All</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

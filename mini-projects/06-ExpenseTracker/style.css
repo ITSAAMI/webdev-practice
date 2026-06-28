@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.tracker-app {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f0f7 100%);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.balance-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.balance-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+}
+
+.balance-card.balance-total {
+    grid-column: span 3;
+}
+
+.balance-label {
+    font-size: 12px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.balance-value {
+    font-size: 24px;
+    color: #0066ff;
+    font-weight: 700;
+}
+
+.income-color {
+    color: #27ae60 !important;
+}
+
+.expense-color {
+    color: #e74c3c !important;
+}
+
+.input-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.input-field {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 12px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #0066ff;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+#description {
+    grid-column: span 2;
+}
+
+#amount {
+    grid-column: span 1;
+}
+
+#type {
+    grid-column: span 1;
+}
+
+.add-btn {
+    grid-column: span 2;
+    background: #0066ff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+}
+
+.transactions-section {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.transactions-section h3 {
+    color: #2c3e50;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.transaction-list {
+    list-style: none;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #0066ff;
+}
+
+.transaction-item.income {
+    border-left-color: #27ae60;
+}
+
+.transaction-item.expense {
+    border-left-color: #e74c3c;
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-description {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.transaction-date {
+    color: #7f8c8d;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.transaction-amount {
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 10px;
+    min-width: 80px;
+    text-align: right;
+}
+
+.transaction-amount.income {
+    color: #27ae60;
+}
+
+.transaction-amount.expense {
+    color: #e74c3c;
+}
+
+.delete-transaction {
+    background: #fff5f5;
+    color: #e74c3c;
+    border: 2px solid #ffc0cb;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.delete-transaction:hover {
+    background: #ffe0e0;
+    border-color: #e74c3c;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px 20px;
+    color: #bdc3c7;
+}
+
+.button-section {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.clear-btn {
+    width: 100%;
+    background: #fff5f5;
+    color: #e74c3c;
+    border: 2px solid #ffc0cb;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: #ffe0e0;
+    border-color: #e74c3c;
+}
+
+@media (max-width: 480px) {
+    .balance-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .balance-card.balance-total {
+        grid-column: span 1;
+    }
+    
+    .input-section {
+        grid-template-columns: 1fr;
+    }
+    
+    #description,
+    #amount,
+    #type,
+    .add-btn {
+        grid-column: span 1 !important;
+    }
+}
