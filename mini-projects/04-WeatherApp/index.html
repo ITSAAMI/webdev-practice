@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <div class="header">
+                <h1>Weather App</h1>
+                <p class="subtitle">Check the weather anywhere</p>
+            </div>
+            
+            <div class="search-section">
+                <input type="text" id="cityInput" placeholder="Enter city name..." class="input-field">
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+            
+            <div id="weatherContent" class="weather-content" style="display: none;">
+                <div class="city-info">
+                    <h2 id="cityName"></h2>
+                    <p id="date"></p>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temperature-section">
+                        <span id="temperature" class="temperature"></span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="weather-description">
+                        <p id="description"></p>
+                        <p id="feelsLike"></p>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <p class="detail-label">Humidity</p>
+                        <p id="humidity" class="detail-value"></p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Wind Speed</p>
+                        <p id="windSpeed" class="detail-value"></p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Pressure</p>
+                        <p id="pressure" class="detail-value"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <div id="loading" class="loading" style="display: none;">Loading...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
